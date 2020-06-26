@@ -8,11 +8,13 @@
         "@emotion/styled": "^10.0.27",
         "gatsby": "^2.20.35",
         "gatsby-image": "^2.3.5",
+        "gatsby-plugin-graphql-codegen": "^2.7.1",
         "gatsby-plugin-netlify": "^2.2.4",
         "gatsby-plugin-netlify-cms": "^4.2.5",
         "gatsby-plugin-react-helmet": "^3.2.5",
         "gatsby-plugin-sass": "^2.2.4",
         "gatsby-plugin-sharp": "^2.5.7",
+        "gatsby-plugin-smoothscroll": "^1.1.0",
         "gatsby-plugin-typescript": "^2.4.2",
         "gatsby-remark-copy-linked-files": "^2.2.4",
         "gatsby-remark-images": "^3.2.6",
@@ -26,7 +28,8 @@
         "prop-types": "^15.6.0",
         "react": "^16.8.4",
         "react-dom": "^16.8.4",
-        "react-helmet": "^6.0.0"
+        "react-helmet": "^6.0.0",
+        "ts-deep-extract-types": "^1.0.1"
     },
     "keywords": [
         "gatsby"

@@ -1,8 +1,26 @@
+const locales = require('./locales');
+
 module.exports = {
     siteMetadata: {
-        title: 'Gatsby + Netlify CMS Starter',
-        description:
-            'This repo contains an example business website that is built with Gatsby, and Netlify CMS.It follows the JAMstack architecture by using Git as a single source of truth, and Netlify for continuous deployment, and CDN distribution.',
+        title: 'Renergy',
+        description: 'Renergy description',
+        localesSettings: locales,
+        menu: [
+            {
+                item: {
+                    en: 'Home',
+                    de: 'Start',
+                },
+                to: '#home',
+            },
+            {
+                item: {
+                    en: 'Our Story',
+                    de: 'Über Uns',
+                },
+                to: '#about',
+            },
+        ],
     },
     plugins: [
         'gatsby-plugin-react-helmet',
@@ -15,14 +33,14 @@ module.exports = {
                 name: 'uploads',
             },
         },
-        {
-            // keep as first gatsby-source-filesystem plugin for gatsby image support
-            resolve: 'gatsby-source-filesystem',
-            options: {
-                path: `${__dirname}/src/assets`,
-                name: 'assets',
-            },
-        },
+        // {
+        //     // keep as first gatsby-source-filesystem plugin for gatsby image support
+        //     resolve: 'gatsby-source-filesystem',
+        //     options: {
+        //         path: `${__dirname}/src/assets`,
+        //         name: 'assets',
+        //     },
+        // },
         {
             resolve: 'gatsby-source-filesystem',
             options: {
@@ -32,6 +50,12 @@ module.exports = {
         },
         'gatsby-plugin-sharp',
         'gatsby-transformer-sharp',
+        {
+            resolve: `gatsby-plugin-graphql-codegen`,
+            options: {
+                fileName: `./gatsby-graphql.ts`,
+            },
+        },
         {
             resolve: 'gatsby-transformer-remark',
             options: {
