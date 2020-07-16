@@ -26,7 +26,7 @@ about_us_section:
     Bereich der Naturheilkunde ist es uns möglich Sie bei gesundheitlichen
     Problemen umfassend und kompetent zu beraten und zu behandeln.
   image:
-    source: /img/health_solutions_logo_blue.svg
+    source: /img/logo_farbe.svg
     alt: Health Solutions Logo
 philosophy_section:
   section_heading: PHILOSOPHIE
@@ -133,7 +133,7 @@ praxis_section:
     - source: /img/couple.png
       alt: blaa
   image:
-    source: /img/health_solutions_logo_blue.svg
+    source: /img/logo_farbe.svg
     alt: Health Solutions Logo
 labor_section:
   heading: LABOR LABOR LABOR
