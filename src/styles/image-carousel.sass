@@ -1,0 +1,90 @@
+// ul 
+//     transform: translate3d(-100%, 0px, 0px)
+//     transition-duration: 500ms
+//     height: 706px
+
+@function remToPixel($size)
+    @return $size * $baseSize
+
+@function breakpointCalc($breakpointPx, $paddingRem)
+    @return $breakpointPx + 2 * $paddingRem 
+
+=galleryWidth($property, $breakpoint)
+    #{$property}: $breakpoint
+    @media screen and (max-width: breakpointCalc($breakpoint, remToPixel($section-padding-X)))
+        #{$property}: 100%
+
+div.image-carousel
+    $width: 350px
+    $height: 250px
+    width: 100%
+    overflow: hidden
+    ul.image-container
+        position: relative
+        +galleryWidth(width, $width)
+        margin: 0 auto
+        height: $height
+        list-style: none
+        li
+            position: absolute
+            transition: all 350ms
+            top: 50%
+            flex-direction: column
+            flex-flow: column
+            opacity: 0
+            width: 100%
+            figure
+                display: flex
+                justify-content: center
+                align-items: center
+                img
+                    +galleryWidth(max-width, $width)
+                    max-height: $height
+        li.selected
+            opacity: 1
+            figure
+    div.indicator-container
+        $width: 350
+        display: flex
+        justify-content: center
+        align-items: center
+        div.image-arrow
+            width: 100px
+            border: 1px solid #ccc
+            text-align: center
+            cursor: pointer
+            color: $orange
+            font-family: Arial
+            font-weight: bold
+        div.image-arrow.previous
+            // box-shadow: 20px 0px 10px #ddd
+            z-index: 30
+        div.image-arrow.next
+            // box-shadow: -20px 0px 10px #ddd
+            z-index: 30
+        div.image-indicators
+            +galleryWidth(width, #{$width - 50}px)
+            height: 20px
+            // box-shadow: inset 3px 3px red, -1em 0 0.4em olive;
+            position: relative
+            overflow: hidden
+            // box-shadow: inset 5px 5px 5px 5px #000000
+            div.image-indicators-container-absolute
+                position: absolute
+                transition: left 300ms
+                div.image-indicators-container-relative
+                    display: flex
+                    position: relative
+                    div.image-indicator
+                        transition: transform 300ms
+                        position: absolute
+                        width: 30px
+                        height: 20px
+                        text-align: center
+                        cursor: pointer
+                        color: $orange
+                        font-family: Arial
+                        font-weight: bold
+                        // background: #ddd
+                    div.image-indicator.selected
+                        text-decoration: underline

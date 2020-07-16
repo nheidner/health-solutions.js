@@ -1,5 +1,6 @@
 backend:
-    name: git-gateway
+    name: github
+    repo: nheidner/renergy-js
     branch: master
     commit_messages:
         create: 'Create {{collection}} “{{slug}}”'
@@ -12,3 +13,34 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+    - name: pages-en
+      label: Pages (En)
+      files:
+          - file: 'src/markdown/en/index.md'
+            label: 'Home'
+            name: 'index-en'
+            fields:
+                - {
+                      label: 'TemplateKey',
+                      name: 'templateKey',
+                      widget: 'hidden',
+                      default: 'index',
+                  }
+                - {
+                      label: 'Locale',
+                      name: 'locale',
+                      widget: 'hidden',
+                      default: 'en',
+                  }
+                - {
+                      label: 'Page Title',
+                      name: 'pageTitle',
+                      widget: 'string',
+                      hint: 'Modifies the title of the page that will be rendered in the browser - as f.e. seen in the tab bar of the browser',
+                  }
+                - {
+                      label: 'Path',
+                      name: 'path',
+                      widget: 'string',
+                      hint: 'Modifies the path under which the page will be found - Warning: Please only change it, if you know, what you are doing!',
+                  }

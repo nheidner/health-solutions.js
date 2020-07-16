@@ -1,0 +1,288 @@
+@charset "utf-8"
+
+// VARIABLES
+
+// spaces
+$space-0: 0rem
+$space-1: 0.25rem
+$space-2: 0.5rem
+$space-3: 0.75rem
+$space-4: 1rem
+$space-5: 1.5rem
+$space-6: 3rem
+$hero-body-padding: $space-5
+$section-padding-X: 1.5 //rem
+$section-padding: 3rem #{$section-padding-X}rem
+$text: #fff
+// $gap: 100px
+
+// colors
+$dark-blue: #00475e
+$dark-blue-hover: #004e63
+$white: #fff
+$yellow: #f2e07c
+$orange: #db7600
+$primary: #005870
+
+// typography
+$title-weight: normal
+$title-color: $dark-blue
+$size-1: 4.5rem
+$size-2: 2.8rem
+$size-normal: 1rem
+$size-medium: 1.375rem
+$size-large: 1.5rem
+
+// flex
+.flex-wrap
+    flex-wrap: wrap
+    justify-content: center
+
+// sizes
+$baseSize: 16px
+
+
+// navbar
+$navbar-item-color: $dark-blue
+$navbar-item-hover-background-color: $white
+$navbar-box-shadow-size: 0 2px 0 0
+
+// button
+$button-border-width: 0
+$button-padding-vertical: 0.3rem
+$button-padding-horizontal: 1rem
+
+@import "image-carousel.sass"
+@import "~bulma/bulma.sass";
+
+// CLASSES
+
+html 
+    // font-size: $baseSize
+
++mobile
+    html 
+        // font-size: 90%
+
+body
+    font-family: Apercu
+    color: $dark-blue
+
+// buttons
+.button
+    border-radius: 0
+    font-family: ClearfaceStd
+    font-size: $size-medium
+    height: initial
+    &.is-small
+        font-size: 1rem
+
+// navbar
+.navbar 
+    transition: box-shadow 200ms, border-bottom 200ms
+    // transition: border-bottom 400ms
+    border-bottom: 1px solid #ddd
+    background: #fff
+    &.has-shadow
+        box-shadow: 0 4px 8px 0 #ddd
+        border-bottom: 1px solid #ccc
+    &.is-fixed-top
+        z-index: 100
+    div.navbar-menu
+        div.navbar-end
+            a.navbar-item 
+                padding: 0.4rem
+
+// to top
+.to-top-button
+    position: fixed
+    bottom: $space-4
+    right: $space-4
+    background: $dark-blue
+    padding: $space-1 $space-3
+    font-size: $size-medium
+    color: $white
+    border-radius: 5px
+    z-index: 100
+    // font-weight: bold
+    font-family: Arial
+    &:hover
+        color: $white
+        background-color: $dark-blue-hover
+
+.locales-toggle
+    position: relative
+    a::before
+        content: '/'
+        color: $navbar-item-color
+        font-weight: normal
+        position: absolute
+        left: -2px    
+    a:first-of-type::before
+        content: ''
+
+// general
+.flex-direction-reverse
+    flex-direction: row-reverse
+
+.is-centered-horizontal
+    margin: 0 auto
+
+.section-heading
+    font-size: 1rem
+    text-align: center
+    text-transform: uppercase
+    font-weight: bold
+
+.has-background-yellow
+    background: $yellow
+
+.has-background-dark-blue
+    background: $dark-blue
+
+.line-differentiator
+    background: $dark-blue
+    height: 40px
+    margin-bottom: 0
+
+.touch-is-block
+    +touch
+        display: block !important
+
+// index template
+.my-card-component
+    text-align: center
+    +touch
+        display: flex
+        justify-content: space-between
+        &.my-card-is-row-reverse
+            flex-direction: row-reverse
+            div.my-card-content
+                padding-left: $space-0
+                padding-right: $space-4
+        div.my-card-image
+            flex-basis: 40%
+            min-width: 130px
+            max-width: 300px
+            figure.image
+                width: 100%
+        div.my-card-content
+            flex-basis: 60%
+            +mobile
+                padding-left: $space-4
+            h1.title
+                text-align: center
+                font-size: 1rem
+                text-transform: uppercase
+                margin-bottom: 1rem
+            div.content
+    +desktop
+        & > *
+            max-width: 75%
+            margin: 0 auto
+
+.image-carousel-section
+    div.carousel-root
+        width: 350px
+        max-width: 100%
+        margin: 0 auto
+        max-height: 200px
+        figure
+            max-height: 300px
+            
+            
+
+// sections
+.contact-section
+    +tablet
+        div.columns
+            width: 80%
+            div.right-column 
+                +clearfix
+                div.content
+                    width: 70%
+                    float: right
+                div.newsletter
+                    width: 70%
+                    float: right
+    div.columns
+        div.right-column    
+            p
+                margin-bottom: $space-1            
+        div.newsletter
+            h1.title
+                margin-bottom: $space-2
+            form.newsletter-form
+                background: #ddd
+                max-width: 300px
+                div.control
+                    display: flex
+                    // border: 1px solid $dark-blue
+                    input.input
+                        background-color: #fff
+                        border: 0
+                        border-radius: 0
+                        background: $yellow
+                        color: $dark-blue
+                        box-shadow: none
+                        font-size: 1rem
+                        font-family: Apercu
+                        // padding: 0.2rem
+                        border: 1px solid $dark-blue
+                    input.input::placeholder
+                        color: $dark-blue
+                        // text-align: center
+                        font-size: $size-normal
+                        font-family: Apercu
+                    input.input:-ms-input-placeholder
+                        color: $dark-blue
+                    input.input::-ms-input-placeholder
+                        color: $dark-blue
+                    button.button
+                        border-radius: 0
+                        color: $dark-blue
+                        padding-top: 0
+                        padding-bottom: 0  
+    div.map
+        height: 300px
+        background: #ddd
+
+.footer
+    div.columns
+        div.column.footer-menu
+            a
+                color: $white
+    div.copyright
+        padding: $space-3
+        padding-left: $space-0
+    +tablet
+        div.columns
+            width: 50%
+
+@mixin margins($property)
+    margin: $property 0
+
+.heading
+    color: $title-color
+    text-shadow: 0.5px 0.5px findColorInvert(#fff)
+    font-size: 40px !important
+    @include margins(20px)
+    
+.more 
+    position: relative
+    @include loader
+
+.center 
+    display: flex
+    justify-content: center
+    align-items: center
+
+
+
+
+
+ 
+
+
+
+
