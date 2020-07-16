@@ -32,15 +32,12 @@ $size-2: 2.8rem
 $size-normal: 1rem
 $size-medium: 1.375rem
 $size-large: 1.5rem
+$base-size: 16px
 
 // flex
 .flex-wrap
     flex-wrap: wrap
     justify-content: center
-
-// sizes
-$baseSize: 16px
-
 
 // navbar
 $navbar-item-color: $dark-blue
@@ -58,7 +55,7 @@ $button-padding-horizontal: 1rem
 // CLASSES
 
 html 
-    // font-size: $baseSize
+    // font-size: $base-size
 
 +mobile
     html 
@@ -85,7 +82,7 @@ body
     background: #fff
     &.has-shadow
         box-shadow: 0 4px 8px 0 #ddd
-        border-bottom: 1px solid #ccc
+        border-bottom: 1px solid #d5d5d5
     &.is-fixed-top
         z-index: 100
     div.navbar-menu
@@ -192,8 +189,8 @@ body
             
             
 
-// sections
-.contact-section
+// IDs
+#contact
     +tablet
         div.columns
             width: 80%
@@ -259,23 +256,23 @@ body
         div.columns
             width: 50%
 
-@mixin margins($property)
-    margin: $property 0
+// @mixin margins($property)
+//     margin: $property 0
 
-.heading
-    color: $title-color
-    text-shadow: 0.5px 0.5px findColorInvert(#fff)
-    font-size: 40px !important
-    @include margins(20px)
+// .heading
+//     color: $title-color
+//     text-shadow: 0.5px 0.5px findColorInvert(#fff)
+//     font-size: 40px !important
+//     @include margins(20px)
     
-.more 
-    position: relative
-    @include loader
+// .more 
+//     position: relative
+//     @include loader
 
-.center 
-    display: flex
-    justify-content: center
-    align-items: center
+// .center 
+//     display: flex
+//     justify-content: center
+//     align-items: center
 
 
 

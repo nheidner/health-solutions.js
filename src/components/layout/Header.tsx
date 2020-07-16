@@ -55,42 +55,51 @@ const Header: FC<{ currentLocale: string; showNavbarShadow: boolean }> = ({
             className={`navbar is-fixed-top ${
                 !mobileMenuToggled && showNavbarShadow ? 'has-shadow' : ''
             }`}>
-            <div className='navbar-brand px-5'>
-                <Link className='navbar-item' to='/'>
-                    <img src={logo} style={{ width: '100px' }} />
-                </Link>
-                <Link
-                    role='button'
-                    className={`navbar-burger burger ${
-                        mobileMenuToggled ? 'is-active' : ''
-                    }`}
-                    onClick={() => setMobileMenuToggled(!mobileMenuToggled)}>
-                    <span aria-hidden='true'></span>
-                    <span aria-hidden='true'></span>
-                    <span aria-hidden='true'></span>
-                </Link>
-            </div>
-            <div
-                className={`navbar-menu ${
-                    mobileMenuToggled ? 'is-active px-5' : 'mr-5'
-                }`}>
-                <div className='navbar-end is-uppercase'>
-                    {menuItems.map((menuItem, index) => {
-                        const to = `${
-                            currentLocale === primaryLocale
-                                ? ''
-                                : '/' + currentLocale
-                        }${menuItem.to}`;
-                        return (
-                            <Link key={index} className='navbar-item' to={to}>
-                                <div
-                                    onClick={() => setMobileMenuToggled(false)}>
-                                    {menuItem.item[currentLocale]}
-                                </div>
-                            </Link>
-                        );
-                    })}
-                    <LocalsToggle />
+            <div className='container'>
+                <div className='navbar-brand px-5'>
+                    <Link className='navbar-item' to='/'>
+                        <img src={logo} style={{ width: '100px' }} />
+                    </Link>
+                    <Link
+                        role='button'
+                        className={`navbar-burger burger ${
+                            mobileMenuToggled ? 'is-active' : ''
+                        }`}
+                        onClick={() =>
+                            setMobileMenuToggled(!mobileMenuToggled)
+                        }>
+                        <span aria-hidden='true'></span>
+                        <span aria-hidden='true'></span>
+                        <span aria-hidden='true'></span>
+                    </Link>
+                </div>
+                <div
+                    className={`navbar-menu ${
+                        mobileMenuToggled ? 'is-active px-5' : 'mr-5'
+                    }`}>
+                    <div className='navbar-end is-uppercase'>
+                        {menuItems.map((menuItem, index) => {
+                            const to = `${
+                                currentLocale === primaryLocale
+                                    ? ''
+                                    : '/' + currentLocale
+                            }${menuItem.to}`;
+                            return (
+                                <Link
+                                    key={index}
+                                    className='navbar-item'
+                                    to={to}>
+                                    <div
+                                        onClick={() =>
+                                            setMobileMenuToggled(false)
+                                        }>
+                                        {menuItem.item[currentLocale]}
+                                    </div>
+                                </Link>
+                            );
+                        })}
+                        <LocalsToggle />
+                    </div>
                 </div>
             </div>
         </nav>

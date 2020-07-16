@@ -42,5 +42,513 @@ collections:
                       label: 'Path',
                       name: 'path',
                       widget: 'string',
-                      hint: 'Modifies the path under which the page will be found - Warning: Please only change it, if you know, what you are doing!',
+                      hint: 'Without locales path - Modifies the path under which the page will be found - Warning: Please only change it, if you know, what you are doing!',
                   }
+                - label: 'Home Section'
+                  name: 'home_section'
+                  widget: object
+                  collapsed: true
+                  fields:
+                      - label: 'Image Column'
+                        name: 'image_column'
+                        widget: 'object'
+                        collapsed: true
+                        fields:
+                            - label: 'Image'
+                              name: 'image'
+                              widget: object
+                              collapsed: true
+                              fields:
+                                  - {
+                                        label: 'Image Source',
+                                        name: 'source',
+                                        widget: 'image',
+                                    }
+                                  - {
+                                        label: 'Image Alt',
+                                        name: 'alt',
+                                        widget: 'string',
+                                    }
+                      - label: 'Text Column'
+                        name: 'text_column'
+                        widget: 'object'
+                        collapsed: true
+                        fields:
+                            - {
+                                  label: 'Heading',
+                                  name: 'heading',
+                                  widget: 'string',
+                              }
+                            - {
+                                  label: 'Markdown Text',
+                                  name: 'markdown_text',
+                                  widget: 'markdown',
+                                  buttons:
+                                      [
+                                          bold,
+                                          italic,
+                                          link,
+                                          bulleted-list,
+                                          numbered-list,
+                                          quote,
+                                      ],
+                              }
+                            - {
+                                  label: 'Button Text',
+                                  name: 'button_text',
+                                  widget: 'string',
+                              }
+
+                - label: 'About Us Section'
+                  name: 'about_us_section'
+                  widget: object
+                  collapsed: true
+                  fields:
+                      - {
+                            label: 'Section Heading',
+                            name: 'section_heading',
+                            widget: 'string',
+                        }
+                      - { label: 'Heading', name: 'heading', widget: 'string' }
+                      - {
+                            label: 'Markdown Text',
+                            name: 'markdown_text',
+                            widget: 'markdown',
+                            buttons:
+                                [
+                                    bold,
+                                    italic,
+                                    link,
+                                    bulleted-list,
+                                    numbered-list,
+                                    quote,
+                                ],
+                        }
+                      - label: 'Image'
+                        name: 'image'
+                        widget: object
+                        collapsed: true
+                        fields:
+                            - {
+                                  label: 'Image Source',
+                                  name: 'source',
+                                  widget: 'image',
+                              }
+                            - {
+                                  label: 'Image Alt',
+                                  name: 'alt',
+                                  widget: 'string',
+                              }
+                - label: 'Philosophy Section'
+                  name: 'philosophy_section'
+                  widget: object
+                  collapsed: true
+                  fields:
+                      - {
+                            label: 'Section Heading',
+                            name: 'section_heading',
+                            widget: 'string',
+                        }
+                      - label: Cards
+                        name: cards
+                        widget: list
+                        collapsed: true
+                        label_singular: Card
+                        fields:
+                            - label: 'Image'
+                              name: 'image'
+                              widget: object
+                              collapsed: true
+                              fields:
+                                  - {
+                                        label: 'Image Source',
+                                        name: 'source',
+                                        widget: 'image',
+                                    }
+                                  - {
+                                        label: 'Image Alt',
+                                        name: 'alt',
+                                        widget: 'string',
+                                    }
+                            - {
+                                  label: 'Heading',
+                                  name: 'heading',
+                                  widget: 'string',
+                              }
+                            - {
+                                  label: 'Markdown Text',
+                                  name: 'markdown_text',
+                                  widget: 'markdown',
+                                  buttons:
+                                      [
+                                          bold,
+                                          italic,
+                                          link,
+                                          bulleted-list,
+                                          numbered-list,
+                                          quote,
+                                      ],
+                              }
+                - label: 'Verfahren Section'
+                  name: 'verfahren_section'
+                  widget: object
+                  collapsed: true
+                  fields:
+                      - {
+                            label: 'Section Heading',
+                            name: 'section_heading',
+                            widget: 'string',
+                        }
+                      - label: 'Image Column'
+                        name: 'image_column'
+                        widget: 'object'
+                        collapsed: true
+                        fields:
+                            - label: 'Image'
+                              name: 'image'
+                              widget: object
+                              collapsed: true
+                              fields:
+                                  - {
+                                        label: 'Image Source',
+                                        name: 'source',
+                                        widget: 'image',
+                                    }
+                                  - {
+                                        label: 'Image Alt',
+                                        name: 'alt',
+                                        widget: 'string',
+                                    }
+                      - label: 'Text Column'
+                        name: 'text_column'
+                        widget: 'object'
+                        collapsed: true
+                        fields:
+                            - {
+                                  label: 'Heading',
+                                  name: 'heading',
+                                  widget: 'string',
+                              }
+                            - {
+                                  label: 'Markdown Text',
+                                  name: 'markdown_text',
+                                  widget: 'markdown',
+                                  buttons:
+                                      [
+                                          bold,
+                                          italic,
+                                          link,
+                                          bulleted-list,
+                                          numbered-list,
+                                          quote,
+                                      ],
+                              }
+                            - {
+                                  label: 'Button Text',
+                                  name: 'button_text',
+                                  widget: 'string',
+                              }
+                - label: 'Anonymous Section 1'
+                  name: 'anonymous_section_1'
+                  widget: object
+                  collapsed: true
+                  fields:
+                      - label: 'Image Column'
+                        name: 'image_column'
+                        widget: 'object'
+                        collapsed: true
+                        fields:
+                            - label: 'Image'
+                              name: 'image'
+                              widget: object
+                              collapsed: true
+                              fields:
+                                  - {
+                                        label: 'Image Source',
+                                        name: 'source',
+                                        widget: 'image',
+                                    }
+                                  - {
+                                        label: 'Image Alt',
+                                        name: 'alt',
+                                        widget: 'string',
+                                    }
+                      - label: 'Text Column'
+                        name: 'text_column'
+                        widget: 'object'
+                        collapsed: true
+                        fields:
+                            - {
+                                  label: 'Heading',
+                                  name: 'heading',
+                                  widget: 'string',
+                              }
+                            - {
+                                  label: 'Markdown Text',
+                                  name: 'markdown_text',
+                                  widget: 'markdown',
+                                  buttons:
+                                      [
+                                          bold,
+                                          italic,
+                                          link,
+                                          bulleted-list,
+                                          numbered-list,
+                                          quote,
+                                      ],
+                              }
+                - label: 'Anonymous Section 2'
+                  name: 'anonymous_section_2'
+                  widget: object
+                  collapsed: true
+                  fields:
+                      - { label: 'Heading', name: 'heading', widget: string }
+                      - {
+                            label: 'Subheading',
+                            name: 'subheading',
+                            widget: string,
+                        }
+                      - {
+                            label: 'Button Text',
+                            name: 'button_text',
+                            widget: 'string',
+                        }
+                - label: 'Praxis Section'
+                  name: 'praxis_section'
+                  widget: object
+                  collapsed: true
+                  fields:
+                      - {
+                            label: 'Section Heading',
+                            name: 'section_heading',
+                            widget: 'string',
+                        }
+                      - label: 'Image Column'
+                        name: 'image_column'
+                        widget: 'object'
+                        collapsed: true
+                        fields:
+                            - label: 'Image'
+                              name: 'image'
+                              widget: object
+                              collapsed: true
+                              fields:
+                                  - {
+                                        label: 'Image Source',
+                                        name: 'source',
+                                        widget: 'image',
+                                    }
+                                  - {
+                                        label: 'Image Alt',
+                                        name: 'alt',
+                                        widget: 'string',
+                                    }
+                      - label: 'Text Column'
+                        name: 'text_column'
+                        widget: 'object'
+                        collapsed: true
+                        fields:
+                            - {
+                                  label: 'Heading',
+                                  name: 'heading',
+                                  widget: 'string',
+                              }
+                            - {
+                                  label: 'Markdown Text',
+                                  name: 'markdown_text',
+                                  widget: 'markdown',
+                                  buttons:
+                                      [
+                                          bold,
+                                          italic,
+                                          link,
+                                          bulleted-list,
+                                          numbered-list,
+                                          quote,
+                                      ],
+                              }
+                            - {
+                                  label: 'Button Text',
+                                  name: 'button_text',
+                                  widget: 'string',
+                              }
+                      - label: Image Gallery
+                        name: image_gallery
+                        widget: list
+                        collapsed: true
+                        label_singular: Image
+                        fields:
+                            - {
+                                  label: 'Image Source',
+                                  name: 'source',
+                                  widget: 'image',
+                              }
+                            - {
+                                  label: 'Image Alt',
+                                  name: 'alt',
+                                  widget: 'string',
+                              }
+                      - label: 'Buttom Image'
+                        name: 'image'
+                        widget: object
+                        collapsed: true
+                        fields:
+                            - {
+                                  label: 'Image Source',
+                                  name: 'source',
+                                  widget: 'image',
+                              }
+                            - {
+                                  label: 'Image Alt',
+                                  name: 'alt',
+                                  widget: 'string',
+                              }
+                - label: 'Labor Section'
+                  name: 'labor_section'
+                  widget: object
+                  collapsed: true
+                  fields:
+                      - { label: 'Heading', name: 'heading', widget: 'string' }
+                      - {
+                            label: 'Markdown Text',
+                            name: 'markdown_text',
+                            widget: 'markdown',
+                            buttons:
+                                [
+                                    bold,
+                                    italic,
+                                    link,
+                                    bulleted-list,
+                                    numbered-list,
+                                    quote,
+                                ],
+                        }
+                - label: 'Team Section'
+                  name: 'team_section'
+                  widget: object
+                  collapsed: true
+                  fields:
+                      - {
+                            label: 'Section Heading',
+                            name: 'section_heading',
+                            widget: 'string',
+                        }
+                      - label: Cards
+                        name: cards
+                        widget: list
+                        collapsed: true
+                        label_singular: Card
+                        fields:
+                            - label: 'Image'
+                              name: 'image'
+                              widget: object
+                              collapsed: true
+                              fields:
+                                  - {
+                                        label: 'Image Source',
+                                        name: 'source',
+                                        widget: 'image',
+                                    }
+                                  - {
+                                        label: 'Image Alt',
+                                        name: 'alt',
+                                        widget: 'string',
+                                    }
+                            - {
+                                  label: 'Heading',
+                                  name: 'heading',
+                                  widget: 'string',
+                              }
+                            - {
+                                  label: 'Markdown Text',
+                                  name: 'markdown_text',
+                                  widget: 'markdown',
+                                  buttons:
+                                      [
+                                          bold,
+                                          italic,
+                                          link,
+                                          bulleted-list,
+                                          numbered-list,
+                                          quote,
+                                      ],
+                              }
+                - label: 'Contact Section'
+                  name: 'contact_section'
+                  widget: object
+                  collapsed: true
+                  fields:
+                      - {
+                            label: 'Section Heading',
+                            name: 'section_heading',
+                            widget: 'string',
+                        }
+                      - { label: 'Heading', name: 'heading', widget: 'string' }
+                      - label: 'Left Column'
+                        name: 'left_column'
+                        widget: 'object'
+                        collapsed: true
+                        fields:
+                            - {
+                                  label: 'Markdown Text',
+                                  name: 'markdown_text',
+                                  widget: 'markdown',
+                                  buttons:
+                                      [
+                                          bold,
+                                          italic,
+                                          link,
+                                          bulleted-list,
+                                          numbered-list,
+                                          quote,
+                                      ],
+                              }
+                            - {
+                                  label: 'Button Text',
+                                  name: 'button_text',
+                                  widget: 'string',
+                              }
+                      - label: 'Right Column'
+                        name: 'right_column'
+                        widget: 'object'
+                        collapsed: true
+                        fields:
+                            - {
+                                  label: 'Address Markdown',
+                                  name: 'address markdown',
+                                  widget: 'markdown',
+                                  buttons:
+                                      [
+                                          bold,
+                                          italic,
+                                          link,
+                                          bulleted-list,
+                                          numbered-list,
+                                          quote,
+                                      ],
+                              }
+                            - {
+                                  label: 'Show Newsletter',
+                                  name: 'show_newsletter',
+                                  widget: 'boolean',
+                              }
+                            - label: 'Newsletter'
+                              name: 'newsletter'
+                              widget: 'object'
+                              collapsed: true
+                              fields:
+                                  - {
+                                        label: 'Heading',
+                                        name: 'heading',
+                                        widget: 'string',
+                                    }
+                                  - {
+                                        label: 'Placeholder',
+                                        name: 'placeholder',
+                                        widget: 'string',
+                                    }
+                                  - {
+                                        label: 'Button Text',
+                                        name: 'button_text',
+                                        widget: 'string',
+                                    }
