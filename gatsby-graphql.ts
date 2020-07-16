@@ -2472,6 +2472,8 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___fileName'
   | 'pluginCreator___pluginOptions___maxWidth'
   | 'pluginCreator___pluginOptions___destinationDir'
+  | 'pluginCreator___pluginOptions___develop'
+  | 'pluginCreator___pluginOptions___purgeOnly'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
@@ -2674,6 +2676,8 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___fileName'
   | 'pluginOptions___maxWidth'
   | 'pluginOptions___destinationDir'
+  | 'pluginOptions___develop'
+  | 'pluginOptions___purgeOnly'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
   | 'browserAPIs'
@@ -2793,6 +2797,8 @@ export type SitePluginPluginOptions = {
   fileName?: Maybe<Scalars['String']>;
   maxWidth?: Maybe<Scalars['Int']>;
   destinationDir?: Maybe<Scalars['String']>;
+  develop?: Maybe<Scalars['Boolean']>;
+  purgeOnly?: Maybe<Array<Maybe<Scalars['String']>>>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
@@ -2803,6 +2809,8 @@ export type SitePluginPluginOptionsFilterInput = {
   fileName?: Maybe<StringQueryOperatorInput>;
   maxWidth?: Maybe<IntQueryOperatorInput>;
   destinationDir?: Maybe<StringQueryOperatorInput>;
+  develop?: Maybe<BooleanQueryOperatorInput>;
+  purgeOnly?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
 
@@ -2913,6 +2921,14 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
+export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_1_Query = { site?: Maybe<{ siteMetadata?: Maybe<{ menu?: Maybe<Array<Maybe<(
+        Pick<SiteSiteMetadataMenu, 'to'>
+        & { item?: Maybe<Pick<SiteSiteMetadataMenuItem, 'en' | 'de'>> }
+      )>>> }> }> };
+
 export type IndexQueryVariables = Exact<{
   id: Scalars['String'];
 }>;
@@ -2920,10 +2936,17 @@ export type IndexQueryVariables = Exact<{
 
 export type IndexQuery = { markdownRemark?: Maybe<{ frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'locale' | 'pageTitle' | 'path'>> }> };
 
-export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Index2QueryVariables = Exact<{
+  id: Scalars['String'];
+}>;
 
 
-export type Unnamed_1_Query = { allMarkdownRemark: { edges: Array<{ node: { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'locale'>> } }> } };
+export type Index2Query = { markdownRemark?: Maybe<{ frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'locale' | 'pageTitle' | 'path'>> }> };
+
+export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Unnamed_2_Query = { allMarkdownRemark: { edges: Array<{ node: { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'locale'>> } }> } };
 
 export type LocalesQueryVariables = Exact<{ [key: string]: never; }>;
 

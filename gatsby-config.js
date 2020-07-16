@@ -11,20 +11,56 @@ module.exports = {
                     en: 'Home',
                     de: 'Start',
                 },
-                to: '#home',
+                to: '/#home',
             },
             {
                 item: {
                     en: 'Our Story',
                     de: 'Über Uns',
                 },
-                to: '#about',
+                to: '/#about',
+            },
+            {
+                item: {
+                    en: 'Philosophie',
+                    de: 'Philosophie',
+                },
+                to: '/#philosophy',
+            },
+            {
+                item: {
+                    en: 'Verfahren',
+                    de: 'Verfahren',
+                },
+                to: '/#verfahren',
+            },
+            {
+                item: {
+                    en: 'Praxis',
+                    de: 'Praxis',
+                },
+                to: '/#praxis',
+            },
+            {
+                item: {
+                    en: 'Team',
+                    de: 'Team',
+                },
+                to: '/#team',
+            },
+            {
+                item: {
+                    en: 'contact',
+                    de: 'Kontakt',
+                },
+                to: '/#contact',
             },
         ],
     },
     plugins: [
         'gatsby-plugin-react-helmet',
         `gatsby-plugin-typescript`,
+        `gatsby-plugin-sass`,
         {
             // keep as first gatsby-source-filesystem plugin for gatsby image support
             resolve: 'gatsby-source-filesystem',
@@ -33,14 +69,14 @@ module.exports = {
                 name: 'uploads',
             },
         },
-        // {
-        //     // keep as first gatsby-source-filesystem plugin for gatsby image support
-        //     resolve: 'gatsby-source-filesystem',
-        //     options: {
-        //         path: `${__dirname}/src/assets`,
-        //         name: 'assets',
-        //     },
-        // },
+        {
+            // keep as first gatsby-source-filesystem plugin for gatsby image support
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                path: `${__dirname}/src/assets`,
+                name: 'assets',
+            },
+        },
         {
             resolve: 'gatsby-source-filesystem',
             options: {
@@ -87,6 +123,13 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-netlify-cms',
         },
+        {
+            resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules
+            options: {
+                develop: false, // Activates purging in npm run develop
+                purgeOnly: ['/all.sass'], // applies purging only on the bulma css file
+            },
+        }, // must be after other CSS plugins
         'gatsby-plugin-netlify', // make sure to keep it last in the array
     ],
 };

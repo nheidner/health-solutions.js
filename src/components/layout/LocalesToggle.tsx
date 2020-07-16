@@ -15,7 +15,6 @@ const existsPathInPages = (
             return { pageExists: true, pathName: path };
         }
     }
-
     return { pageExists: false, pathName: '' };
 };
 
@@ -23,7 +22,14 @@ const IntlLink: FC<{
     targetLocale: string;
     targetPath: string;
     primaryLocale: string;
-}> = ({ targetLocale, targetPath, primaryLocale, children }): ReactElement => {
+    [prop: string]: any;
+}> = ({
+    targetLocale,
+    targetPath,
+    primaryLocale,
+    children,
+    ...props
+}): ReactElement => {
     const path =
         (targetLocale === primaryLocale ? '' : `/${targetLocale}`) + targetPath;
     const { allPages } = useAllPages();
@@ -31,6 +37,8 @@ const IntlLink: FC<{
 
     return (
         <Link
+            {...props}
+            className='navbar-item is-inline'
             to={
                 pageExists
                     ? pathName
@@ -52,21 +60,21 @@ const LocalesToggle: FC<{ [prop: string]: any }> = ({ ...props }) => {
         primaryLocale
     );
     return (
-        <ul {...props}>
+        <div className='locales-toggle navbar-item is-paddingless'>
             {locales.map((locale, index) => {
                 const active = locale === currentLocale;
                 return (
-                    <li key={index} className={active ? 'active' : ''}>
-                        <IntlLink
-                            targetLocale={locale}
-                            targetPath={pathWithoutLocale}
-                            primaryLocale={primaryLocale}>
-                            {locale}
-                        </IntlLink>
-                    </li>
+                    <IntlLink
+                        key={index}
+                        className={active ? 'active' : ''}
+                        targetLocale={locale}
+                        targetPath={pathWithoutLocale}
+                        primaryLocale={primaryLocale}>
+                        {locale}
+                    </IntlLink>
                 );
             })}
-        </ul>
+        </div>
     );
 };
 

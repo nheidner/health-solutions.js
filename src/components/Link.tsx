@@ -1,39 +1,35 @@
-import React, { ReactNode, ReactElement } from 'react';
+import React, { ReactNode, ReactElement, FC } from 'react';
 import { Link as GatsbyLink } from 'gatsby';
-import scrollTo from 'gatsby-plugin-smoothscroll';
 import { css } from '@emotion/core';
 import isHash from '../utils/isHash';
 
-export interface ILink {
-    (props: {
-        children: ReactNode;
-        to: string;
-        [otherParams: string]: any;
-    }): ReactElement;
-}
-
-const Link: ILink = ({ children, to, ...other }) => {
+const Link: FC<{
+    children?: ReactNode;
+    to?: string;
+    className?: string;
+    [otherParams: string]: any;
+}> = ({ children, to, ...other }) => {
     // This example assumes that any internal link (intended for Gatsby)
     // will start with exactly one slash, and that anything else is external.
-    const internal = /^\/(?!\/)/.test(to);
-    const hash = isHash(to);
+    const internal = to ? /^\/(?!\/)/.test(to) : false;
+    const hash = to ? isHash(to) : false;
     if (hash) {
         return (
-            <a
-                onClick={() => scrollTo(to)}
+            <GatsbyLink
+                to={to as string}
                 {...other}
                 css={css`
                     cursor: pointer;
                 `}>
                 {children}
-            </a>
+            </GatsbyLink>
         );
     }
 
     // Use Gatsby Link for internal links, and <a> for others
     if (internal) {
         return (
-            <GatsbyLink to={to} {...other}>
+            <GatsbyLink to={to as string} {...other}>
                 {children}
             </GatsbyLink>
         );
