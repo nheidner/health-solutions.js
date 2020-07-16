@@ -698,6 +698,29 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___locale'
   | 'childMarkdownRemark___frontmatter___pageTitle'
   | 'childMarkdownRemark___frontmatter___path'
+  | 'childMarkdownRemark___frontmatter___about_us_section___section_heading'
+  | 'childMarkdownRemark___frontmatter___about_us_section___heading'
+  | 'childMarkdownRemark___frontmatter___about_us_section___markdown_text'
+  | 'childMarkdownRemark___frontmatter___philosophy_section___section_heading'
+  | 'childMarkdownRemark___frontmatter___philosophy_section___cards'
+  | 'childMarkdownRemark___frontmatter___verfahren_section___section_heading'
+  | 'childMarkdownRemark___frontmatter___anonymous_section_2___heading'
+  | 'childMarkdownRemark___frontmatter___anonymous_section_2___subheading'
+  | 'childMarkdownRemark___frontmatter___anonymous_section_2___button_text'
+  | 'childMarkdownRemark___frontmatter___praxis_section___section_heading'
+  | 'childMarkdownRemark___frontmatter___praxis_section___image_gallery'
+  | 'childMarkdownRemark___frontmatter___labor_section___heading'
+  | 'childMarkdownRemark___frontmatter___labor_section___markdown_text'
+  | 'childMarkdownRemark___frontmatter___team_section___section_heading'
+  | 'childMarkdownRemark___frontmatter___team_section___cards'
+  | 'childMarkdownRemark___frontmatter___contact_section___section_heading'
+  | 'childMarkdownRemark___frontmatter___contact_section___heading'
+  | 'childMarkdownRemark___frontmatter___clients___topic'
+  | 'childMarkdownRemark___frontmatter___clients___clientsList'
+  | 'childMarkdownRemark___frontmatter___introducing___topic'
+  | 'childMarkdownRemark___frontmatter___introducing___heading'
+  | 'childMarkdownRemark___frontmatter___introducing___text'
+  | 'childMarkdownRemark___frontmatter___openers'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
   | 'childMarkdownRemark___fileAbsolutePath'
@@ -1472,6 +1495,64 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___locale'
   | 'frontmatter___pageTitle'
   | 'frontmatter___path'
+  | 'frontmatter___home_section___text_column___heading'
+  | 'frontmatter___home_section___text_column___markdown_text'
+  | 'frontmatter___home_section___text_column___button_text'
+  | 'frontmatter___about_us_section___section_heading'
+  | 'frontmatter___about_us_section___heading'
+  | 'frontmatter___about_us_section___markdown_text'
+  | 'frontmatter___about_us_section___image___source'
+  | 'frontmatter___about_us_section___image___alt'
+  | 'frontmatter___philosophy_section___section_heading'
+  | 'frontmatter___philosophy_section___cards'
+  | 'frontmatter___philosophy_section___cards___heading'
+  | 'frontmatter___philosophy_section___cards___markdown_text'
+  | 'frontmatter___verfahren_section___section_heading'
+  | 'frontmatter___verfahren_section___text_column___heading'
+  | 'frontmatter___verfahren_section___text_column___markdown_text'
+  | 'frontmatter___verfahren_section___text_column___button_text'
+  | 'frontmatter___anonymous_section_1___text_column___heading'
+  | 'frontmatter___anonymous_section_1___text_column___markdown_text'
+  | 'frontmatter___anonymous_section_2___heading'
+  | 'frontmatter___anonymous_section_2___subheading'
+  | 'frontmatter___anonymous_section_2___button_text'
+  | 'frontmatter___praxis_section___section_heading'
+  | 'frontmatter___praxis_section___text_column___heading'
+  | 'frontmatter___praxis_section___text_column___markdown_text'
+  | 'frontmatter___praxis_section___text_column___button_text'
+  | 'frontmatter___praxis_section___image_gallery'
+  | 'frontmatter___praxis_section___image_gallery___source'
+  | 'frontmatter___praxis_section___image_gallery___alt'
+  | 'frontmatter___praxis_section___image___source'
+  | 'frontmatter___praxis_section___image___alt'
+  | 'frontmatter___labor_section___heading'
+  | 'frontmatter___labor_section___markdown_text'
+  | 'frontmatter___team_section___section_heading'
+  | 'frontmatter___team_section___cards'
+  | 'frontmatter___team_section___cards___heading'
+  | 'frontmatter___team_section___cards___markdown_text'
+  | 'frontmatter___contact_section___section_heading'
+  | 'frontmatter___contact_section___heading'
+  | 'frontmatter___contact_section___left_column___markdown_text'
+  | 'frontmatter___contact_section___left_column___button_text'
+  | 'frontmatter___contact_section___right_column___address_markdown'
+  | 'frontmatter___contact_section___right_column___show_newsletter'
+  | 'frontmatter___clients___topic'
+  | 'frontmatter___clients___clientsList'
+  | 'frontmatter___introducing___topic'
+  | 'frontmatter___introducing___heading'
+  | 'frontmatter___introducing___text'
+  | 'frontmatter___introducing___image___source'
+  | 'frontmatter___introducing___image___alt'
+  | 'frontmatter___introducing___link___text'
+  | 'frontmatter___introducing___link___href'
+  | 'frontmatter___openers'
+  | 'frontmatter___openers___image___source'
+  | 'frontmatter___openers___image___alt'
+  | 'frontmatter___openers___link___text'
+  | 'frontmatter___openers___link___href'
+  | 'frontmatter___openers___heading___text'
+  | 'frontmatter___openers___heading___href'
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
@@ -1603,6 +1684,183 @@ export type MarkdownRemarkFrontmatter = {
   locale?: Maybe<Scalars['String']>;
   pageTitle?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
+  home_section?: Maybe<MarkdownRemarkFrontmatterHome_Section>;
+  about_us_section?: Maybe<MarkdownRemarkFrontmatterAbout_Us_Section>;
+  philosophy_section?: Maybe<MarkdownRemarkFrontmatterPhilosophy_Section>;
+  verfahren_section?: Maybe<MarkdownRemarkFrontmatterVerfahren_Section>;
+  anonymous_section_1?: Maybe<MarkdownRemarkFrontmatterAnonymous_Section_1>;
+  anonymous_section_2?: Maybe<MarkdownRemarkFrontmatterAnonymous_Section_2>;
+  praxis_section?: Maybe<MarkdownRemarkFrontmatterPraxis_Section>;
+  labor_section?: Maybe<MarkdownRemarkFrontmatterLabor_Section>;
+  team_section?: Maybe<MarkdownRemarkFrontmatterTeam_Section>;
+  contact_section?: Maybe<MarkdownRemarkFrontmatterContact_Section>;
+  clients?: Maybe<MarkdownRemarkFrontmatterClients>;
+  introducing?: Maybe<MarkdownRemarkFrontmatterIntroducing>;
+  openers?: Maybe<Array<Maybe<MarkdownRemarkFrontmatterOpeners>>>;
+};
+
+export type MarkdownRemarkFrontmatterAbout_Us_Section = {
+  section_heading?: Maybe<Scalars['String']>;
+  heading?: Maybe<Scalars['String']>;
+  markdown_text?: Maybe<Scalars['String']>;
+  image?: Maybe<MarkdownRemarkFrontmatterAbout_Us_SectionImage>;
+};
+
+export type MarkdownRemarkFrontmatterAbout_Us_SectionFilterInput = {
+  section_heading?: Maybe<StringQueryOperatorInput>;
+  heading?: Maybe<StringQueryOperatorInput>;
+  markdown_text?: Maybe<StringQueryOperatorInput>;
+  image?: Maybe<MarkdownRemarkFrontmatterAbout_Us_SectionImageFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterAbout_Us_SectionImage = {
+  source?: Maybe<Scalars['String']>;
+  alt?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterAbout_Us_SectionImageFilterInput = {
+  source?: Maybe<StringQueryOperatorInput>;
+  alt?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterAnonymous_Section_1 = {
+  image_column?: Maybe<MarkdownRemarkFrontmatterAnonymous_Section_1Image_Column>;
+  text_column?: Maybe<MarkdownRemarkFrontmatterAnonymous_Section_1Text_Column>;
+};
+
+export type MarkdownRemarkFrontmatterAnonymous_Section_1FilterInput = {
+  image_column?: Maybe<MarkdownRemarkFrontmatterAnonymous_Section_1Image_ColumnFilterInput>;
+  text_column?: Maybe<MarkdownRemarkFrontmatterAnonymous_Section_1Text_ColumnFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterAnonymous_Section_1Image_Column = {
+  image?: Maybe<MarkdownRemarkFrontmatterAnonymous_Section_1Image_ColumnImage>;
+};
+
+export type MarkdownRemarkFrontmatterAnonymous_Section_1Image_ColumnFilterInput = {
+  image?: Maybe<MarkdownRemarkFrontmatterAnonymous_Section_1Image_ColumnImageFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterAnonymous_Section_1Image_ColumnImage = {
+  source?: Maybe<Scalars['String']>;
+  alt?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterAnonymous_Section_1Image_ColumnImageFilterInput = {
+  source?: Maybe<StringQueryOperatorInput>;
+  alt?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterAnonymous_Section_1Text_Column = {
+  heading?: Maybe<Scalars['String']>;
+  markdown_text?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterAnonymous_Section_1Text_ColumnFilterInput = {
+  heading?: Maybe<StringQueryOperatorInput>;
+  markdown_text?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterAnonymous_Section_2 = {
+  heading?: Maybe<Scalars['String']>;
+  subheading?: Maybe<Scalars['String']>;
+  button_text?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterAnonymous_Section_2FilterInput = {
+  heading?: Maybe<StringQueryOperatorInput>;
+  subheading?: Maybe<StringQueryOperatorInput>;
+  button_text?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterClients = {
+  topic?: Maybe<Scalars['String']>;
+  clientsList?: Maybe<Array<Maybe<MarkdownRemarkFrontmatterClientsClientsList>>>;
+};
+
+export type MarkdownRemarkFrontmatterClientsClientsList = {
+  image?: Maybe<MarkdownRemarkFrontmatterClientsClientsListImage>;
+  link?: Maybe<MarkdownRemarkFrontmatterClientsClientsListLink>;
+};
+
+export type MarkdownRemarkFrontmatterClientsClientsListFilterInput = {
+  image?: Maybe<MarkdownRemarkFrontmatterClientsClientsListImageFilterInput>;
+  link?: Maybe<MarkdownRemarkFrontmatterClientsClientsListLinkFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterClientsClientsListFilterListInput = {
+  elemMatch?: Maybe<MarkdownRemarkFrontmatterClientsClientsListFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterClientsClientsListImage = {
+  source?: Maybe<Scalars['String']>;
+  alt?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterClientsClientsListImageFilterInput = {
+  source?: Maybe<StringQueryOperatorInput>;
+  alt?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterClientsClientsListLink = {
+  href?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterClientsClientsListLinkFilterInput = {
+  href?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterClientsFilterInput = {
+  topic?: Maybe<StringQueryOperatorInput>;
+  clientsList?: Maybe<MarkdownRemarkFrontmatterClientsClientsListFilterListInput>;
+};
+
+export type MarkdownRemarkFrontmatterContact_Section = {
+  section_heading?: Maybe<Scalars['String']>;
+  heading?: Maybe<Scalars['String']>;
+  left_column?: Maybe<MarkdownRemarkFrontmatterContact_SectionLeft_Column>;
+  right_column?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_Column>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionFilterInput = {
+  section_heading?: Maybe<StringQueryOperatorInput>;
+  heading?: Maybe<StringQueryOperatorInput>;
+  left_column?: Maybe<MarkdownRemarkFrontmatterContact_SectionLeft_ColumnFilterInput>;
+  right_column?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionLeft_Column = {
+  markdown_text?: Maybe<Scalars['String']>;
+  button_text?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionLeft_ColumnFilterInput = {
+  markdown_text?: Maybe<StringQueryOperatorInput>;
+  button_text?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_Column = {
+  address_markdown?: Maybe<Scalars['String']>;
+  show_newsletter?: Maybe<Scalars['Boolean']>;
+  newsletter?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnNewsletter>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFilterInput = {
+  address_markdown?: Maybe<StringQueryOperatorInput>;
+  show_newsletter?: Maybe<BooleanQueryOperatorInput>;
+  newsletter?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnNewsletterFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnNewsletter = {
+  heading?: Maybe<Scalars['String']>;
+  placeholder?: Maybe<Scalars['String']>;
+  button_text?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnNewsletterFilterInput = {
+  heading?: Maybe<StringQueryOperatorInput>;
+  placeholder?: Maybe<StringQueryOperatorInput>;
+  button_text?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkFrontmatterFilterInput = {
@@ -1611,6 +1869,335 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   locale?: Maybe<StringQueryOperatorInput>;
   pageTitle?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
+  home_section?: Maybe<MarkdownRemarkFrontmatterHome_SectionFilterInput>;
+  about_us_section?: Maybe<MarkdownRemarkFrontmatterAbout_Us_SectionFilterInput>;
+  philosophy_section?: Maybe<MarkdownRemarkFrontmatterPhilosophy_SectionFilterInput>;
+  verfahren_section?: Maybe<MarkdownRemarkFrontmatterVerfahren_SectionFilterInput>;
+  anonymous_section_1?: Maybe<MarkdownRemarkFrontmatterAnonymous_Section_1FilterInput>;
+  anonymous_section_2?: Maybe<MarkdownRemarkFrontmatterAnonymous_Section_2FilterInput>;
+  praxis_section?: Maybe<MarkdownRemarkFrontmatterPraxis_SectionFilterInput>;
+  labor_section?: Maybe<MarkdownRemarkFrontmatterLabor_SectionFilterInput>;
+  team_section?: Maybe<MarkdownRemarkFrontmatterTeam_SectionFilterInput>;
+  contact_section?: Maybe<MarkdownRemarkFrontmatterContact_SectionFilterInput>;
+  clients?: Maybe<MarkdownRemarkFrontmatterClientsFilterInput>;
+  introducing?: Maybe<MarkdownRemarkFrontmatterIntroducingFilterInput>;
+  openers?: Maybe<MarkdownRemarkFrontmatterOpenersFilterListInput>;
+};
+
+export type MarkdownRemarkFrontmatterHome_Section = {
+  image_column?: Maybe<MarkdownRemarkFrontmatterHome_SectionImage_Column>;
+  text_column?: Maybe<MarkdownRemarkFrontmatterHome_SectionText_Column>;
+};
+
+export type MarkdownRemarkFrontmatterHome_SectionFilterInput = {
+  image_column?: Maybe<MarkdownRemarkFrontmatterHome_SectionImage_ColumnFilterInput>;
+  text_column?: Maybe<MarkdownRemarkFrontmatterHome_SectionText_ColumnFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterHome_SectionImage_Column = {
+  image?: Maybe<MarkdownRemarkFrontmatterHome_SectionImage_ColumnImage>;
+};
+
+export type MarkdownRemarkFrontmatterHome_SectionImage_ColumnFilterInput = {
+  image?: Maybe<MarkdownRemarkFrontmatterHome_SectionImage_ColumnImageFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterHome_SectionImage_ColumnImage = {
+  source?: Maybe<Scalars['String']>;
+  alt?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterHome_SectionImage_ColumnImageFilterInput = {
+  source?: Maybe<StringQueryOperatorInput>;
+  alt?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterHome_SectionText_Column = {
+  heading?: Maybe<Scalars['String']>;
+  markdown_text?: Maybe<Scalars['String']>;
+  button_text?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterHome_SectionText_ColumnFilterInput = {
+  heading?: Maybe<StringQueryOperatorInput>;
+  markdown_text?: Maybe<StringQueryOperatorInput>;
+  button_text?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterIntroducing = {
+  topic?: Maybe<Scalars['String']>;
+  heading?: Maybe<Scalars['String']>;
+  text?: Maybe<Scalars['String']>;
+  image?: Maybe<MarkdownRemarkFrontmatterIntroducingImage>;
+  link?: Maybe<MarkdownRemarkFrontmatterIntroducingLink>;
+};
+
+export type MarkdownRemarkFrontmatterIntroducingFilterInput = {
+  topic?: Maybe<StringQueryOperatorInput>;
+  heading?: Maybe<StringQueryOperatorInput>;
+  text?: Maybe<StringQueryOperatorInput>;
+  image?: Maybe<MarkdownRemarkFrontmatterIntroducingImageFilterInput>;
+  link?: Maybe<MarkdownRemarkFrontmatterIntroducingLinkFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterIntroducingImage = {
+  source?: Maybe<Scalars['String']>;
+  alt?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterIntroducingImageFilterInput = {
+  source?: Maybe<StringQueryOperatorInput>;
+  alt?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterIntroducingLink = {
+  text?: Maybe<Scalars['String']>;
+  href?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterIntroducingLinkFilterInput = {
+  text?: Maybe<StringQueryOperatorInput>;
+  href?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterLabor_Section = {
+  heading?: Maybe<Scalars['String']>;
+  markdown_text?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterLabor_SectionFilterInput = {
+  heading?: Maybe<StringQueryOperatorInput>;
+  markdown_text?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterOpeners = {
+  image?: Maybe<MarkdownRemarkFrontmatterOpenersImage>;
+  link?: Maybe<MarkdownRemarkFrontmatterOpenersLink>;
+  heading?: Maybe<MarkdownRemarkFrontmatterOpenersHeading>;
+};
+
+export type MarkdownRemarkFrontmatterOpenersFilterInput = {
+  image?: Maybe<MarkdownRemarkFrontmatterOpenersImageFilterInput>;
+  link?: Maybe<MarkdownRemarkFrontmatterOpenersLinkFilterInput>;
+  heading?: Maybe<MarkdownRemarkFrontmatterOpenersHeadingFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterOpenersFilterListInput = {
+  elemMatch?: Maybe<MarkdownRemarkFrontmatterOpenersFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterOpenersHeading = {
+  text?: Maybe<Scalars['String']>;
+  href?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterOpenersHeadingFilterInput = {
+  text?: Maybe<StringQueryOperatorInput>;
+  href?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterOpenersImage = {
+  source?: Maybe<Scalars['String']>;
+  alt?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterOpenersImageFilterInput = {
+  source?: Maybe<StringQueryOperatorInput>;
+  alt?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterOpenersLink = {
+  text?: Maybe<Scalars['String']>;
+  href?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterOpenersLinkFilterInput = {
+  text?: Maybe<StringQueryOperatorInput>;
+  href?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterPhilosophy_Section = {
+  section_heading?: Maybe<Scalars['String']>;
+  cards?: Maybe<Array<Maybe<MarkdownRemarkFrontmatterPhilosophy_SectionCards>>>;
+};
+
+export type MarkdownRemarkFrontmatterPhilosophy_SectionCards = {
+  image?: Maybe<MarkdownRemarkFrontmatterPhilosophy_SectionCardsImage>;
+  heading?: Maybe<Scalars['String']>;
+  markdown_text?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterPhilosophy_SectionCardsFilterInput = {
+  image?: Maybe<MarkdownRemarkFrontmatterPhilosophy_SectionCardsImageFilterInput>;
+  heading?: Maybe<StringQueryOperatorInput>;
+  markdown_text?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterPhilosophy_SectionCardsFilterListInput = {
+  elemMatch?: Maybe<MarkdownRemarkFrontmatterPhilosophy_SectionCardsFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterPhilosophy_SectionCardsImage = {
+  source?: Maybe<Scalars['String']>;
+  alt?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterPhilosophy_SectionCardsImageFilterInput = {
+  source?: Maybe<StringQueryOperatorInput>;
+  alt?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterPhilosophy_SectionFilterInput = {
+  section_heading?: Maybe<StringQueryOperatorInput>;
+  cards?: Maybe<MarkdownRemarkFrontmatterPhilosophy_SectionCardsFilterListInput>;
+};
+
+export type MarkdownRemarkFrontmatterPraxis_Section = {
+  section_heading?: Maybe<Scalars['String']>;
+  image_column?: Maybe<MarkdownRemarkFrontmatterPraxis_SectionImage_Column>;
+  text_column?: Maybe<MarkdownRemarkFrontmatterPraxis_SectionText_Column>;
+  image_gallery?: Maybe<Array<Maybe<MarkdownRemarkFrontmatterPraxis_SectionImage_Gallery>>>;
+  image?: Maybe<MarkdownRemarkFrontmatterPraxis_SectionImage>;
+};
+
+export type MarkdownRemarkFrontmatterPraxis_SectionFilterInput = {
+  section_heading?: Maybe<StringQueryOperatorInput>;
+  image_column?: Maybe<MarkdownRemarkFrontmatterPraxis_SectionImage_ColumnFilterInput>;
+  text_column?: Maybe<MarkdownRemarkFrontmatterPraxis_SectionText_ColumnFilterInput>;
+  image_gallery?: Maybe<MarkdownRemarkFrontmatterPraxis_SectionImage_GalleryFilterListInput>;
+  image?: Maybe<MarkdownRemarkFrontmatterPraxis_SectionImageFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterPraxis_SectionImage = {
+  source?: Maybe<Scalars['String']>;
+  alt?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterPraxis_SectionImage_Column = {
+  image?: Maybe<MarkdownRemarkFrontmatterPraxis_SectionImage_ColumnImage>;
+};
+
+export type MarkdownRemarkFrontmatterPraxis_SectionImage_ColumnFilterInput = {
+  image?: Maybe<MarkdownRemarkFrontmatterPraxis_SectionImage_ColumnImageFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterPraxis_SectionImage_ColumnImage = {
+  source?: Maybe<Scalars['String']>;
+  alt?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterPraxis_SectionImage_ColumnImageFilterInput = {
+  source?: Maybe<StringQueryOperatorInput>;
+  alt?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterPraxis_SectionImage_Gallery = {
+  source?: Maybe<Scalars['String']>;
+  alt?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterPraxis_SectionImage_GalleryFilterInput = {
+  source?: Maybe<StringQueryOperatorInput>;
+  alt?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterPraxis_SectionImage_GalleryFilterListInput = {
+  elemMatch?: Maybe<MarkdownRemarkFrontmatterPraxis_SectionImage_GalleryFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterPraxis_SectionImageFilterInput = {
+  source?: Maybe<StringQueryOperatorInput>;
+  alt?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterPraxis_SectionText_Column = {
+  heading?: Maybe<Scalars['String']>;
+  markdown_text?: Maybe<Scalars['String']>;
+  button_text?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterPraxis_SectionText_ColumnFilterInput = {
+  heading?: Maybe<StringQueryOperatorInput>;
+  markdown_text?: Maybe<StringQueryOperatorInput>;
+  button_text?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterTeam_Section = {
+  section_heading?: Maybe<Scalars['String']>;
+  cards?: Maybe<Array<Maybe<MarkdownRemarkFrontmatterTeam_SectionCards>>>;
+};
+
+export type MarkdownRemarkFrontmatterTeam_SectionCards = {
+  image?: Maybe<MarkdownRemarkFrontmatterTeam_SectionCardsImage>;
+  heading?: Maybe<Scalars['String']>;
+  markdown_text?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterTeam_SectionCardsFilterInput = {
+  image?: Maybe<MarkdownRemarkFrontmatterTeam_SectionCardsImageFilterInput>;
+  heading?: Maybe<StringQueryOperatorInput>;
+  markdown_text?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterTeam_SectionCardsFilterListInput = {
+  elemMatch?: Maybe<MarkdownRemarkFrontmatterTeam_SectionCardsFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterTeam_SectionCardsImage = {
+  source?: Maybe<Scalars['String']>;
+  alt?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterTeam_SectionCardsImageFilterInput = {
+  source?: Maybe<StringQueryOperatorInput>;
+  alt?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterTeam_SectionFilterInput = {
+  section_heading?: Maybe<StringQueryOperatorInput>;
+  cards?: Maybe<MarkdownRemarkFrontmatterTeam_SectionCardsFilterListInput>;
+};
+
+export type MarkdownRemarkFrontmatterVerfahren_Section = {
+  section_heading?: Maybe<Scalars['String']>;
+  text_column?: Maybe<MarkdownRemarkFrontmatterVerfahren_SectionText_Column>;
+  image_column?: Maybe<MarkdownRemarkFrontmatterVerfahren_SectionImage_Column>;
+};
+
+export type MarkdownRemarkFrontmatterVerfahren_SectionFilterInput = {
+  section_heading?: Maybe<StringQueryOperatorInput>;
+  text_column?: Maybe<MarkdownRemarkFrontmatterVerfahren_SectionText_ColumnFilterInput>;
+  image_column?: Maybe<MarkdownRemarkFrontmatterVerfahren_SectionImage_ColumnFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterVerfahren_SectionImage_Column = {
+  image?: Maybe<MarkdownRemarkFrontmatterVerfahren_SectionImage_ColumnImage>;
+};
+
+export type MarkdownRemarkFrontmatterVerfahren_SectionImage_ColumnFilterInput = {
+  image?: Maybe<MarkdownRemarkFrontmatterVerfahren_SectionImage_ColumnImageFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterVerfahren_SectionImage_ColumnImage = {
+  source?: Maybe<Scalars['String']>;
+  alt?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterVerfahren_SectionImage_ColumnImageFilterInput = {
+  source?: Maybe<StringQueryOperatorInput>;
+  alt?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterVerfahren_SectionText_Column = {
+  heading?: Maybe<Scalars['String']>;
+  markdown_text?: Maybe<Scalars['String']>;
+  button_text?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterVerfahren_SectionText_ColumnFilterInput = {
+  heading?: Maybe<StringQueryOperatorInput>;
+  markdown_text?: Maybe<StringQueryOperatorInput>;
+  button_text?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkGroupConnection = {
@@ -1815,15 +2402,15 @@ export type QuerySitePageArgs = {
   internalComponentName?: Maybe<StringQueryOperatorInput>;
   componentChunkName?: Maybe<StringQueryOperatorInput>;
   matchPath?: Maybe<StringQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
   context?: Maybe<SitePageContextFilterInput>;
   pluginCreator?: Maybe<SitePluginFilterInput>;
   pluginCreatorId?: Maybe<StringQueryOperatorInput>;
   componentPath?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
 };
 
 
@@ -2279,15 +2866,15 @@ export type SitePage = Node & {
   internalComponentName: Scalars['String'];
   componentChunkName: Scalars['String'];
   matchPath?: Maybe<Scalars['String']>;
-  id: Scalars['ID'];
-  parent?: Maybe<Node>;
-  children: Array<Node>;
-  internal: Internal;
   isCreatedByStatefulCreatePages?: Maybe<Scalars['Boolean']>;
   context?: Maybe<SitePageContext>;
   pluginCreator?: Maybe<SitePlugin>;
   pluginCreatorId?: Maybe<Scalars['String']>;
   componentPath?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
 };
 
 export type SitePageConnection = {
@@ -2331,6 +2918,85 @@ export type SitePageFieldsEnum =
   | 'internalComponentName'
   | 'componentChunkName'
   | 'matchPath'
+  | 'isCreatedByStatefulCreatePages'
+  | 'context___id'
+  | 'pluginCreator___id'
+  | 'pluginCreator___parent___id'
+  | 'pluginCreator___parent___parent___id'
+  | 'pluginCreator___parent___parent___children'
+  | 'pluginCreator___parent___children'
+  | 'pluginCreator___parent___children___id'
+  | 'pluginCreator___parent___children___children'
+  | 'pluginCreator___parent___internal___content'
+  | 'pluginCreator___parent___internal___contentDigest'
+  | 'pluginCreator___parent___internal___description'
+  | 'pluginCreator___parent___internal___fieldOwners'
+  | 'pluginCreator___parent___internal___ignoreType'
+  | 'pluginCreator___parent___internal___mediaType'
+  | 'pluginCreator___parent___internal___owner'
+  | 'pluginCreator___parent___internal___type'
+  | 'pluginCreator___children'
+  | 'pluginCreator___children___id'
+  | 'pluginCreator___children___parent___id'
+  | 'pluginCreator___children___parent___children'
+  | 'pluginCreator___children___children'
+  | 'pluginCreator___children___children___id'
+  | 'pluginCreator___children___children___children'
+  | 'pluginCreator___children___internal___content'
+  | 'pluginCreator___children___internal___contentDigest'
+  | 'pluginCreator___children___internal___description'
+  | 'pluginCreator___children___internal___fieldOwners'
+  | 'pluginCreator___children___internal___ignoreType'
+  | 'pluginCreator___children___internal___mediaType'
+  | 'pluginCreator___children___internal___owner'
+  | 'pluginCreator___children___internal___type'
+  | 'pluginCreator___internal___content'
+  | 'pluginCreator___internal___contentDigest'
+  | 'pluginCreator___internal___description'
+  | 'pluginCreator___internal___fieldOwners'
+  | 'pluginCreator___internal___ignoreType'
+  | 'pluginCreator___internal___mediaType'
+  | 'pluginCreator___internal___owner'
+  | 'pluginCreator___internal___type'
+  | 'pluginCreator___resolve'
+  | 'pluginCreator___name'
+  | 'pluginCreator___version'
+  | 'pluginCreator___pluginOptions___plugins'
+  | 'pluginCreator___pluginOptions___plugins___resolve'
+  | 'pluginCreator___pluginOptions___plugins___id'
+  | 'pluginCreator___pluginOptions___plugins___name'
+  | 'pluginCreator___pluginOptions___plugins___version'
+  | 'pluginCreator___pluginOptions___plugins___browserAPIs'
+  | 'pluginCreator___pluginOptions___plugins___pluginFilepath'
+  | 'pluginCreator___pluginOptions___path'
+  | 'pluginCreator___pluginOptions___name'
+  | 'pluginCreator___pluginOptions___fileName'
+  | 'pluginCreator___pluginOptions___maxWidth'
+  | 'pluginCreator___pluginOptions___destinationDir'
+  | 'pluginCreator___pluginOptions___develop'
+  | 'pluginCreator___pluginOptions___purgeOnly'
+  | 'pluginCreator___pluginOptions___pathCheck'
+  | 'pluginCreator___nodeAPIs'
+  | 'pluginCreator___browserAPIs'
+  | 'pluginCreator___ssrAPIs'
+  | 'pluginCreator___pluginFilepath'
+  | 'pluginCreator___packageJson___name'
+  | 'pluginCreator___packageJson___description'
+  | 'pluginCreator___packageJson___version'
+  | 'pluginCreator___packageJson___main'
+  | 'pluginCreator___packageJson___license'
+  | 'pluginCreator___packageJson___dependencies'
+  | 'pluginCreator___packageJson___dependencies___name'
+  | 'pluginCreator___packageJson___dependencies___version'
+  | 'pluginCreator___packageJson___devDependencies'
+  | 'pluginCreator___packageJson___devDependencies___name'
+  | 'pluginCreator___packageJson___devDependencies___version'
+  | 'pluginCreator___packageJson___peerDependencies'
+  | 'pluginCreator___packageJson___peerDependencies___name'
+  | 'pluginCreator___packageJson___peerDependencies___version'
+  | 'pluginCreator___packageJson___keywords'
+  | 'pluginCreatorId'
+  | 'componentPath'
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -2416,86 +3082,7 @@ export type SitePageFieldsEnum =
   | 'internal___ignoreType'
   | 'internal___mediaType'
   | 'internal___owner'
-  | 'internal___type'
-  | 'isCreatedByStatefulCreatePages'
-  | 'context___id'
-  | 'pluginCreator___id'
-  | 'pluginCreator___parent___id'
-  | 'pluginCreator___parent___parent___id'
-  | 'pluginCreator___parent___parent___children'
-  | 'pluginCreator___parent___children'
-  | 'pluginCreator___parent___children___id'
-  | 'pluginCreator___parent___children___children'
-  | 'pluginCreator___parent___internal___content'
-  | 'pluginCreator___parent___internal___contentDigest'
-  | 'pluginCreator___parent___internal___description'
-  | 'pluginCreator___parent___internal___fieldOwners'
-  | 'pluginCreator___parent___internal___ignoreType'
-  | 'pluginCreator___parent___internal___mediaType'
-  | 'pluginCreator___parent___internal___owner'
-  | 'pluginCreator___parent___internal___type'
-  | 'pluginCreator___children'
-  | 'pluginCreator___children___id'
-  | 'pluginCreator___children___parent___id'
-  | 'pluginCreator___children___parent___children'
-  | 'pluginCreator___children___children'
-  | 'pluginCreator___children___children___id'
-  | 'pluginCreator___children___children___children'
-  | 'pluginCreator___children___internal___content'
-  | 'pluginCreator___children___internal___contentDigest'
-  | 'pluginCreator___children___internal___description'
-  | 'pluginCreator___children___internal___fieldOwners'
-  | 'pluginCreator___children___internal___ignoreType'
-  | 'pluginCreator___children___internal___mediaType'
-  | 'pluginCreator___children___internal___owner'
-  | 'pluginCreator___children___internal___type'
-  | 'pluginCreator___internal___content'
-  | 'pluginCreator___internal___contentDigest'
-  | 'pluginCreator___internal___description'
-  | 'pluginCreator___internal___fieldOwners'
-  | 'pluginCreator___internal___ignoreType'
-  | 'pluginCreator___internal___mediaType'
-  | 'pluginCreator___internal___owner'
-  | 'pluginCreator___internal___type'
-  | 'pluginCreator___resolve'
-  | 'pluginCreator___name'
-  | 'pluginCreator___version'
-  | 'pluginCreator___pluginOptions___plugins'
-  | 'pluginCreator___pluginOptions___plugins___resolve'
-  | 'pluginCreator___pluginOptions___plugins___id'
-  | 'pluginCreator___pluginOptions___plugins___name'
-  | 'pluginCreator___pluginOptions___plugins___version'
-  | 'pluginCreator___pluginOptions___plugins___browserAPIs'
-  | 'pluginCreator___pluginOptions___plugins___pluginFilepath'
-  | 'pluginCreator___pluginOptions___path'
-  | 'pluginCreator___pluginOptions___name'
-  | 'pluginCreator___pluginOptions___fileName'
-  | 'pluginCreator___pluginOptions___maxWidth'
-  | 'pluginCreator___pluginOptions___destinationDir'
-  | 'pluginCreator___pluginOptions___develop'
-  | 'pluginCreator___pluginOptions___purgeOnly'
-  | 'pluginCreator___pluginOptions___pathCheck'
-  | 'pluginCreator___nodeAPIs'
-  | 'pluginCreator___browserAPIs'
-  | 'pluginCreator___ssrAPIs'
-  | 'pluginCreator___pluginFilepath'
-  | 'pluginCreator___packageJson___name'
-  | 'pluginCreator___packageJson___description'
-  | 'pluginCreator___packageJson___version'
-  | 'pluginCreator___packageJson___main'
-  | 'pluginCreator___packageJson___license'
-  | 'pluginCreator___packageJson___dependencies'
-  | 'pluginCreator___packageJson___dependencies___name'
-  | 'pluginCreator___packageJson___dependencies___version'
-  | 'pluginCreator___packageJson___devDependencies'
-  | 'pluginCreator___packageJson___devDependencies___name'
-  | 'pluginCreator___packageJson___devDependencies___version'
-  | 'pluginCreator___packageJson___peerDependencies'
-  | 'pluginCreator___packageJson___peerDependencies___name'
-  | 'pluginCreator___packageJson___peerDependencies___version'
-  | 'pluginCreator___packageJson___keywords'
-  | 'pluginCreatorId'
-  | 'componentPath';
+  | 'internal___type';
 
 export type SitePageFilterInput = {
   path?: Maybe<StringQueryOperatorInput>;
@@ -2503,15 +3090,15 @@ export type SitePageFilterInput = {
   internalComponentName?: Maybe<StringQueryOperatorInput>;
   componentChunkName?: Maybe<StringQueryOperatorInput>;
   matchPath?: Maybe<StringQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
   context?: Maybe<SitePageContextFilterInput>;
   pluginCreator?: Maybe<SitePluginFilterInput>;
   pluginCreatorId?: Maybe<StringQueryOperatorInput>;
   componentPath?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
 };
 
 export type SitePageGroupConnection = {

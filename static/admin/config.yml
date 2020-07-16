@@ -1,6 +1,6 @@
 backend:
     name: github
-    repo: nheidner/renergy-js
+    repo: nheidner/health-solutions.js
     branch: master
     commit_messages:
         create: 'Create {{collection}} “{{slug}}”'
