@@ -110,7 +110,7 @@ anonymous_section_2:
   subheading: Kontaktieren Sie uns jetzt telefonisch unter 030 093834582735t2
   button_text: Termin vereinbaren
 praxis_section:
-  section_heading: Termin vereinbaren
+  section_heading: Praxis
   image_column:
     image:
       source: /img/couple.png
@@ -188,7 +188,7 @@ team_section:
         morgen, das bereitet keine Sorgen. Ich
       heading: Erfahrung
 contact_section:
-  section_heading: KONTAKT
+  section_heading: Kontakt
   heading: Bei Interesse, Fragen oder einer Terminabsprache, stehen wir Ihnen
     jederzeit zur Verfügung.
   left_column:
@@ -211,3 +211,4 @@ contact_section:
       heading: Subscribe to our newsletter
       placeholder: Email Address
       button_text: OK
+---
