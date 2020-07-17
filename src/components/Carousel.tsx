@@ -1,9 +1,15 @@
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import React, { FC } from 'react';
+import Img from './Img';
+
+export interface GalleryImage {
+    alt: string;
+    source: any;
+}
 
 export const ImageCarousel: FC<{
-    images: string[];
+    images: GalleryImage[];
     [props: string]: any;
 }> = ({ images, ...props }) => {
     return (
@@ -22,7 +28,7 @@ export const ImageCarousel: FC<{
             {images.map((image, index) => {
                 return (
                     <figure key={index}>
-                        <img src={image} alt='Placeholder image' />
+                        <Img source={image.source} alt={image.alt} />
                     </figure>
                 );
             })}

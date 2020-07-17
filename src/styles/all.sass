@@ -94,18 +94,20 @@ body
 .to-top-button
     position: fixed
     bottom: $space-4
-    right: $space-4
-    background: $dark-blue
-    padding: $space-1 $space-3
+    right: 4vh
     font-size: $size-medium
-    color: $white
-    border-radius: 5px
     z-index: 100
-    // font-weight: bold
-    font-family: Arial
+    transform: rotate(45deg)
     &:hover
         color: $white
-        background-color: $dark-blue-hover
+        // background-color: $dark-blue-hover
+    span
+        display: block
+        width: 1.7rem
+        height: 1.7rem
+        border-top: 0.45rem solid $orange
+        border-left: 0.45rem solid $orange
+        border-radius: 3px
 
 .locales-toggle
     position: relative

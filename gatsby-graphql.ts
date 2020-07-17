@@ -715,12 +715,6 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___team_section___cards'
   | 'childMarkdownRemark___frontmatter___contact_section___section_heading'
   | 'childMarkdownRemark___frontmatter___contact_section___heading'
-  | 'childMarkdownRemark___frontmatter___clients___topic'
-  | 'childMarkdownRemark___frontmatter___clients___clientsList'
-  | 'childMarkdownRemark___frontmatter___introducing___topic'
-  | 'childMarkdownRemark___frontmatter___introducing___heading'
-  | 'childMarkdownRemark___frontmatter___introducing___text'
-  | 'childMarkdownRemark___frontmatter___openers'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
   | 'childMarkdownRemark___fileAbsolutePath'
@@ -1501,7 +1495,6 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___about_us_section___section_heading'
   | 'frontmatter___about_us_section___heading'
   | 'frontmatter___about_us_section___markdown_text'
-  | 'frontmatter___about_us_section___image___source'
   | 'frontmatter___about_us_section___image___alt'
   | 'frontmatter___philosophy_section___section_heading'
   | 'frontmatter___philosophy_section___cards'
@@ -1521,9 +1514,7 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___praxis_section___text_column___markdown_text'
   | 'frontmatter___praxis_section___text_column___button_text'
   | 'frontmatter___praxis_section___image_gallery'
-  | 'frontmatter___praxis_section___image_gallery___source'
   | 'frontmatter___praxis_section___image_gallery___alt'
-  | 'frontmatter___praxis_section___image___source'
   | 'frontmatter___praxis_section___image___alt'
   | 'frontmatter___labor_section___heading'
   | 'frontmatter___labor_section___markdown_text'
@@ -1537,22 +1528,6 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___contact_section___left_column___button_text'
   | 'frontmatter___contact_section___right_column___address_markdown'
   | 'frontmatter___contact_section___right_column___show_newsletter'
-  | 'frontmatter___clients___topic'
-  | 'frontmatter___clients___clientsList'
-  | 'frontmatter___introducing___topic'
-  | 'frontmatter___introducing___heading'
-  | 'frontmatter___introducing___text'
-  | 'frontmatter___introducing___image___source'
-  | 'frontmatter___introducing___image___alt'
-  | 'frontmatter___introducing___link___text'
-  | 'frontmatter___introducing___link___href'
-  | 'frontmatter___openers'
-  | 'frontmatter___openers___image___source'
-  | 'frontmatter___openers___image___alt'
-  | 'frontmatter___openers___link___text'
-  | 'frontmatter___openers___link___href'
-  | 'frontmatter___openers___heading___text'
-  | 'frontmatter___openers___heading___href'
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
@@ -1694,9 +1669,6 @@ export type MarkdownRemarkFrontmatter = {
   labor_section?: Maybe<MarkdownRemarkFrontmatterLabor_Section>;
   team_section?: Maybe<MarkdownRemarkFrontmatterTeam_Section>;
   contact_section?: Maybe<MarkdownRemarkFrontmatterContact_Section>;
-  clients?: Maybe<MarkdownRemarkFrontmatterClients>;
-  introducing?: Maybe<MarkdownRemarkFrontmatterIntroducing>;
-  openers?: Maybe<Array<Maybe<MarkdownRemarkFrontmatterOpeners>>>;
 };
 
 export type MarkdownRemarkFrontmatterAbout_Us_Section = {
@@ -1714,12 +1686,12 @@ export type MarkdownRemarkFrontmatterAbout_Us_SectionFilterInput = {
 };
 
 export type MarkdownRemarkFrontmatterAbout_Us_SectionImage = {
-  source?: Maybe<Scalars['String']>;
+  source?: Maybe<File>;
   alt?: Maybe<Scalars['String']>;
 };
 
 export type MarkdownRemarkFrontmatterAbout_Us_SectionImageFilterInput = {
-  source?: Maybe<StringQueryOperatorInput>;
+  source?: Maybe<FileFilterInput>;
   alt?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -1742,12 +1714,12 @@ export type MarkdownRemarkFrontmatterAnonymous_Section_1Image_ColumnFilterInput 
 };
 
 export type MarkdownRemarkFrontmatterAnonymous_Section_1Image_ColumnImage = {
-  source?: Maybe<Scalars['String']>;
+  source?: Maybe<File>;
   alt?: Maybe<Scalars['String']>;
 };
 
 export type MarkdownRemarkFrontmatterAnonymous_Section_1Image_ColumnImageFilterInput = {
-  source?: Maybe<StringQueryOperatorInput>;
+  source?: Maybe<FileFilterInput>;
   alt?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -1771,48 +1743,6 @@ export type MarkdownRemarkFrontmatterAnonymous_Section_2FilterInput = {
   heading?: Maybe<StringQueryOperatorInput>;
   subheading?: Maybe<StringQueryOperatorInput>;
   button_text?: Maybe<StringQueryOperatorInput>;
-};
-
-export type MarkdownRemarkFrontmatterClients = {
-  topic?: Maybe<Scalars['String']>;
-  clientsList?: Maybe<Array<Maybe<MarkdownRemarkFrontmatterClientsClientsList>>>;
-};
-
-export type MarkdownRemarkFrontmatterClientsClientsList = {
-  image?: Maybe<MarkdownRemarkFrontmatterClientsClientsListImage>;
-  link?: Maybe<MarkdownRemarkFrontmatterClientsClientsListLink>;
-};
-
-export type MarkdownRemarkFrontmatterClientsClientsListFilterInput = {
-  image?: Maybe<MarkdownRemarkFrontmatterClientsClientsListImageFilterInput>;
-  link?: Maybe<MarkdownRemarkFrontmatterClientsClientsListLinkFilterInput>;
-};
-
-export type MarkdownRemarkFrontmatterClientsClientsListFilterListInput = {
-  elemMatch?: Maybe<MarkdownRemarkFrontmatterClientsClientsListFilterInput>;
-};
-
-export type MarkdownRemarkFrontmatterClientsClientsListImage = {
-  source?: Maybe<Scalars['String']>;
-  alt?: Maybe<Scalars['String']>;
-};
-
-export type MarkdownRemarkFrontmatterClientsClientsListImageFilterInput = {
-  source?: Maybe<StringQueryOperatorInput>;
-  alt?: Maybe<StringQueryOperatorInput>;
-};
-
-export type MarkdownRemarkFrontmatterClientsClientsListLink = {
-  href?: Maybe<Scalars['String']>;
-};
-
-export type MarkdownRemarkFrontmatterClientsClientsListLinkFilterInput = {
-  href?: Maybe<StringQueryOperatorInput>;
-};
-
-export type MarkdownRemarkFrontmatterClientsFilterInput = {
-  topic?: Maybe<StringQueryOperatorInput>;
-  clientsList?: Maybe<MarkdownRemarkFrontmatterClientsClientsListFilterListInput>;
 };
 
 export type MarkdownRemarkFrontmatterContact_Section = {
@@ -1879,9 +1809,6 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   labor_section?: Maybe<MarkdownRemarkFrontmatterLabor_SectionFilterInput>;
   team_section?: Maybe<MarkdownRemarkFrontmatterTeam_SectionFilterInput>;
   contact_section?: Maybe<MarkdownRemarkFrontmatterContact_SectionFilterInput>;
-  clients?: Maybe<MarkdownRemarkFrontmatterClientsFilterInput>;
-  introducing?: Maybe<MarkdownRemarkFrontmatterIntroducingFilterInput>;
-  openers?: Maybe<MarkdownRemarkFrontmatterOpenersFilterListInput>;
 };
 
 export type MarkdownRemarkFrontmatterHome_Section = {
@@ -1903,12 +1830,12 @@ export type MarkdownRemarkFrontmatterHome_SectionImage_ColumnFilterInput = {
 };
 
 export type MarkdownRemarkFrontmatterHome_SectionImage_ColumnImage = {
-  source?: Maybe<Scalars['String']>;
+  source?: Maybe<File>;
   alt?: Maybe<Scalars['String']>;
 };
 
 export type MarkdownRemarkFrontmatterHome_SectionImage_ColumnImageFilterInput = {
-  source?: Maybe<StringQueryOperatorInput>;
+  source?: Maybe<FileFilterInput>;
   alt?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -1924,42 +1851,6 @@ export type MarkdownRemarkFrontmatterHome_SectionText_ColumnFilterInput = {
   button_text?: Maybe<StringQueryOperatorInput>;
 };
 
-export type MarkdownRemarkFrontmatterIntroducing = {
-  topic?: Maybe<Scalars['String']>;
-  heading?: Maybe<Scalars['String']>;
-  text?: Maybe<Scalars['String']>;
-  image?: Maybe<MarkdownRemarkFrontmatterIntroducingImage>;
-  link?: Maybe<MarkdownRemarkFrontmatterIntroducingLink>;
-};
-
-export type MarkdownRemarkFrontmatterIntroducingFilterInput = {
-  topic?: Maybe<StringQueryOperatorInput>;
-  heading?: Maybe<StringQueryOperatorInput>;
-  text?: Maybe<StringQueryOperatorInput>;
-  image?: Maybe<MarkdownRemarkFrontmatterIntroducingImageFilterInput>;
-  link?: Maybe<MarkdownRemarkFrontmatterIntroducingLinkFilterInput>;
-};
-
-export type MarkdownRemarkFrontmatterIntroducingImage = {
-  source?: Maybe<Scalars['String']>;
-  alt?: Maybe<Scalars['String']>;
-};
-
-export type MarkdownRemarkFrontmatterIntroducingImageFilterInput = {
-  source?: Maybe<StringQueryOperatorInput>;
-  alt?: Maybe<StringQueryOperatorInput>;
-};
-
-export type MarkdownRemarkFrontmatterIntroducingLink = {
-  text?: Maybe<Scalars['String']>;
-  href?: Maybe<Scalars['String']>;
-};
-
-export type MarkdownRemarkFrontmatterIntroducingLinkFilterInput = {
-  text?: Maybe<StringQueryOperatorInput>;
-  href?: Maybe<StringQueryOperatorInput>;
-};
-
 export type MarkdownRemarkFrontmatterLabor_Section = {
   heading?: Maybe<Scalars['String']>;
   markdown_text?: Maybe<Scalars['String']>;
@@ -1968,52 +1859,6 @@ export type MarkdownRemarkFrontmatterLabor_Section = {
 export type MarkdownRemarkFrontmatterLabor_SectionFilterInput = {
   heading?: Maybe<StringQueryOperatorInput>;
   markdown_text?: Maybe<StringQueryOperatorInput>;
-};
-
-export type MarkdownRemarkFrontmatterOpeners = {
-  image?: Maybe<MarkdownRemarkFrontmatterOpenersImage>;
-  link?: Maybe<MarkdownRemarkFrontmatterOpenersLink>;
-  heading?: Maybe<MarkdownRemarkFrontmatterOpenersHeading>;
-};
-
-export type MarkdownRemarkFrontmatterOpenersFilterInput = {
-  image?: Maybe<MarkdownRemarkFrontmatterOpenersImageFilterInput>;
-  link?: Maybe<MarkdownRemarkFrontmatterOpenersLinkFilterInput>;
-  heading?: Maybe<MarkdownRemarkFrontmatterOpenersHeadingFilterInput>;
-};
-
-export type MarkdownRemarkFrontmatterOpenersFilterListInput = {
-  elemMatch?: Maybe<MarkdownRemarkFrontmatterOpenersFilterInput>;
-};
-
-export type MarkdownRemarkFrontmatterOpenersHeading = {
-  text?: Maybe<Scalars['String']>;
-  href?: Maybe<Scalars['String']>;
-};
-
-export type MarkdownRemarkFrontmatterOpenersHeadingFilterInput = {
-  text?: Maybe<StringQueryOperatorInput>;
-  href?: Maybe<StringQueryOperatorInput>;
-};
-
-export type MarkdownRemarkFrontmatterOpenersImage = {
-  source?: Maybe<Scalars['String']>;
-  alt?: Maybe<Scalars['String']>;
-};
-
-export type MarkdownRemarkFrontmatterOpenersImageFilterInput = {
-  source?: Maybe<StringQueryOperatorInput>;
-  alt?: Maybe<StringQueryOperatorInput>;
-};
-
-export type MarkdownRemarkFrontmatterOpenersLink = {
-  text?: Maybe<Scalars['String']>;
-  href?: Maybe<Scalars['String']>;
-};
-
-export type MarkdownRemarkFrontmatterOpenersLinkFilterInput = {
-  text?: Maybe<StringQueryOperatorInput>;
-  href?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkFrontmatterPhilosophy_Section = {
@@ -2038,12 +1883,12 @@ export type MarkdownRemarkFrontmatterPhilosophy_SectionCardsFilterListInput = {
 };
 
 export type MarkdownRemarkFrontmatterPhilosophy_SectionCardsImage = {
-  source?: Maybe<Scalars['String']>;
+  source?: Maybe<File>;
   alt?: Maybe<Scalars['String']>;
 };
 
 export type MarkdownRemarkFrontmatterPhilosophy_SectionCardsImageFilterInput = {
-  source?: Maybe<StringQueryOperatorInput>;
+  source?: Maybe<FileFilterInput>;
   alt?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -2069,7 +1914,7 @@ export type MarkdownRemarkFrontmatterPraxis_SectionFilterInput = {
 };
 
 export type MarkdownRemarkFrontmatterPraxis_SectionImage = {
-  source?: Maybe<Scalars['String']>;
+  source?: Maybe<File>;
   alt?: Maybe<Scalars['String']>;
 };
 
@@ -2082,22 +1927,22 @@ export type MarkdownRemarkFrontmatterPraxis_SectionImage_ColumnFilterInput = {
 };
 
 export type MarkdownRemarkFrontmatterPraxis_SectionImage_ColumnImage = {
-  source?: Maybe<Scalars['String']>;
+  source?: Maybe<File>;
   alt?: Maybe<Scalars['String']>;
 };
 
 export type MarkdownRemarkFrontmatterPraxis_SectionImage_ColumnImageFilterInput = {
-  source?: Maybe<StringQueryOperatorInput>;
+  source?: Maybe<FileFilterInput>;
   alt?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkFrontmatterPraxis_SectionImage_Gallery = {
-  source?: Maybe<Scalars['String']>;
+  source?: Maybe<File>;
   alt?: Maybe<Scalars['String']>;
 };
 
 export type MarkdownRemarkFrontmatterPraxis_SectionImage_GalleryFilterInput = {
-  source?: Maybe<StringQueryOperatorInput>;
+  source?: Maybe<FileFilterInput>;
   alt?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -2106,7 +1951,7 @@ export type MarkdownRemarkFrontmatterPraxis_SectionImage_GalleryFilterListInput 
 };
 
 export type MarkdownRemarkFrontmatterPraxis_SectionImageFilterInput = {
-  source?: Maybe<StringQueryOperatorInput>;
+  source?: Maybe<FileFilterInput>;
   alt?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -2144,12 +1989,12 @@ export type MarkdownRemarkFrontmatterTeam_SectionCardsFilterListInput = {
 };
 
 export type MarkdownRemarkFrontmatterTeam_SectionCardsImage = {
-  source?: Maybe<Scalars['String']>;
+  source?: Maybe<File>;
   alt?: Maybe<Scalars['String']>;
 };
 
 export type MarkdownRemarkFrontmatterTeam_SectionCardsImageFilterInput = {
-  source?: Maybe<StringQueryOperatorInput>;
+  source?: Maybe<FileFilterInput>;
   alt?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -2179,12 +2024,12 @@ export type MarkdownRemarkFrontmatterVerfahren_SectionImage_ColumnFilterInput = 
 };
 
 export type MarkdownRemarkFrontmatterVerfahren_SectionImage_ColumnImage = {
-  source?: Maybe<Scalars['String']>;
+  source?: Maybe<File>;
   alt?: Maybe<Scalars['String']>;
 };
 
 export type MarkdownRemarkFrontmatterVerfahren_SectionImage_ColumnImageFilterInput = {
-  source?: Maybe<StringQueryOperatorInput>;
+  source?: Maybe<FileFilterInput>;
   alt?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -2427,8 +2272,6 @@ export type QuerySiteArgs = {
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
   port?: Maybe<IntQueryOperatorInput>;
   host?: Maybe<StringQueryOperatorInput>;
-  polyfill?: Maybe<BooleanQueryOperatorInput>;
-  pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
@@ -2540,8 +2383,6 @@ export type Site = Node & {
   siteMetadata?: Maybe<SiteSiteMetadata>;
   port?: Maybe<Scalars['Int']>;
   host?: Maybe<Scalars['String']>;
-  polyfill?: Maybe<Scalars['Boolean']>;
-  pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
   parent?: Maybe<Node>;
   children: Array<Node>;
@@ -2749,8 +2590,6 @@ export type SiteFieldsEnum =
   | 'siteMetadata___menu___to'
   | 'port'
   | 'host'
-  | 'polyfill'
-  | 'pathPrefix'
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -2843,8 +2682,6 @@ export type SiteFilterInput = {
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
   port?: Maybe<IntQueryOperatorInput>;
   host?: Maybe<StringQueryOperatorInput>;
-  polyfill?: Maybe<BooleanQueryOperatorInput>;
-  pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
@@ -3521,7 +3358,64 @@ export type IndexQueryVariables = Exact<{
 }>;
 
 
-export type IndexQuery = { markdownRemark?: Maybe<{ frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'locale' | 'pageTitle' | 'path'>> }> };
+export type IndexQuery = { markdownRemark?: Maybe<{ frontmatter?: Maybe<(
+      Pick<MarkdownRemarkFrontmatter, 'locale' | 'pageTitle' | 'path'>
+      & { home_section?: Maybe<{ image_column?: Maybe<{ image?: Maybe<(
+            Pick<MarkdownRemarkFrontmatterHome_SectionImage_ColumnImage, 'alt'>
+            & { source?: Maybe<ColumnImageLargeFragment> }
+          )> }>, text_column?: Maybe<Pick<MarkdownRemarkFrontmatterHome_SectionText_Column, 'heading' | 'markdown_text' | 'button_text'>> }>, about_us_section?: Maybe<(
+        Pick<MarkdownRemarkFrontmatterAbout_Us_Section, 'section_heading' | 'heading' | 'markdown_text'>
+        & { image?: Maybe<(
+          Pick<MarkdownRemarkFrontmatterAbout_Us_SectionImage, 'alt'>
+          & { source?: Maybe<LogoFragment> }
+        )> }
+      )>, philosophy_section?: Maybe<(
+        Pick<MarkdownRemarkFrontmatterPhilosophy_Section, 'section_heading'>
+        & { cards?: Maybe<Array<Maybe<(
+          Pick<MarkdownRemarkFrontmatterPhilosophy_SectionCards, 'heading' | 'markdown_text'>
+          & { image?: Maybe<(
+            Pick<MarkdownRemarkFrontmatterPhilosophy_SectionCardsImage, 'alt'>
+            & { source?: Maybe<CardHeaderImageFragment> }
+          )> }
+        )>>> }
+      )>, verfahren_section?: Maybe<(
+        Pick<MarkdownRemarkFrontmatterVerfahren_Section, 'section_heading'>
+        & { text_column?: Maybe<Pick<MarkdownRemarkFrontmatterVerfahren_SectionText_Column, 'heading' | 'markdown_text' | 'button_text'>>, image_column?: Maybe<{ image?: Maybe<(
+            Pick<MarkdownRemarkFrontmatterVerfahren_SectionImage_ColumnImage, 'alt'>
+            & { source?: Maybe<ColumnImageLargeFragment> }
+          )> }> }
+      )>, anonymous_section_1?: Maybe<{ image_column?: Maybe<{ image?: Maybe<(
+            Pick<MarkdownRemarkFrontmatterAnonymous_Section_1Image_ColumnImage, 'alt'>
+            & { source?: Maybe<ColumnImageMediumFragment> }
+          )> }>, text_column?: Maybe<Pick<MarkdownRemarkFrontmatterAnonymous_Section_1Text_Column, 'heading' | 'markdown_text'>> }>, anonymous_section_2?: Maybe<Pick<MarkdownRemarkFrontmatterAnonymous_Section_2, 'heading' | 'subheading' | 'button_text'>>, praxis_section?: Maybe<(
+        Pick<MarkdownRemarkFrontmatterPraxis_Section, 'section_heading'>
+        & { image_column?: Maybe<{ image?: Maybe<(
+            Pick<MarkdownRemarkFrontmatterPraxis_SectionImage_ColumnImage, 'alt'>
+            & { source?: Maybe<ColumnImageMediumFragment> }
+          )> }>, text_column?: Maybe<Pick<MarkdownRemarkFrontmatterPraxis_SectionText_Column, 'heading' | 'markdown_text' | 'button_text'>>, image_gallery?: Maybe<Array<Maybe<(
+          Pick<MarkdownRemarkFrontmatterPraxis_SectionImage_Gallery, 'alt'>
+          & { source?: Maybe<GalleryImageFragment> }
+        )>>>, image?: Maybe<(
+          Pick<MarkdownRemarkFrontmatterPraxis_SectionImage, 'alt'>
+          & { source?: Maybe<LogoFragment> }
+        )> }
+      )>, labor_section?: Maybe<Pick<MarkdownRemarkFrontmatterLabor_Section, 'heading' | 'markdown_text'>>, team_section?: Maybe<(
+        Pick<MarkdownRemarkFrontmatterTeam_Section, 'section_heading'>
+        & { cards?: Maybe<Array<Maybe<(
+          Pick<MarkdownRemarkFrontmatterTeam_SectionCards, 'heading' | 'markdown_text'>
+          & { image?: Maybe<(
+            Pick<MarkdownRemarkFrontmatterTeam_SectionCardsImage, 'alt'>
+            & { source?: Maybe<CardHeaderImageFragment> }
+          )> }
+        )>>> }
+      )>, contact_section?: Maybe<(
+        Pick<MarkdownRemarkFrontmatterContact_Section, 'section_heading' | 'heading'>
+        & { left_column?: Maybe<Pick<MarkdownRemarkFrontmatterContact_SectionLeft_Column, 'markdown_text' | 'button_text'>>, right_column?: Maybe<(
+          Pick<MarkdownRemarkFrontmatterContact_SectionRight_Column, 'address_markdown' | 'show_newsletter'>
+          & { newsletter?: Maybe<Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnNewsletter, 'heading' | 'placeholder' | 'button_text'>> }
+        )> }
+      )> }
+    )> }> };
 
 export type Index2QueryVariables = Exact<{
   id: Scalars['String'];
@@ -3529,6 +3423,16 @@ export type Index2QueryVariables = Exact<{
 
 
 export type Index2Query = { markdownRemark?: Maybe<{ frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'locale' | 'pageTitle' | 'path'>> }> };
+
+export type ColumnImageMediumFragment = { childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> };
+
+export type ColumnImageLargeFragment = { childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> };
+
+export type CardHeaderImageFragment = { childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> };
+
+export type GalleryImageFragment = { childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> };
+
+export type LogoFragment = { childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> };
 
 export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 

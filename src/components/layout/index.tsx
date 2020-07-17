@@ -55,12 +55,8 @@ const Layout: FC = ({ children }) => {
     return (
         <div className='pt-6' id='top'>
             <Helmet></Helmet>
-            <Link
-                className='to-top-button'
-                to={`${
-                    currentLocale === primaryLocale ? '' : '/' + currentLocale
-                }/#top`}>
-                nach oben
+            <Link className='to-top-button' to='#top'>
+                <span />
             </Link>
             <Header
                 currentLocale={currentLocale}
