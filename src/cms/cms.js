@@ -1,7 +1,11 @@
 import { IndexTemplate } from '../templates/index';
+import CMS from 'netlify-cms-app';
+import React from 'react';
+import withEmotion from './with-emotion';
 
 const IndexPagePreviewEn = ({ entry }) => {
     const data = entry.getIn(['data']).toJS();
+    console.log(data);
     return (
         <IndexTemplate
             pageTitle={data.pageTitle}
@@ -15,7 +19,8 @@ const IndexPagePreviewEn = ({ entry }) => {
             labor_section={data.labor_section}
             team_section={data.team_section}
             contact_section={data.contact_section}
+            preview={true}
         />
     );
 };
-CMS.registerPreviewTemplate('index_en', IndexPagePreviewEn);
+CMS.registerPreviewTemplate('index_en', withEmotion(IndexPagePreviewEn));

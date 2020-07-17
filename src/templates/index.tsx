@@ -22,7 +22,7 @@ import Content from '../components/Content';
 type IIndexTemplate = DeepExtractType<
     IndexQuery,
     ['markdownRemark', 'frontmatter']
->;
+> & { preview?: boolean };
 
 const aosSettings = {
     duration: { fast: 600, slow: 1800 },
@@ -30,7 +30,7 @@ const aosSettings = {
 };
 
 export const IndexTemplate: FC<IIndexTemplate> = ({
-    pageTitle,
+    preview,
     home_section,
     about_us_section,
     philosophy_section,
@@ -51,7 +51,16 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
         }
     );
     return (
-        <React.Fragment>
+        <div
+            css={
+                preview
+                    ? css`
+                          [data-aos='fade'] {
+                              opacity: 1 !important;
+                          }
+                      `
+                    : null
+            }>
             <section className='section' id='home'>
                 <div className='container'>
                     <div className='columns flex-direction-reverse'>
@@ -483,7 +492,7 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                     data-aos-duration={aosSettings.duration.fast}
                     data-aos-delay={aosSettings.delay.short}></div>
             </section>
-        </React.Fragment>
+        </div>
     );
 };
 
@@ -491,9 +500,8 @@ const Index: FC<{ data: IndexQuery }> = ({ data }) => {
     const { frontmatter } = data.markdownRemark || {};
 
     return (
-        <Layout>
+        <Layout pageTitle={frontmatter?.pageTitle as string}>
             <IndexTemplate
-                pageTitle={frontmatter?.pageTitle}
                 home_section={frontmatter?.home_section}
                 about_us_section={frontmatter?.about_us_section}
                 philosophy_section={frontmatter?.philosophy_section}

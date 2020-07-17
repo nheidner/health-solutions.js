@@ -13,7 +13,7 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-    - name: pages-en
+    - name: pages_en
       label: Pages (En)
       files:
           - file: 'src/markdown/en/index.md'

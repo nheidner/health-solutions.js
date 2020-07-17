@@ -13,7 +13,7 @@ import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const Layout: FC = ({ children }) => {
+const Layout: FC<{ pageTitle: string }> = ({ children }) => {
     const { locales, primary: primaryLocale } = useLocales();
     const { pathname } = useLocation();
     const { locale: currentLocale, pathWithoutLocale } = usePath(
@@ -24,7 +24,7 @@ const Layout: FC = ({ children }) => {
 
     // AOS
     useEffect(() => {
-        AOS.init({ once: true });
+        AOS.init({ once: true, disable: window.innerWidth < 768 });
     });
 
     // smooth-scroll
