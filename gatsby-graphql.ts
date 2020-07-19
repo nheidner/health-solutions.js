@@ -2899,6 +2899,7 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___plugins___version'
   | 'pluginCreator___pluginOptions___plugins___browserAPIs'
   | 'pluginCreator___pluginOptions___plugins___pluginFilepath'
+  | 'pluginCreator___pluginOptions___modalProps___closeTimeoutMS'
   | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___name'
   | 'pluginCreator___pluginOptions___fileName'
@@ -3107,6 +3108,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___plugins___pluginOptions___destinationDir'
   | 'pluginOptions___plugins___browserAPIs'
   | 'pluginOptions___plugins___pluginFilepath'
+  | 'pluginOptions___modalProps___closeTimeoutMS'
   | 'pluginOptions___path'
   | 'pluginOptions___name'
   | 'pluginOptions___fileName'
@@ -3232,6 +3234,7 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 
 export type SitePluginPluginOptions = {
   plugins?: Maybe<Array<Maybe<SitePluginPluginOptionsPlugins>>>;
+  modalProps?: Maybe<SitePluginPluginOptionsModalProps>;
   path?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
   fileName?: Maybe<Scalars['String']>;
@@ -3248,6 +3251,7 @@ export type SitePluginPluginOptions = {
 
 export type SitePluginPluginOptionsFilterInput = {
   plugins?: Maybe<SitePluginPluginOptionsPluginsFilterListInput>;
+  modalProps?: Maybe<SitePluginPluginOptionsModalPropsFilterInput>;
   path?: Maybe<StringQueryOperatorInput>;
   name?: Maybe<StringQueryOperatorInput>;
   fileName?: Maybe<StringQueryOperatorInput>;
@@ -3260,6 +3264,14 @@ export type SitePluginPluginOptionsFilterInput = {
   publicPath?: Maybe<StringQueryOperatorInput>;
   htmlTitle?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
+};
+
+export type SitePluginPluginOptionsModalProps = {
+  closeTimeoutMS?: Maybe<Scalars['Int']>;
+};
+
+export type SitePluginPluginOptionsModalPropsFilterInput = {
+  closeTimeoutMS?: Maybe<IntQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsPlugins = {
@@ -3377,6 +3389,13 @@ export type Unnamed_1_Query = { site?: Maybe<{ siteMetadata?: Maybe<{ menu?: May
         & { item?: Maybe<Pick<SiteSiteMetadataMenuItem, 'en' | 'de'>> }
       )>>> }> }> };
 
+export type ContactPopupQueryVariables = Exact<{
+  id: Scalars['String'];
+}>;
+
+
+export type ContactPopupQuery = { markdownRemark?: Maybe<{ frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'locale' | 'path'>> }> };
+
 export type IndexQueryVariables = Exact<{
   id: Scalars['String'];
 }>;
@@ -3456,7 +3475,10 @@ export type CardHeaderImageFragment = { childImageSharp?: Maybe<{ fluid?: Maybe<
 
 export type GalleryImageFragment = { childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> };
 
-export type LogoFragment = { childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> };
+export type LogoFragment = (
+  Pick<File, 'extension' | 'publicURL'>
+  & { childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }
+);
 
 export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 

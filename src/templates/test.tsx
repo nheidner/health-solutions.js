@@ -107,7 +107,7 @@ const Index: FC<{ data: IndexQuery }> = ({ data }) => {
     const { frontmatter } = data.markdownRemark || {};
 
     return (
-        <Layout>
+        <Layout pageTitle={frontmatter?.pageTitle as string}>
             <IndexTemplate pageTitle={frontmatter?.pageTitle} />
         </Layout>
     );

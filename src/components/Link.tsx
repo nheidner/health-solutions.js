@@ -1,6 +1,7 @@
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core';
 import React, { ReactNode, ReactElement, FC } from 'react';
 import { Link as GatsbyLink } from 'gatsby';
-import { css } from '@emotion/core';
 import isHash from '../utils/isHash';
 
 const Link: FC<{

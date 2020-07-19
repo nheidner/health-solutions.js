@@ -552,3 +552,117 @@ collections:
                                         name: 'button_text',
                                         widget: 'string',
                                     }
+
+          - file: 'src/markdown/en/contact_popup.md'
+            label: 'Contact Popup'
+            name: 'contact_popup_en'
+            fields:
+                - {
+                      label: 'TemplateKey',
+                      name: 'templateKey',
+                      widget: 'hidden',
+                      default: 'contact_popup',
+                  }
+                - {
+                      label: 'Locale',
+                      name: 'locale',
+                      widget: 'hidden',
+                      default: 'en',
+                  }
+                - {
+                      label: 'Path',
+                      name: 'path',
+                      widget: 'string',
+                      hint: 'Without locales path - Modifies the path under which the page will be found - Warning: Please only change it, if you know, what you are doing!',
+                  }
+                - label: 'Header'
+                  name: 'header'
+                  widget: object
+                  collapsed: true
+                  fields:
+                      - label: 'Logo'
+                        name: 'logo_image'
+                        widget: object
+                        collapsed: true
+                        fields:
+                            - {
+                                  label: 'Image Source',
+                                  name: 'source',
+                                  widget: 'image',
+                              }
+                            - {
+                                  label: 'Image Alt',
+                                  name: 'alt',
+                                  widget: 'string',
+                              }
+                      - { label: 'Heading', name: 'heading', widget: 'string' }
+                      - {
+                            label: 'Markdown Text',
+                            name: 'markdown_text',
+                            widget: 'markdown',
+                            buttons:
+                                [
+                                    bold,
+                                    italic,
+                                    link,
+                                    bulleted-list,
+                                    numbered-list,
+                                    quote,
+                                ],
+                        }
+                - label: 'Form'
+                  name: 'form'
+                  widget: object
+                  collapsed: true
+                  fields:
+                      - label: 'Name Field'
+                        name: 'name_field'
+                        widget: 'object'
+                        collapsed: true
+                        fields:
+                            - {
+                                  label: 'label',
+                                  name: 'label',
+                                  widget: 'string',
+                              }
+                      - label: 'Telephone Number Field'
+                        name: 'telephone_number_field'
+                        widget: 'object'
+                        collapsed: true
+                        fields:
+                            - {
+                                  label: 'label',
+                                  name: 'label',
+                                  widget: 'string',
+                              }
+                      - label: 'Email Address Field'
+                        name: 'email_address_field'
+                        widget: 'object'
+                        collapsed: true
+                        fields:
+                            - {
+                                  label: 'label',
+                                  name: 'label',
+                                  widget: 'string',
+                              }
+                      - label: 'Send Button'
+                        name: 'send_button'
+                        widget: 'object'
+                        collapsed: true
+                        fields:
+                            - {
+                                  label: 'Button Text',
+                                  name: 'button_text',
+                                  widget: 'string',
+                              }
+                - label: 'Image'
+                  name: 'image'
+                  widget: object
+                  collapsed: true
+                  fields:
+                      - {
+                            label: 'Image Source',
+                            name: 'source',
+                            widget: 'image',
+                        }
+                      - { label: 'Image Alt', name: 'alt', widget: 'string' }

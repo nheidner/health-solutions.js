@@ -5,7 +5,6 @@ import withEmotion from './with-emotion';
 
 const IndexPagePreviewEn = ({ entry }) => {
     const data = entry.getIn(['data']).toJS();
-    console.log(data);
     return (
         <IndexTemplate
             pageTitle={data.pageTitle}

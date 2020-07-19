@@ -47,5 +47,7 @@ export const logo = graphql`
                 ...GatsbyImageSharpFluid
             }
         }
+        extension
+        publicURL
     }
 `;

@@ -53,6 +53,7 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
     return (
         <div
             css={
+                // for cms preview because layout component is not loaded and opacity: 0 according to aos.css
                 preview
                     ? css`
                           [data-aos='fade'] {
@@ -80,9 +81,15 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                                     }
                                 />
                             </div>
-                            <button className='button is-primary'>
+                            <Link
+                                className='button is-primary'
+                                to='/popup/'
+                                state={{
+                                    modal: true,
+                                    noScroll: true,
+                                }}>
                                 {home_section?.text_column?.button_text}
-                            </button>
+                            </Link>
                         </div>
                         <div
                             className='column'
