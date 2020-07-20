@@ -625,8 +625,8 @@ collections:
                                   name: 'label',
                                   widget: 'string',
                               }
-                            - label: 'Warning Messages'
-                              name: 'warning_messages'
+                            - label: 'Messages'
+                              name: 'messages'
                               widget: 'object'
                               collapsed: true
                               fields:
@@ -634,8 +634,13 @@ collections:
                                         label: '80 characters maximum',
                                         name: 'character_maximum',
                                         widget: 'string',
-                                        hint: 'warning message that is displayed when more than 80 characters are used',
-                                        default: 'Must be 80 characters or less',
+                                        hint: 'Warning message that is displayed when more than 80 characters are used',
+                                    }
+                                  - {
+                                        label: 'Required',
+                                        name: 'required',
+                                        widget: 'string',
+                                        hint: 'Warning message that is displayed field is empty',
                                     }
                       - label: 'Telephone Number Field'
                         name: 'telephone_number_field'
@@ -647,6 +652,23 @@ collections:
                                   name: 'label',
                                   widget: 'string',
                               }
+                            - label: 'Messages'
+                              name: 'messages'
+                              widget: 'object'
+                              collapsed: true
+                              fields:
+                                  - {
+                                        label: '80 characters maximum',
+                                        name: 'character_maximum',
+                                        widget: 'string',
+                                        hint: 'Warning message that is displayed when more than 80 characters are used',
+                                    }
+                                  - {
+                                        label: 'Required',
+                                        name: 'required',
+                                        widget: 'string',
+                                        hint: 'Warning message that is displayed field is empty',
+                                    }
                       - label: 'Email Address Field'
                         name: 'email_address_field'
                         widget: 'object'
@@ -657,6 +679,23 @@ collections:
                                   name: 'label',
                                   widget: 'string',
                               }
+                            - label: 'Messages'
+                              name: 'messages'
+                              widget: 'object'
+                              collapsed: true
+                              fields:
+                                  - {
+                                        label: 'Is Not An Email',
+                                        name: 'is_email',
+                                        widget: 'string',
+                                        hint: 'Warning message that is displayed when the content is not an email',
+                                    }
+                                  - {
+                                        label: 'Required',
+                                        name: 'required',
+                                        widget: 'string',
+                                        hint: 'Warning message that is displayed field is empty',
+                                    }
                       - label: 'Send Button'
                         name: 'send_button'
                         widget: 'object'
@@ -667,6 +706,17 @@ collections:
                                   name: 'button_text',
                                   widget: 'string',
                               }
+                            - label: 'Messages'
+                              name: 'messages'
+                              widget: 'object'
+                              collapsed: true
+                              fields:
+                                  - {
+                                        label: 'Is Sent',
+                                        name: 'is_sent',
+                                        widget: 'string',
+                                        hint: 'Success message that is displayed when the form content was successfully delivered',
+                                    }
                 - label: 'Image'
                   name: 'image'
                   widget: object
