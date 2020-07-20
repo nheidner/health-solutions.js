@@ -625,6 +625,18 @@ collections:
                                   name: 'label',
                                   widget: 'string',
                               }
+                            - label: 'Warning Messages'
+                              name: 'warning_messages'
+                              widget: 'object'
+                              collapsed: true
+                              fields:
+                                  - {
+                                        label: '80 characters maximum',
+                                        name: 'character_maximum',
+                                        widget: 'string',
+                                        hint: 'warning message that is displayed when more than 80 characters are used',
+                                        default: 'Must be 80 characters or less',
+                                    }
                       - label: 'Telephone Number Field'
                         name: 'telephone_number_field'
                         widget: 'object'
