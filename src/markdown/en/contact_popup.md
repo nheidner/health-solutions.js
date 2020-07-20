@@ -12,12 +12,23 @@ header:
 form:
   name_field:
     label: NAME
+    messages:
+      required: Required
+      character_maximum: Must be 80 characters or less
   telephone_number_field:
     label: TELEFON NUMMER
+    messages:
+      character_maximum: Must be 80 characters or less
+      required: Required
   email_address_field:
     label: E-MAIL ADRESSE
+    messages:
+      is_email: Invalid email address
+      required: Required
   send_button:
     button_text: Abschicken
+    messages:
+      is_sent: Your message was sent
 image:
   source: /img/speach-bubbles.png
   alt: speach bubbles
