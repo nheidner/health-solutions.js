@@ -15,11 +15,13 @@ form:
     messages:
       required: Required
       character_maximum: Must be 80 characters or less
+    max_number_characters: 80
   telephone_number_field:
     label: TELEFON NUMMER
     messages:
       character_maximum: Must be 80 characters or less
       required: Required
+    max_number_characters: 80
   email_address_field:
     label: E-MAIL ADRESSE
     messages:
