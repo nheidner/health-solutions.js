@@ -16,6 +16,7 @@ import {
     columnImageLarge,
     cardHeaderImage,
     galleryImage,
+    SVGImage,
 } from '../utils/fragments';
 import Content from '../components/Content';
 
@@ -83,7 +84,7 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                             </div>
                             <Link
                                 className='button is-primary'
-                                to='/popup/'
+                                to='/contact-popup/'
                                 state={{
                                     modal: true,
                                     noScroll: true,
@@ -552,7 +553,7 @@ export const pageQuery = graphql`
                     markdown_text
                     image {
                         source {
-                            ...logo
+                            ...SVGImage
                         }
                         alt
                     }
@@ -629,7 +630,7 @@ export const pageQuery = graphql`
                     }
                     image {
                         source {
-                            ...logo
+                            ...SVGImage
                         }
                         alt
                     }

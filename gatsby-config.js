@@ -61,6 +61,7 @@ module.exports = {
         'gatsby-plugin-react-helmet',
         `gatsby-plugin-typescript`,
         `gatsby-plugin-sass`,
+        `gatsby-plugin-fontawesome-css`,
         {
             resolve: `gatsby-plugin-modal-routing`,
             options: {

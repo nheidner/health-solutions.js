@@ -40,14 +40,19 @@ export const galleryImage = graphql`
     }
 `;
 
-export const logo = graphql`
-    fragment logo on File {
+export const SVGImage = graphql`
+    fragment SVGImage on File {
+        extension
+        publicURL
+    }
+`;
+
+export const popupColumnImage = graphql`
+    fragment popupColumnImage on File {
         childImageSharp {
             fluid(maxWidth: 1600) {
                 ...GatsbyImageSharpFluid
             }
         }
-        extension
-        publicURL
     }
 `;
