@@ -625,22 +625,27 @@ collections:
                                   name: 'label',
                                   widget: 'string',
                               }
+                            - {
+                                  label: 'Maximum Number Of Characters',
+                                  name: 'max_number_characters',
+                                  widget: 'number',
+                              }
                             - label: 'Messages'
                               name: 'messages'
                               widget: 'object'
                               collapsed: true
                               fields:
                                   - {
-                                        label: '80 characters maximum',
+                                        label: 'Maximum Characters Message',
                                         name: 'character_maximum',
                                         widget: 'string',
-                                        hint: 'Warning message that is displayed when more than 80 characters are used',
+                                        hint: 'Warning message that is displayed when more than the maximum number of characters are used',
                                     }
                                   - {
-                                        label: 'Required',
+                                        label: 'Required Message',
                                         name: 'required',
                                         widget: 'string',
-                                        hint: 'Warning message that is displayed field is empty',
+                                        hint: 'Warning message that is displayed when the field is empty',
                                     }
                       - label: 'Telephone Number Field'
                         name: 'telephone_number_field'
@@ -652,22 +657,27 @@ collections:
                                   name: 'label',
                                   widget: 'string',
                               }
+                            - {
+                                  label: 'Maximum Number Of Characters',
+                                  name: 'max_number_characters',
+                                  widget: 'number',
+                              }
                             - label: 'Messages'
                               name: 'messages'
                               widget: 'object'
                               collapsed: true
                               fields:
                                   - {
-                                        label: '80 characters maximum',
+                                        label: 'Maximum Characters Message',
                                         name: 'character_maximum',
                                         widget: 'string',
-                                        hint: 'Warning message that is displayed when more than 80 characters are used',
+                                        hint: 'Warning message that is displayed when more than the maximum number of characters are used',
                                     }
                                   - {
-                                        label: 'Required',
+                                        label: 'Required Message',
                                         name: 'required',
                                         widget: 'string',
-                                        hint: 'Warning message that is displayed field is empty',
+                                        hint: 'Warning message that is displayed when the field is empty',
                                     }
                       - label: 'Email Address Field'
                         name: 'email_address_field'
@@ -685,16 +695,16 @@ collections:
                               collapsed: true
                               fields:
                                   - {
-                                        label: 'Is Not An Email',
+                                        label: 'Is Not An Email Message',
                                         name: 'is_email',
                                         widget: 'string',
-                                        hint: 'Warning message that is displayed when the content is not an email',
+                                        hint: 'Warning message that is displayed when the character entered into the field dont fit the patter of an email',
                                     }
                                   - {
-                                        label: 'Required',
+                                        label: 'Required Message',
                                         name: 'required',
                                         widget: 'string',
-                                        hint: 'Warning message that is displayed field is empty',
+                                        hint: 'Warning message that is displayed when the field is empty',
                                     }
                       - label: 'Send Button'
                         name: 'send_button'
@@ -712,7 +722,7 @@ collections:
                               collapsed: true
                               fields:
                                   - {
-                                        label: 'Is Sent',
+                                        label: 'Is Sent Message',
                                         name: 'is_sent',
                                         widget: 'string',
                                         hint: 'Success message that is displayed when the form content was successfully delivered',
@@ -728,3 +738,310 @@ collections:
                             widget: 'image',
                         }
                       - { label: 'Image Alt', name: 'alt', widget: 'string' }
+
+          - file: 'src/markdown/en/contact.md'
+            label: 'Contact'
+            name: 'contact_en'
+            fields:
+                - {
+                      label: 'TemplateKey',
+                      name: 'templateKey',
+                      widget: 'hidden',
+                      default: 'contact',
+                  }
+                - {
+                      label: 'Locale',
+                      name: 'locale',
+                      widget: 'hidden',
+                      default: 'en',
+                  }
+                - {
+                      label: 'Page Title',
+                      name: 'pageTitle',
+                      widget: 'string',
+                      hint: 'Modifies the title of the page that will be rendered in the browser - as f.e. seen in the tab bar of the browser',
+                  }
+                - {
+                      label: 'Path',
+                      name: 'path',
+                      widget: 'string',
+                      hint: 'Without locales path - Modifies the path under which the page will be found - Warning: Please only change it, if you know, what you are doing!',
+                  }
+                - label: 'Header Section'
+                  name: 'header_section'
+                  widget: object
+                  collapsed: true
+                  fields:
+                      - { label: 'Heading', name: 'heading', widget: 'string' }
+                      - {
+                            label: 'Markdown Text',
+                            name: 'markdown_text',
+                            widget: 'markdown',
+                            buttons:
+                                [
+                                    bold,
+                                    italic,
+                                    link,
+                                    bulleted-list,
+                                    numbered-list,
+                                    quote,
+                                ],
+                        }
+                      - label: 'Image'
+                        name: 'image'
+                        widget: object
+                        collapsed: true
+                        fields:
+                            - {
+                                  label: 'Image Source',
+                                  name: 'source',
+                                  widget: 'image',
+                              }
+                            - {
+                                  label: 'Image Alt',
+                                  name: 'alt',
+                                  widget: 'string',
+                              }
+                - label: 'Contact Section'
+                  name: 'contact_section'
+                  widget: object
+                  collapsed: true
+                  fields:
+                      - {
+                            label: 'Section Heading',
+                            name: 'section_heading',
+                            widget: 'string',
+                        }
+                      - label: 'Image Column'
+                        name: 'image_column'
+                        widget: 'object'
+                        collapsed: true
+                        fields:
+                            - label: 'Image'
+                              name: 'image'
+                              widget: object
+                              collapsed: true
+                              fields:
+                                  - {
+                                        label: 'Image Source',
+                                        name: 'source',
+                                        widget: 'image',
+                                    }
+                                  - {
+                                        label: 'Image Alt',
+                                        name: 'alt',
+                                        widget: 'string',
+                                    }
+                      - label: 'Right Column'
+                        name: 'right_column'
+                        widget: 'object'
+                        collapsed: true
+                        fields:
+                            - {
+                                  label: 'Heading',
+                                  name: 'heading',
+                                  widget: 'string',
+                              }
+                            - {
+                                  label: 'Markdown Text',
+                                  name: 'markdown_text',
+                                  widget: 'markdown',
+                                  buttons:
+                                      [
+                                          bold,
+                                          italic,
+                                          link,
+                                          bulleted-list,
+                                          numbered-list,
+                                          quote,
+                                      ],
+                              }
+                            - label: 'Form'
+                              name: 'form'
+                              widget: object
+                              collapsed: true
+                              fields:
+                                  - label: 'Name Field'
+                                    name: 'name_field'
+                                    widget: 'object'
+                                    collapsed: true
+                                    fields:
+                                        - {
+                                              label: 'label',
+                                              name: 'label',
+                                              widget: 'string',
+                                          }
+                                        - {
+                                              label: 'Maximum Number Of Characters',
+                                              name: 'max_number_characters',
+                                              widget: 'number',
+                                          }
+                                        - label: 'Messages'
+                                          name: 'messages'
+                                          widget: 'object'
+                                          collapsed: true
+                                          fields:
+                                              - {
+                                                    label: 'Maximum Characters Message',
+                                                    name: 'character_maximum',
+                                                    widget: 'string',
+                                                    hint: 'Warning message that is displayed when more than the maximum number of characters are used',
+                                                }
+                                              - {
+                                                    label: 'Required Message',
+                                                    name: 'required',
+                                                    widget: 'string',
+                                                    hint: 'Warning message that is displayed when the field is empty',
+                                                }
+                                  - label: 'Telephone Number Field'
+                                    name: 'telephone_number_field'
+                                    widget: 'object'
+                                    collapsed: true
+                                    fields:
+                                        - {
+                                              label: 'label',
+                                              name: 'label',
+                                              widget: 'string',
+                                          }
+                                        - {
+                                              label: 'Maximum Number Of Characters',
+                                              name: 'max_number_characters',
+                                              widget: 'number',
+                                          }
+                                        - label: 'Messages'
+                                          name: 'messages'
+                                          widget: 'object'
+                                          collapsed: true
+                                          fields:
+                                              - {
+                                                    label: 'Maximum Characters Message',
+                                                    name: 'character_maximum',
+                                                    widget: 'string',
+                                                    hint: 'Warning message that is displayed when more than the maximum number of characters are used',
+                                                }
+                                              - {
+                                                    label: 'Required Message',
+                                                    name: 'required',
+                                                    widget: 'string',
+                                                    hint: 'Warning message that is displayed when the field is empty',
+                                                }
+                                  - label: 'Email Address Field'
+                                    name: 'email_address_field'
+                                    widget: 'object'
+                                    collapsed: true
+                                    fields:
+                                        - {
+                                              label: 'label',
+                                              name: 'label',
+                                              widget: 'string',
+                                          }
+                                        - label: 'Messages'
+                                          name: 'messages'
+                                          widget: 'object'
+                                          collapsed: true
+                                          fields:
+                                              - {
+                                                    label: 'Is Not An Email Message',
+                                                    name: 'is_email',
+                                                    widget: 'string',
+                                                    hint: 'Warning message that is displayed when the character entered into the field dont fit the patter of an email',
+                                                }
+                                              - {
+                                                    label: 'Required Message',
+                                                    name: 'required',
+                                                    widget: 'string',
+                                                    hint: 'Warning message that is displayed when the field is empty',
+                                                }
+                                  - label: 'Message Field'
+                                    name: 'message_field'
+                                    widget: 'object'
+                                    collapsed: true
+                                    fields:
+                                        - {
+                                              label: 'label',
+                                              name: 'label',
+                                              widget: 'string',
+                                          }
+                                        - {
+                                              label: 'Maximum Number Of Characters',
+                                              name: 'max_number_characters',
+                                              widget: 'number',
+                                          }
+                                        - label: 'Messages'
+                                          name: 'messages'
+                                          widget: 'object'
+                                          collapsed: true
+                                          fields:
+                                              - {
+                                                    label: 'Maximum Characters Message',
+                                                    name: 'character_maximum',
+                                                    widget: 'string',
+                                                    hint: 'Warning message that is displayed when more than the maximum number of characters are used',
+                                                }
+                                              - {
+                                                    label: 'Required Message',
+                                                    name: 'required',
+                                                    widget: 'string',
+                                                    hint: 'Warning message that is displayed when the field is empty',
+                                                }
+                                  - label: 'Send Button'
+                                    name: 'send_button'
+                                    widget: 'object'
+                                    collapsed: true
+                                    fields:
+                                        - {
+                                              label: 'Button Text',
+                                              name: 'button_text',
+                                              widget: 'string',
+                                          }
+                                        - label: 'Messages'
+                                          name: 'messages'
+                                          widget: 'object'
+                                          collapsed: true
+                                          fields:
+                                              - {
+                                                    label: 'Is Sent Message',
+                                                    name: 'is_sent',
+                                                    widget: 'string',
+                                                    hint: 'Success message that is displayed when the form content was successfully delivered',
+                                                }
+
+                            - {
+                                  label: 'Address Markdown',
+                                  name: 'address markdown',
+                                  widget: 'markdown',
+                                  buttons:
+                                      [
+                                          bold,
+                                          italic,
+                                          link,
+                                          bulleted-list,
+                                          numbered-list,
+                                          quote,
+                                      ],
+                              }
+                            - {
+                                  label: 'Show Newsletter',
+                                  name: 'show_newsletter',
+                                  widget: 'boolean',
+                              }
+                            - label: 'Newsletter'
+                              name: 'newsletter'
+                              widget: 'object'
+                              collapsed: true
+                              fields:
+                                  - {
+                                        label: 'Heading',
+                                        name: 'heading',
+                                        widget: 'string',
+                                    }
+                                  - {
+                                        label: 'Placeholder',
+                                        name: 'placeholder',
+                                        widget: 'string',
+                                    }
+                                  - {
+                                        label: 'Button Text',
+                                        name: 'button_text',
+                                        widget: 'string',
+                                    }

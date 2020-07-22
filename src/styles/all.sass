@@ -24,6 +24,7 @@ $yellow: #f2e07c
 $orange: #db7600
 $primary: #005870
 $text: $white
+$danger-red: #f14668
 
 // typography
 $title-weight: normal
@@ -50,8 +51,10 @@ $button-border-width: 0
 $button-padding-vertical: 0.3rem
 $button-padding-horizontal: 1rem
 
-@import "image-carousel.sass"
 @import "~bulma/bulma.sass";
+@import "image-carousel.sass"
+@import "contact.sass"
+
 
 // CLASSES
 
@@ -200,8 +203,13 @@ body
                     font-family: Apercu
                     padding: 0rem 0.5rem
                     line-height: 1
-                    // padding: 0.2rem
-                    // border: 1px solid $dark-blue
+                    &.is-danger
+                        border: 1px solid $danger-red
+            p.help
+                height: 0.75rem
+                &.is-danger
+                &.is-success
+                    color: $dark-blue
         div.image-column
             +mobile
                 display: none
@@ -333,7 +341,7 @@ body
             
 
 // IDs
-#contact
+.section#contact
     +tablet
         div.columns
             width: 80%

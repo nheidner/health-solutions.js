@@ -1,7 +1,6 @@
 import React, { FC, useState } from 'react';
 import { graphql } from 'gatsby';
 import { ModalRoutingContext } from 'gatsby-plugin-modal-routing';
-import Layout from '../components/layout';
 import { ContactPopupQuery } from '../../gatsby-graphql';
 import { DeepExtractType } from 'ts-deep-extract-types';
 import { useFormik } from 'formik';
@@ -36,7 +35,6 @@ const encode = (data: {
 
 const Form: FC<{ formContent: IFormContent }> = ({ formContent }) => {
     const [submitted, setSubmitted] = useState(false);
-
     const formik = useFormik({
         initialValues: {
             name: '',
@@ -45,14 +43,23 @@ const Form: FC<{ formContent: IFormContent }> = ({ formContent }) => {
         },
         validationSchema: Yup.object({
             name: Yup.string()
-                .max(80, 'Must be 80 characters or less')
-                .required('Required'),
+                .max(
+                    formContent.name_field?.max_number_characters,
+                    formContent.name_field?.messages?.character_maximum
+                )
+                .required(formContent.name_field?.messages?.required),
             telephone: Yup.string()
-                .max(80, 'Must be 80 characters or less')
-                .required('Required'),
+                .max(
+                    formContent.telephone_number_field?.max_number_characters,
+                    formContent.telephone_number_field?.messages
+                        ?.character_maximum
+                )
+                .required(
+                    formContent.telephone_number_field?.messages?.required
+                ),
             email: Yup.string()
-                .email('Invalid email address')
-                .required('Required'),
+                .email(formContent.email_address_field?.messages?.is_email)
+                .required(formContent.email_address_field?.messages?.required),
         }),
         onSubmit: (values) => {
             fetch('/', {
@@ -74,14 +81,20 @@ const Form: FC<{ formContent: IFormContent }> = ({ formContent }) => {
                 <label className='label'>{formContent.name_field?.label}</label>
                 <div className='control'>
                     <input
-                        className='input'
+                        className={`input ${
+                            formik.touched.name && formik.errors.name
+                                ? 'is-danger'
+                                : ''
+                        }`}
                         type='text'
                         {...formik.getFieldProps('name')}
                     />
                 </div>
-                {formik.touched.name && formik.errors.name ? (
-                    <p className='help is-danger'>{formik.errors.name}</p>
-                ) : null}
+                <p className='help is-danger'>
+                    {formik.touched.name && formik.errors.name
+                        ? formik.errors.name
+                        : null}
+                </p>
             </div>
 
             <div className='field'>
@@ -90,14 +103,20 @@ const Form: FC<{ formContent: IFormContent }> = ({ formContent }) => {
                 </label>
                 <div className='control'>
                     <input
-                        className='input'
+                        className={`input ${
+                            formik.touched.telephone && formik.errors.telephone
+                                ? 'is-danger'
+                                : ''
+                        }`}
                         type='text'
                         {...formik.getFieldProps('telephone')}
                     />
                 </div>
-                {formik.touched.telephone && formik.errors.telephone ? (
-                    <p className='help is-danger'>{formik.errors.telephone}</p>
-                ) : null}
+                <p className='help is-danger'>
+                    {formik.touched.telephone && formik.errors.telephone
+                        ? formik.errors.telephone
+                        : null}
+                </p>
             </div>
 
             <div className='field'>
@@ -106,25 +125,43 @@ const Form: FC<{ formContent: IFormContent }> = ({ formContent }) => {
                 </label>
                 <div className='control'>
                     <input
-                        className='input is-danger'
+                        className={`input ${
+                            formik.touched.email && formik.errors.email
+                                ? 'is-danger'
+                                : ''
+                        }`}
                         type='text'
                         {...formik.getFieldProps('email')}
                     />
                 </div>
-                {formik.touched.email && formik.errors.email ? (
-                    <p className='help is-danger'>{formik.errors.email}</p>
-                ) : null}
+                <p className='help is-danger'>
+                    {formik.touched.email && formik.errors.email
+                        ? formik.errors.email
+                        : null}
+                </p>
             </div>
 
             <div className='field'>
                 <div className='control'>
-                    <button type='submit' className='button is-primary'>
-                        {formContent?.send_button?.button_text}
-                    </button>
+                    {submitted ? (
+                        <button
+                            type='submit'
+                            className='button is-primary'
+                            title='Disabled button'
+                            disabled>
+                            {formContent?.send_button?.button_text}
+                        </button>
+                    ) : (
+                        <button type='submit' className='button is-primary'>
+                            {formContent?.send_button?.button_text}
+                        </button>
+                    )}
                 </div>
-                {submitted ? (
-                    <p className='help is-success'>Your message was sent</p>
-                ) : null}
+                <p className='help is-success'>
+                    {submitted
+                        ? formContent.send_button?.messages?.is_sent
+                        : null}
+                </p>
             </div>
         </form>
     );
@@ -136,7 +173,6 @@ export const ContactPopupTemplate: FC<IContactPopupTemplate> = ({
     image,
     preview,
 }) => {
-    console.log(form);
     return (
         <ModalRoutingContext.Consumer>
             {({ modal, closeTo }) => (
@@ -149,7 +185,7 @@ export const ContactPopupTemplate: FC<IContactPopupTemplate> = ({
                                 noScroll: true,
                             }}
                         />
-                    ) : (
+                    ) : preview ? null : (
                         <LocalizedLink
                             className='go-back-to-home-link'
                             to='/'
@@ -225,15 +261,32 @@ export const pageQuery = graphql`
                 form {
                     name_field {
                         label
+                        max_number_characters
+                        messages {
+                            required
+                            character_maximum
+                        }
                     }
                     telephone_number_field {
                         label
+                        max_number_characters
+                        messages {
+                            character_maximum
+                            required
+                        }
                     }
                     email_address_field {
                         label
+                        messages {
+                            is_email
+                            required
+                        }
                     }
                     send_button {
                         button_text
+                        messages {
+                            is_sent
+                        }
                     }
                 }
                 image {
