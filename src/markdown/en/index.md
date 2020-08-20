@@ -200,7 +200,7 @@ contact_section:
       button_href: /contact
   right_column:
     address_markdown: |-
-      Adresse BLABLABLA 
+      Adresse BLABLABLA
 
       Adresse BLABLABLA
 
