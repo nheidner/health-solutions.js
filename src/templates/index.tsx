@@ -127,8 +127,8 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                     <h1 className='title section-heading'>
                         {about_us_section?.section_heading}
                     </h1>
-                    <div className='container has-background-white has-text-centered'>
-                        <h1 className='title is-2'>
+                    <div className='container has-background-white has-text-centered px-3'>
+                        <h1 className='title is-2 pt-5'>
                             {about_us_section?.heading}
                         </h1>
                         <div className='content is-medium'>
@@ -138,7 +138,7 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                                 }
                             />
                         </div>
-                        <figure className='image'>
+                        <figure className='image pb-5'>
                             <Img
                                 source={about_us_section?.image?.source}
                                 alt={about_us_section?.image?.alt as string}
@@ -224,7 +224,7 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                             <Link
                                 to={
                                     verfahren_section?.text_column?.button
-                                        ?.button_href
+                                        ?.button_href as string
                                 }
                                 className='button is-primary'>
                                 {
@@ -302,7 +302,7 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                         {anonymous_section_2?.subheading}
                     </h1>
                     <Link
-                        to={anonymous_section_2?.button?.button_href}
+                        to={anonymous_section_2?.button?.button_href as string}
                         className='button'>
                         {anonymous_section_2?.button?.button_text}
                     </Link>
@@ -354,7 +354,7 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                             <Link
                                 to={
                                     praxis_section?.text_column?.button
-                                        ?.button_href
+                                        ?.button_href as string
                                 }
                                 className='button is-primary'>
                                 {
