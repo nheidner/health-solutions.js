@@ -199,7 +199,7 @@ contact_section:
       button_text: Termin Vereinbaren
       button_href: /contact
   right_column:
-    address markdown: |-
+    address_markdown: |-
       Adresse BLABLABLA 
 
       Adresse BLABLABLA

@@ -54,12 +54,15 @@ $button-padding-horizontal: 1rem
 @import "~bulma/bulma.sass";
 @import "image-carousel.sass"
 @import "contact.sass"
+@import "mixins.sass"
 
 
 // CLASSES
-
 html 
     // font-size: $base-size
+input,textarea 
+    width: 100%
+    display: block
 
 +mobile
     html 
@@ -183,33 +186,8 @@ body
             
     section.form-section
         div.form-column
-            label.label
-                font-size: 1rem
-                text-transform: uppercase
-                color: $dark-blue
-                font-weight: normal
-                margin-bottom: $space-1
-            div.control
-                input.input
-                    background-color: #fff
-                    border: 0
-                    border-radius: 0
-                    background: $white
-                    color: $dark-blue
-                    box-shadow: none
-                    font-size: 1rem
-                    max-width: 350px
-                    height: 30px
-                    font-family: Apercu
-                    padding: 0rem 0.5rem
-                    line-height: 1
-                    &.is-danger
-                        border: 1px solid $danger-red
-            p.help
-                height: 0.75rem
-                &.is-danger
-                &.is-success
-                    color: $dark-blue
+            form 
+                +form
         div.image-column
             +mobile
                 display: none
@@ -337,8 +315,7 @@ body
         max-height: 200px
         figure
             max-height: 300px
-            
-            
+                       
 
 // IDs
 .section#contact
@@ -350,47 +327,13 @@ body
                 div.content
                     width: 70%
                     float: right
-                div.newsletter
-                    width: 70%
-                    float: right
+                    
     div.columns
         div.right-column    
             p
                 margin-bottom: $space-1            
         div.newsletter
-            h1.title
-                margin-bottom: $space-2
-            form.newsletter-form
-                background: #ddd
-                max-width: 300px
-                div.control
-                    display: flex
-                    // border: 1px solid $dark-blue
-                    input.input
-                        background-color: #fff
-                        border: 0
-                        border-radius: 0
-                        background: $yellow
-                        color: $dark-blue
-                        box-shadow: none
-                        font-size: 1rem
-                        font-family: Apercu
-                        // padding: 0.2rem
-                        border: 1px solid $dark-blue
-                    input.input::placeholder
-                        color: $dark-blue
-                        // text-align: center
-                        font-size: $size-normal
-                        font-family: Apercu
-                    input.input:-ms-input-placeholder
-                        color: $dark-blue
-                    input.input::-ms-input-placeholder
-                        color: $dark-blue
-                    button.button
-                        border-radius: 0
-                        color: $dark-blue
-                        padding-top: 0
-                        padding-bottom: 0  
+            +newsletter
     div.map
         height: 300px
         background: #ddd

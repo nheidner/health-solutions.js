@@ -54,7 +54,7 @@ contact_section:
         button_text: Abschicken
         messages:
           is_sent: Your message was sent
-    address markdown: |-
+    address_markdown: |-
       Adresse BLABLABLA 
 
       Adresse BLABLABLA

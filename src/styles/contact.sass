@@ -1,11 +1,25 @@
 @charset "utf-8"
 
+@import "mixins.sass"
+
+$space-1: 0.25rem
+
 .section#contact__header
 
 .section#contact__contact
     div.container
-        
         div.columns
+            div.column.right-column
+                div.newsletter
+                    +newsletter
+                    +tablet
+                        width: 100%
+                        float: initial
+                form
+                    margin-bottom: 3.5rem
+                    +form
+                p
+                    margin-bottom: $space-1 
             div.column.image-column
                 +mobile
                     display: none

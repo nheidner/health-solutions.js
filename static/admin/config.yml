@@ -525,7 +525,7 @@ collections:
                         fields:
                             - {
                                   label: 'Address Markdown',
-                                  name: 'address markdown',
+                                  name: 'address_markdown',
                                   widget: 'markdown',
                                   buttons:
                                       [
@@ -1018,7 +1018,7 @@ collections:
 
                             - {
                                   label: 'Address Markdown',
-                                  name: 'address markdown',
+                                  name: 'address_markdown',
                                   widget: 'markdown',
                                   buttons:
                                       [

@@ -19,6 +19,7 @@ import {
     SVGImage,
 } from '../utils/fragments';
 import Content from '../components/Content';
+import Newsletter, { INewsletterContent } from '../components/Newsletter';
 
 type IIndexTemplate = DeepExtractType<
     IndexQuery,
@@ -446,8 +447,16 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                                     }
                                 />
                             </div>
-                            <Link className='button is-primary'>
-                                {contact_section?.left_column?.button_text}
+                            <Link
+                                to={
+                                    contact_section?.left_column?.button
+                                        ?.button_href as string
+                                }
+                                className='button is-primary'>
+                                {
+                                    contact_section?.left_column?.button
+                                        ?.button_text
+                                }
                             </Link>
                         </div>
                         <div className='column right-column'>
@@ -459,38 +468,16 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                                     }
                                 />
                             </div>
-                            {contact_section?.right_column?.show_newsletter ? (
-                                <div className='newsletter'>
-                                    <h1 className='title is-6'>
-                                        {
-                                            contact_section?.right_column
-                                                ?.newsletter?.heading
-                                        }
-                                    </h1>
-                                    <form className='newsletter-form'>
-                                        <div className='control'>
-                                            <input
-                                                className='input'
-                                                type='text'
-                                                placeholder={
-                                                    contact_section
-                                                        ?.right_column
-                                                        ?.newsletter
-                                                        ?.placeholder as string
-                                                }
-                                            />
-                                            <button className='button is-small'>
-                                                {
-                                                    contact_section
-                                                        ?.right_column
-                                                        ?.newsletter
-                                                        ?.button_text
-                                                }
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            ) : null}
+                            <Newsletter
+                                newsletterContent={
+                                    contact_section?.right_column
+                                        ?.newsletter as INewsletterContent
+                                }
+                                showNewsletter={
+                                    contact_section?.right_column
+                                        ?.show_newsletter as boolean
+                                }
+                            />
                         </div>
                     </div>
                 </div>
@@ -657,7 +644,10 @@ export const pageQuery = graphql`
                     heading
                     left_column {
                         markdown_text
-                        button_text
+                        button {
+                            button_text
+                            button_href
+                        }
                     }
                     right_column {
                         address_markdown

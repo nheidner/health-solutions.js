@@ -702,9 +702,6 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___header_section___markdown_text'
   | 'childMarkdownRemark___frontmatter___contact_section___section_heading'
   | 'childMarkdownRemark___frontmatter___contact_section___heading'
-  | 'childMarkdownRemark___frontmatter___header___heading'
-  | 'childMarkdownRemark___frontmatter___header___markdown_text'
-  | 'childMarkdownRemark___frontmatter___image___alt'
   | 'childMarkdownRemark___frontmatter___about_us_section___section_heading'
   | 'childMarkdownRemark___frontmatter___about_us_section___heading'
   | 'childMarkdownRemark___frontmatter___about_us_section___markdown_text'
@@ -720,6 +717,9 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___labor_section___markdown_text'
   | 'childMarkdownRemark___frontmatter___team_section___section_heading'
   | 'childMarkdownRemark___frontmatter___team_section___cards'
+  | 'childMarkdownRemark___frontmatter___header___heading'
+  | 'childMarkdownRemark___frontmatter___header___markdown_text'
+  | 'childMarkdownRemark___frontmatter___image___alt'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
   | 'childMarkdownRemark___fileAbsolutePath'
@@ -1500,11 +1500,44 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___contact_section___section_heading'
   | 'frontmatter___contact_section___right_column___heading'
   | 'frontmatter___contact_section___right_column___markdown_text'
-  | 'frontmatter___contact_section___right_column___address_markdown'
   | 'frontmatter___contact_section___right_column___show_newsletter'
+  | 'frontmatter___contact_section___right_column___address_markdown'
   | 'frontmatter___contact_section___heading'
   | 'frontmatter___contact_section___left_column___markdown_text'
   | 'frontmatter___contact_section___left_column___button_text'
+  | 'frontmatter___home_section___text_column___heading'
+  | 'frontmatter___home_section___text_column___markdown_text'
+  | 'frontmatter___home_section___text_column___button_text'
+  | 'frontmatter___about_us_section___section_heading'
+  | 'frontmatter___about_us_section___heading'
+  | 'frontmatter___about_us_section___markdown_text'
+  | 'frontmatter___about_us_section___image___alt'
+  | 'frontmatter___philosophy_section___section_heading'
+  | 'frontmatter___philosophy_section___cards'
+  | 'frontmatter___philosophy_section___cards___heading'
+  | 'frontmatter___philosophy_section___cards___markdown_text'
+  | 'frontmatter___verfahren_section___section_heading'
+  | 'frontmatter___verfahren_section___text_column___heading'
+  | 'frontmatter___verfahren_section___text_column___markdown_text'
+  | 'frontmatter___verfahren_section___text_column___button_text'
+  | 'frontmatter___anonymous_section_1___text_column___heading'
+  | 'frontmatter___anonymous_section_1___text_column___markdown_text'
+  | 'frontmatter___anonymous_section_2___heading'
+  | 'frontmatter___anonymous_section_2___subheading'
+  | 'frontmatter___anonymous_section_2___button_text'
+  | 'frontmatter___praxis_section___section_heading'
+  | 'frontmatter___praxis_section___text_column___heading'
+  | 'frontmatter___praxis_section___text_column___markdown_text'
+  | 'frontmatter___praxis_section___text_column___button_text'
+  | 'frontmatter___praxis_section___image_gallery'
+  | 'frontmatter___praxis_section___image_gallery___alt'
+  | 'frontmatter___praxis_section___image___alt'
+  | 'frontmatter___labor_section___heading'
+  | 'frontmatter___labor_section___markdown_text'
+  | 'frontmatter___team_section___section_heading'
+  | 'frontmatter___team_section___cards'
+  | 'frontmatter___team_section___cards___heading'
+  | 'frontmatter___team_section___cards___markdown_text'
   | 'frontmatter___header___logo_image___alt'
   | 'frontmatter___header___heading'
   | 'frontmatter___header___markdown_text'
@@ -1551,39 +1584,6 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___image___source___id'
   | 'frontmatter___image___source___children'
   | 'frontmatter___image___alt'
-  | 'frontmatter___home_section___text_column___heading'
-  | 'frontmatter___home_section___text_column___markdown_text'
-  | 'frontmatter___home_section___text_column___button_text'
-  | 'frontmatter___about_us_section___section_heading'
-  | 'frontmatter___about_us_section___heading'
-  | 'frontmatter___about_us_section___markdown_text'
-  | 'frontmatter___about_us_section___image___alt'
-  | 'frontmatter___philosophy_section___section_heading'
-  | 'frontmatter___philosophy_section___cards'
-  | 'frontmatter___philosophy_section___cards___heading'
-  | 'frontmatter___philosophy_section___cards___markdown_text'
-  | 'frontmatter___verfahren_section___section_heading'
-  | 'frontmatter___verfahren_section___text_column___heading'
-  | 'frontmatter___verfahren_section___text_column___markdown_text'
-  | 'frontmatter___verfahren_section___text_column___button_text'
-  | 'frontmatter___anonymous_section_1___text_column___heading'
-  | 'frontmatter___anonymous_section_1___text_column___markdown_text'
-  | 'frontmatter___anonymous_section_2___heading'
-  | 'frontmatter___anonymous_section_2___subheading'
-  | 'frontmatter___anonymous_section_2___button_text'
-  | 'frontmatter___praxis_section___section_heading'
-  | 'frontmatter___praxis_section___text_column___heading'
-  | 'frontmatter___praxis_section___text_column___markdown_text'
-  | 'frontmatter___praxis_section___text_column___button_text'
-  | 'frontmatter___praxis_section___image_gallery'
-  | 'frontmatter___praxis_section___image_gallery___alt'
-  | 'frontmatter___praxis_section___image___alt'
-  | 'frontmatter___labor_section___heading'
-  | 'frontmatter___labor_section___markdown_text'
-  | 'frontmatter___team_section___section_heading'
-  | 'frontmatter___team_section___cards'
-  | 'frontmatter___team_section___cards___heading'
-  | 'frontmatter___team_section___cards___markdown_text'
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
@@ -1717,9 +1717,6 @@ export type MarkdownRemarkFrontmatter = {
   path?: Maybe<Scalars['String']>;
   header_section?: Maybe<MarkdownRemarkFrontmatterHeader_Section>;
   contact_section?: Maybe<MarkdownRemarkFrontmatterContact_Section>;
-  header?: Maybe<MarkdownRemarkFrontmatterHeader>;
-  form?: Maybe<MarkdownRemarkFrontmatterForm>;
-  image?: Maybe<MarkdownRemarkFrontmatterImage>;
   home_section?: Maybe<MarkdownRemarkFrontmatterHome_Section>;
   about_us_section?: Maybe<MarkdownRemarkFrontmatterAbout_Us_Section>;
   philosophy_section?: Maybe<MarkdownRemarkFrontmatterPhilosophy_Section>;
@@ -1729,6 +1726,9 @@ export type MarkdownRemarkFrontmatter = {
   praxis_section?: Maybe<MarkdownRemarkFrontmatterPraxis_Section>;
   labor_section?: Maybe<MarkdownRemarkFrontmatterLabor_Section>;
   team_section?: Maybe<MarkdownRemarkFrontmatterTeam_Section>;
+  header?: Maybe<MarkdownRemarkFrontmatterHeader>;
+  form?: Maybe<MarkdownRemarkFrontmatterForm>;
+  image?: Maybe<MarkdownRemarkFrontmatterImage>;
 };
 
 export type MarkdownRemarkFrontmatterAbout_Us_Section = {
@@ -1842,29 +1842,41 @@ export type MarkdownRemarkFrontmatterContact_SectionImage_ColumnImageFilterInput
 export type MarkdownRemarkFrontmatterContact_SectionLeft_Column = {
   markdown_text?: Maybe<Scalars['String']>;
   button_text?: Maybe<Scalars['String']>;
+  button?: Maybe<MarkdownRemarkFrontmatterContact_SectionLeft_ColumnButton>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionLeft_ColumnButton = {
+  button_text?: Maybe<Scalars['String']>;
+  button_href?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionLeft_ColumnButtonFilterInput = {
+  button_text?: Maybe<StringQueryOperatorInput>;
+  button_href?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkFrontmatterContact_SectionLeft_ColumnFilterInput = {
   markdown_text?: Maybe<StringQueryOperatorInput>;
   button_text?: Maybe<StringQueryOperatorInput>;
+  button?: Maybe<MarkdownRemarkFrontmatterContact_SectionLeft_ColumnButtonFilterInput>;
 };
 
 export type MarkdownRemarkFrontmatterContact_SectionRight_Column = {
   heading?: Maybe<Scalars['String']>;
   markdown_text?: Maybe<Scalars['String']>;
   form?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnForm>;
-  address_markdown?: Maybe<Scalars['String']>;
   show_newsletter?: Maybe<Scalars['Boolean']>;
   newsletter?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnNewsletter>;
+  address_markdown?: Maybe<Scalars['String']>;
 };
 
 export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFilterInput = {
   heading?: Maybe<StringQueryOperatorInput>;
   markdown_text?: Maybe<StringQueryOperatorInput>;
   form?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormFilterInput>;
-  address_markdown?: Maybe<StringQueryOperatorInput>;
   show_newsletter?: Maybe<BooleanQueryOperatorInput>;
   newsletter?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnNewsletterFilterInput>;
+  address_markdown?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnForm = {
@@ -2007,9 +2019,6 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   path?: Maybe<StringQueryOperatorInput>;
   header_section?: Maybe<MarkdownRemarkFrontmatterHeader_SectionFilterInput>;
   contact_section?: Maybe<MarkdownRemarkFrontmatterContact_SectionFilterInput>;
-  header?: Maybe<MarkdownRemarkFrontmatterHeaderFilterInput>;
-  form?: Maybe<MarkdownRemarkFrontmatterFormFilterInput>;
-  image?: Maybe<MarkdownRemarkFrontmatterImageFilterInput>;
   home_section?: Maybe<MarkdownRemarkFrontmatterHome_SectionFilterInput>;
   about_us_section?: Maybe<MarkdownRemarkFrontmatterAbout_Us_SectionFilterInput>;
   philosophy_section?: Maybe<MarkdownRemarkFrontmatterPhilosophy_SectionFilterInput>;
@@ -2019,6 +2028,9 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   praxis_section?: Maybe<MarkdownRemarkFrontmatterPraxis_SectionFilterInput>;
   labor_section?: Maybe<MarkdownRemarkFrontmatterLabor_SectionFilterInput>;
   team_section?: Maybe<MarkdownRemarkFrontmatterTeam_SectionFilterInput>;
+  header?: Maybe<MarkdownRemarkFrontmatterHeaderFilterInput>;
+  form?: Maybe<MarkdownRemarkFrontmatterFormFilterInput>;
+  image?: Maybe<MarkdownRemarkFrontmatterImageFilterInput>;
 };
 
 export type MarkdownRemarkFrontmatterForm = {
@@ -2607,15 +2619,15 @@ export type QuerySitePageArgs = {
   internalComponentName?: Maybe<StringQueryOperatorInput>;
   componentChunkName?: Maybe<StringQueryOperatorInput>;
   matchPath?: Maybe<StringQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
   context?: Maybe<SitePageContextFilterInput>;
   pluginCreator?: Maybe<SitePluginFilterInput>;
   pluginCreatorId?: Maybe<StringQueryOperatorInput>;
   componentPath?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
 };
 
 
@@ -3071,15 +3083,15 @@ export type SitePage = Node & {
   internalComponentName: Scalars['String'];
   componentChunkName: Scalars['String'];
   matchPath?: Maybe<Scalars['String']>;
-  id: Scalars['ID'];
-  parent?: Maybe<Node>;
-  children: Array<Node>;
-  internal: Internal;
   isCreatedByStatefulCreatePages?: Maybe<Scalars['Boolean']>;
   context?: Maybe<SitePageContext>;
   pluginCreator?: Maybe<SitePlugin>;
   pluginCreatorId?: Maybe<Scalars['String']>;
   componentPath?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
 };
 
 export type SitePageConnection = {
@@ -3123,6 +3135,90 @@ export type SitePageFieldsEnum =
   | 'internalComponentName'
   | 'componentChunkName'
   | 'matchPath'
+  | 'isCreatedByStatefulCreatePages'
+  | 'context___id'
+  | 'pluginCreator___id'
+  | 'pluginCreator___parent___id'
+  | 'pluginCreator___parent___parent___id'
+  | 'pluginCreator___parent___parent___children'
+  | 'pluginCreator___parent___children'
+  | 'pluginCreator___parent___children___id'
+  | 'pluginCreator___parent___children___children'
+  | 'pluginCreator___parent___internal___content'
+  | 'pluginCreator___parent___internal___contentDigest'
+  | 'pluginCreator___parent___internal___description'
+  | 'pluginCreator___parent___internal___fieldOwners'
+  | 'pluginCreator___parent___internal___ignoreType'
+  | 'pluginCreator___parent___internal___mediaType'
+  | 'pluginCreator___parent___internal___owner'
+  | 'pluginCreator___parent___internal___type'
+  | 'pluginCreator___children'
+  | 'pluginCreator___children___id'
+  | 'pluginCreator___children___parent___id'
+  | 'pluginCreator___children___parent___children'
+  | 'pluginCreator___children___children'
+  | 'pluginCreator___children___children___id'
+  | 'pluginCreator___children___children___children'
+  | 'pluginCreator___children___internal___content'
+  | 'pluginCreator___children___internal___contentDigest'
+  | 'pluginCreator___children___internal___description'
+  | 'pluginCreator___children___internal___fieldOwners'
+  | 'pluginCreator___children___internal___ignoreType'
+  | 'pluginCreator___children___internal___mediaType'
+  | 'pluginCreator___children___internal___owner'
+  | 'pluginCreator___children___internal___type'
+  | 'pluginCreator___internal___content'
+  | 'pluginCreator___internal___contentDigest'
+  | 'pluginCreator___internal___description'
+  | 'pluginCreator___internal___fieldOwners'
+  | 'pluginCreator___internal___ignoreType'
+  | 'pluginCreator___internal___mediaType'
+  | 'pluginCreator___internal___owner'
+  | 'pluginCreator___internal___type'
+  | 'pluginCreator___resolve'
+  | 'pluginCreator___name'
+  | 'pluginCreator___version'
+  | 'pluginCreator___pluginOptions___plugins'
+  | 'pluginCreator___pluginOptions___plugins___resolve'
+  | 'pluginCreator___pluginOptions___plugins___id'
+  | 'pluginCreator___pluginOptions___plugins___name'
+  | 'pluginCreator___pluginOptions___plugins___version'
+  | 'pluginCreator___pluginOptions___plugins___browserAPIs'
+  | 'pluginCreator___pluginOptions___plugins___pluginFilepath'
+  | 'pluginCreator___pluginOptions___modalProps___closeTimeoutMS'
+  | 'pluginCreator___pluginOptions___path'
+  | 'pluginCreator___pluginOptions___name'
+  | 'pluginCreator___pluginOptions___fileName'
+  | 'pluginCreator___pluginOptions___maxWidth'
+  | 'pluginCreator___pluginOptions___destinationDir'
+  | 'pluginCreator___pluginOptions___develop'
+  | 'pluginCreator___pluginOptions___purgeOnly'
+  | 'pluginCreator___pluginOptions___modulePath'
+  | 'pluginCreator___pluginOptions___enableIdentityWidget'
+  | 'pluginCreator___pluginOptions___publicPath'
+  | 'pluginCreator___pluginOptions___htmlTitle'
+  | 'pluginCreator___pluginOptions___pathCheck'
+  | 'pluginCreator___nodeAPIs'
+  | 'pluginCreator___browserAPIs'
+  | 'pluginCreator___ssrAPIs'
+  | 'pluginCreator___pluginFilepath'
+  | 'pluginCreator___packageJson___name'
+  | 'pluginCreator___packageJson___description'
+  | 'pluginCreator___packageJson___version'
+  | 'pluginCreator___packageJson___main'
+  | 'pluginCreator___packageJson___license'
+  | 'pluginCreator___packageJson___dependencies'
+  | 'pluginCreator___packageJson___dependencies___name'
+  | 'pluginCreator___packageJson___dependencies___version'
+  | 'pluginCreator___packageJson___devDependencies'
+  | 'pluginCreator___packageJson___devDependencies___name'
+  | 'pluginCreator___packageJson___devDependencies___version'
+  | 'pluginCreator___packageJson___peerDependencies'
+  | 'pluginCreator___packageJson___peerDependencies___name'
+  | 'pluginCreator___packageJson___peerDependencies___version'
+  | 'pluginCreator___packageJson___keywords'
+  | 'pluginCreatorId'
+  | 'componentPath'
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -3208,91 +3304,7 @@ export type SitePageFieldsEnum =
   | 'internal___ignoreType'
   | 'internal___mediaType'
   | 'internal___owner'
-  | 'internal___type'
-  | 'isCreatedByStatefulCreatePages'
-  | 'context___id'
-  | 'pluginCreator___id'
-  | 'pluginCreator___parent___id'
-  | 'pluginCreator___parent___parent___id'
-  | 'pluginCreator___parent___parent___children'
-  | 'pluginCreator___parent___children'
-  | 'pluginCreator___parent___children___id'
-  | 'pluginCreator___parent___children___children'
-  | 'pluginCreator___parent___internal___content'
-  | 'pluginCreator___parent___internal___contentDigest'
-  | 'pluginCreator___parent___internal___description'
-  | 'pluginCreator___parent___internal___fieldOwners'
-  | 'pluginCreator___parent___internal___ignoreType'
-  | 'pluginCreator___parent___internal___mediaType'
-  | 'pluginCreator___parent___internal___owner'
-  | 'pluginCreator___parent___internal___type'
-  | 'pluginCreator___children'
-  | 'pluginCreator___children___id'
-  | 'pluginCreator___children___parent___id'
-  | 'pluginCreator___children___parent___children'
-  | 'pluginCreator___children___children'
-  | 'pluginCreator___children___children___id'
-  | 'pluginCreator___children___children___children'
-  | 'pluginCreator___children___internal___content'
-  | 'pluginCreator___children___internal___contentDigest'
-  | 'pluginCreator___children___internal___description'
-  | 'pluginCreator___children___internal___fieldOwners'
-  | 'pluginCreator___children___internal___ignoreType'
-  | 'pluginCreator___children___internal___mediaType'
-  | 'pluginCreator___children___internal___owner'
-  | 'pluginCreator___children___internal___type'
-  | 'pluginCreator___internal___content'
-  | 'pluginCreator___internal___contentDigest'
-  | 'pluginCreator___internal___description'
-  | 'pluginCreator___internal___fieldOwners'
-  | 'pluginCreator___internal___ignoreType'
-  | 'pluginCreator___internal___mediaType'
-  | 'pluginCreator___internal___owner'
-  | 'pluginCreator___internal___type'
-  | 'pluginCreator___resolve'
-  | 'pluginCreator___name'
-  | 'pluginCreator___version'
-  | 'pluginCreator___pluginOptions___plugins'
-  | 'pluginCreator___pluginOptions___plugins___resolve'
-  | 'pluginCreator___pluginOptions___plugins___id'
-  | 'pluginCreator___pluginOptions___plugins___name'
-  | 'pluginCreator___pluginOptions___plugins___version'
-  | 'pluginCreator___pluginOptions___plugins___browserAPIs'
-  | 'pluginCreator___pluginOptions___plugins___pluginFilepath'
-  | 'pluginCreator___pluginOptions___modalProps___closeTimeoutMS'
-  | 'pluginCreator___pluginOptions___path'
-  | 'pluginCreator___pluginOptions___name'
-  | 'pluginCreator___pluginOptions___fileName'
-  | 'pluginCreator___pluginOptions___maxWidth'
-  | 'pluginCreator___pluginOptions___destinationDir'
-  | 'pluginCreator___pluginOptions___develop'
-  | 'pluginCreator___pluginOptions___purgeOnly'
-  | 'pluginCreator___pluginOptions___modulePath'
-  | 'pluginCreator___pluginOptions___enableIdentityWidget'
-  | 'pluginCreator___pluginOptions___publicPath'
-  | 'pluginCreator___pluginOptions___htmlTitle'
-  | 'pluginCreator___pluginOptions___pathCheck'
-  | 'pluginCreator___nodeAPIs'
-  | 'pluginCreator___browserAPIs'
-  | 'pluginCreator___ssrAPIs'
-  | 'pluginCreator___pluginFilepath'
-  | 'pluginCreator___packageJson___name'
-  | 'pluginCreator___packageJson___description'
-  | 'pluginCreator___packageJson___version'
-  | 'pluginCreator___packageJson___main'
-  | 'pluginCreator___packageJson___license'
-  | 'pluginCreator___packageJson___dependencies'
-  | 'pluginCreator___packageJson___dependencies___name'
-  | 'pluginCreator___packageJson___dependencies___version'
-  | 'pluginCreator___packageJson___devDependencies'
-  | 'pluginCreator___packageJson___devDependencies___name'
-  | 'pluginCreator___packageJson___devDependencies___version'
-  | 'pluginCreator___packageJson___peerDependencies'
-  | 'pluginCreator___packageJson___peerDependencies___name'
-  | 'pluginCreator___packageJson___peerDependencies___version'
-  | 'pluginCreator___packageJson___keywords'
-  | 'pluginCreatorId'
-  | 'componentPath';
+  | 'internal___type';
 
 export type SitePageFilterInput = {
   path?: Maybe<StringQueryOperatorInput>;
@@ -3300,15 +3312,15 @@ export type SitePageFilterInput = {
   internalComponentName?: Maybe<StringQueryOperatorInput>;
   componentChunkName?: Maybe<StringQueryOperatorInput>;
   matchPath?: Maybe<StringQueryOperatorInput>;
-  id?: Maybe<StringQueryOperatorInput>;
-  parent?: Maybe<NodeFilterInput>;
-  children?: Maybe<NodeFilterListInput>;
-  internal?: Maybe<InternalFilterInput>;
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>;
   context?: Maybe<SitePageContextFilterInput>;
   pluginCreator?: Maybe<SitePluginFilterInput>;
   pluginCreatorId?: Maybe<StringQueryOperatorInput>;
   componentPath?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
 };
 
 export type SitePageGroupConnection = {
@@ -3877,7 +3889,10 @@ export type IndexQuery = { markdownRemark?: Maybe<{ frontmatter?: Maybe<(
         )>>> }
       )>, contact_section?: Maybe<(
         Pick<MarkdownRemarkFrontmatterContact_Section, 'section_heading' | 'heading'>
-        & { left_column?: Maybe<Pick<MarkdownRemarkFrontmatterContact_SectionLeft_Column, 'markdown_text' | 'button_text'>>, right_column?: Maybe<(
+        & { left_column?: Maybe<(
+          Pick<MarkdownRemarkFrontmatterContact_SectionLeft_Column, 'markdown_text'>
+          & { button?: Maybe<Pick<MarkdownRemarkFrontmatterContact_SectionLeft_ColumnButton, 'button_text' | 'button_href'>> }
+        )>, right_column?: Maybe<(
           Pick<MarkdownRemarkFrontmatterContact_SectionRight_Column, 'address_markdown' | 'show_newsletter'>
           & { newsletter?: Maybe<Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnNewsletter, 'heading' | 'placeholder' | 'button_text'>> }
         )> }
