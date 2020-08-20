@@ -195,6 +195,9 @@ contact_section:
     markdown_text: Termine erfolgen nach Absprache. Rufen Sie uns an oder machen Sie
       problemlos direkt online einen Termin aus.
     button_text: Termin Vereinbaren
+    button:
+      button_text: Termin Vereinbaren
+      button_href: /contact
   right_column:
     address markdown: |-
       Adresse BLABLABLA 
