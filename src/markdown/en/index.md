@@ -81,6 +81,9 @@ verfahren_section:
       den Prozess der Selbstheilung zu aktivieren und Schaderreger
       auszuschalten.
     button_text: Erfahre mehr
+    button:
+      button_text: Erfahre mehr
+      button_href: /
   image_column:
     image:
       source: /img/woman_with_doctor.png
@@ -109,6 +112,9 @@ anonymous_section_2:
   heading: Möchten Sie eine Termin in unserer Praxis buchen?
   subheading: Kontaktieren Sie uns jetzt telefonisch unter 030 093834582735t2
   button_text: Termin vereinbaren
+  button:
+    button_text: Termin vereinbaren
+    button_href: /contact
 praxis_section:
   section_heading: Praxis
   image_column:
@@ -127,6 +133,9 @@ praxis_section:
       auch noch lange kein Problem. Was verschiebe steht auf morgen, das
       bereitet keine Sorgen. Ich bin ein Fließtext und das ist gut so.
     button_text: Termin vereinbaren
+    button:
+      button_text: Termin vereinbaren
+      button_href: /contact
   image_gallery:
     - source: /img/woman_with_doctor.png
       alt: bla
