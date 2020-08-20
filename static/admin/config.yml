@@ -155,6 +155,11 @@ collections:
                         collapsed: true
                         label_singular: Card
                         fields:
+                            - {
+                                  label: 'Heading',
+                                  name: 'heading',
+                                  widget: 'string',
+                              }
                             - label: 'Image'
                               name: 'image'
                               widget: object
@@ -170,11 +175,6 @@ collections:
                                         name: 'alt',
                                         widget: 'string',
                                     }
-                            - {
-                                  label: 'Heading',
-                                  name: 'heading',
-                                  widget: 'string',
-                              }
                             - {
                                   label: 'Markdown Text',
                                   name: 'markdown_text',
@@ -243,11 +243,21 @@ collections:
                                           quote,
                                       ],
                               }
-                            - {
-                                  label: 'Button Text',
-                                  name: 'button_text',
-                                  widget: 'string',
-                              }
+                            - label: 'Button'
+                              name: button
+                              widget: 'object'
+                              collapsed: true
+                              fields:
+                                  - {
+                                        label: 'Button Text',
+                                        name: 'button_text',
+                                        widget: 'string',
+                                    }
+                                  - {
+                                        label: 'Button To',
+                                        name: 'button_href',
+                                        widget: 'string',
+                                    }
                 - label: 'Anonymous Section 1'
                   name: 'anonymous_section_1'
                   widget: object
@@ -308,11 +318,21 @@ collections:
                             name: 'subheading',
                             widget: string,
                         }
-                      - {
-                            label: 'Button Text',
-                            name: 'button_text',
-                            widget: 'string',
-                        }
+                      - label: 'Button'
+                        name: button
+                        widget: 'object'
+                        collapsed: true
+                        fields:
+                            - {
+                                  label: 'Button Text',
+                                  name: 'button_text',
+                                  widget: 'string',
+                              }
+                            - {
+                                  label: 'Button To',
+                                  name: 'button_href',
+                                  widget: 'string',
+                              }
                 - label: 'Praxis Section'
                   name: 'praxis_section'
                   widget: object
@@ -367,11 +387,21 @@ collections:
                                           quote,
                                       ],
                               }
-                            - {
-                                  label: 'Button Text',
-                                  name: 'button_text',
-                                  widget: 'string',
-                              }
+                            - label: 'Button'
+                              name: button
+                              widget: 'object'
+                              collapsed: true
+                              fields:
+                                  - {
+                                        label: 'Button Text',
+                                        name: 'button_text',
+                                        widget: 'string',
+                                    }
+                                  - {
+                                        label: 'Button To',
+                                        name: 'button_href',
+                                        widget: 'string',
+                                    }
                       - label: Image Gallery
                         name: image_gallery
                         widget: list
@@ -439,6 +469,11 @@ collections:
                         collapsed: true
                         label_singular: Card
                         fields:
+                            - {
+                                  label: 'Heading',
+                                  name: 'heading',
+                                  widget: 'string',
+                              }
                             - label: 'Image'
                               name: 'image'
                               widget: object
@@ -454,11 +489,6 @@ collections:
                                         name: 'alt',
                                         widget: 'string',
                                     }
-                            - {
-                                  label: 'Heading',
-                                  name: 'heading',
-                                  widget: 'string',
-                              }
                             - {
                                   label: 'Markdown Text',
                                   name: 'markdown_text',

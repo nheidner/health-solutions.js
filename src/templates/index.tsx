@@ -221,9 +221,17 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                                     }
                                 />
                             </div>
-                            <button className='button is-primary'>
-                                {verfahren_section?.text_column?.button_text}
-                            </button>
+                            <Link
+                                to={
+                                    verfahren_section?.text_column?.button
+                                        ?.button_href
+                                }
+                                className='button is-primary'>
+                                {
+                                    verfahren_section?.text_column?.button
+                                        ?.button_text
+                                }
+                            </Link>
                         </div>
                         <div
                             className='column'
@@ -293,9 +301,11 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                     <h1 className='subtitle has-text-white'>
                         {anonymous_section_2?.subheading}
                     </h1>
-                    <button className='button'>
-                        {anonymous_section_2?.button_text}
-                    </button>
+                    <Link
+                        to={anonymous_section_2?.button?.button_href}
+                        className='button'>
+                        {anonymous_section_2?.button?.button_text}
+                    </Link>
                 </div>
             </section>
             <section className='section' id='praxis'>
@@ -341,9 +351,17 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                                     }
                                 />
                             </div>
-                            <button className='button is-primary'>
-                                {praxis_section?.text_column?.button_text}
-                            </button>
+                            <Link
+                                to={
+                                    praxis_section?.text_column?.button
+                                        ?.button_href
+                                }
+                                className='button is-primary'>
+                                {
+                                    praxis_section?.text_column?.button
+                                        ?.button_text
+                                }
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -563,7 +581,10 @@ export const pageQuery = graphql`
                     text_column {
                         heading
                         markdown_text
-                        button_text
+                        button {
+                            button_text
+                            button_href
+                        }
                     }
                     image_column {
                         image {
@@ -592,7 +613,10 @@ export const pageQuery = graphql`
                 anonymous_section_2 {
                     heading
                     subheading
-                    button_text
+                    button {
+                        button_text
+                        button_href
+                    }
                 }
                 praxis_section {
                     section_heading
@@ -607,7 +631,10 @@ export const pageQuery = graphql`
                     text_column {
                         heading
                         markdown_text
-                        button_text
+                        button {
+                            button_text
+                            button_href
+                        }
                     }
                     image_gallery {
                         source {

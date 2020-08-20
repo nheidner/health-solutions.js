@@ -1500,8 +1500,8 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___contact_section___section_heading'
   | 'frontmatter___contact_section___right_column___heading'
   | 'frontmatter___contact_section___right_column___markdown_text'
-  | 'frontmatter___contact_section___right_column___show_newsletter'
   | 'frontmatter___contact_section___right_column___address_markdown'
+  | 'frontmatter___contact_section___right_column___show_newsletter'
   | 'frontmatter___contact_section___heading'
   | 'frontmatter___contact_section___left_column___markdown_text'
   | 'frontmatter___contact_section___left_column___button_text'
@@ -1865,18 +1865,18 @@ export type MarkdownRemarkFrontmatterContact_SectionRight_Column = {
   heading?: Maybe<Scalars['String']>;
   markdown_text?: Maybe<Scalars['String']>;
   form?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnForm>;
+  address_markdown?: Maybe<Scalars['String']>;
   show_newsletter?: Maybe<Scalars['Boolean']>;
   newsletter?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnNewsletter>;
-  address_markdown?: Maybe<Scalars['String']>;
 };
 
 export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFilterInput = {
   heading?: Maybe<StringQueryOperatorInput>;
   markdown_text?: Maybe<StringQueryOperatorInput>;
   form?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormFilterInput>;
+  address_markdown?: Maybe<StringQueryOperatorInput>;
   show_newsletter?: Maybe<BooleanQueryOperatorInput>;
   newsletter?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnNewsletterFilterInput>;
-  address_markdown?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnForm = {
@@ -3752,183 +3752,6 @@ export type StringQueryOperatorInput = {
   regex?: Maybe<Scalars['String']>;
   glob?: Maybe<Scalars['String']>;
 };
-
-export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_1_Query = { site?: Maybe<{ siteMetadata?: Maybe<{ menu?: Maybe<Array<Maybe<(
-        Pick<SiteSiteMetadataMenu, 'to'>
-        & { item?: Maybe<Pick<SiteSiteMetadataMenuItem, 'en' | 'de'>> }
-      )>>> }> }> };
-
-export type ContactQueryVariables = Exact<{
-  id: Scalars['String'];
-}>;
-
-
-export type ContactQuery = { markdownRemark?: Maybe<{ frontmatter?: Maybe<(
-      Pick<MarkdownRemarkFrontmatter, 'pageTitle'>
-      & { header_section?: Maybe<(
-        Pick<MarkdownRemarkFrontmatterHeader_Section, 'heading' | 'markdown_text'>
-        & { image?: Maybe<(
-          Pick<MarkdownRemarkFrontmatterHeader_SectionImage, 'alt'>
-          & { source?: Maybe<FullWidthImageFragment> }
-        )> }
-      )>, contact_section?: Maybe<(
-        Pick<MarkdownRemarkFrontmatterContact_Section, 'section_heading' | 'heading'>
-        & { image_column?: Maybe<{ image?: Maybe<(
-            Pick<MarkdownRemarkFrontmatterContact_SectionImage_ColumnImage, 'alt'>
-            & { source?: Maybe<ColumnImageMediumFragment> }
-          )> }>, right_column?: Maybe<(
-          Pick<MarkdownRemarkFrontmatterContact_SectionRight_Column, 'heading' | 'markdown_text' | 'address_markdown' | 'show_newsletter'>
-          & { form?: Maybe<{ name_field?: Maybe<(
-              Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormName_Field, 'label' | 'max_number_characters'>
-              & { messages?: Maybe<Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormName_FieldMessages, 'character_maximum' | 'required'>> }
-            )>, telephone_number_field?: Maybe<(
-              Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormTelephone_Number_Field, 'label' | 'max_number_characters'>
-              & { messages?: Maybe<Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormTelephone_Number_FieldMessages, 'character_maximum' | 'required'>> }
-            )>, email_address_field?: Maybe<(
-              Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormEmail_Address_Field, 'label'>
-              & { messages?: Maybe<Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormEmail_Address_FieldMessages, 'is_email' | 'required'>> }
-            )>, message_field?: Maybe<(
-              Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormMessage_Field, 'label' | 'max_number_characters'>
-              & { messages?: Maybe<Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormMessage_FieldMessages, 'character_maximum' | 'required'>> }
-            )>, send_button?: Maybe<(
-              Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormSend_Button, 'button_text'>
-              & { messages?: Maybe<Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormSend_ButtonMessages, 'is_sent'>> }
-            )> }>, newsletter?: Maybe<Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnNewsletter, 'heading' | 'placeholder' | 'button_text'>> }
-        )> }
-      )> }
-    )> }> };
-
-export type ContactPopupQueryVariables = Exact<{
-  id: Scalars['String'];
-}>;
-
-
-export type ContactPopupQuery = { markdownRemark?: Maybe<{ frontmatter?: Maybe<(
-      Pick<MarkdownRemarkFrontmatter, 'locale'>
-      & { header?: Maybe<(
-        Pick<MarkdownRemarkFrontmatterHeader, 'heading' | 'markdown_text'>
-        & { logo_image?: Maybe<(
-          Pick<MarkdownRemarkFrontmatterHeaderLogo_Image, 'alt'>
-          & { source?: Maybe<SvgImageFragment> }
-        )> }
-      )>, form?: Maybe<{ name_field?: Maybe<(
-          Pick<MarkdownRemarkFrontmatterFormName_Field, 'label' | 'max_number_characters'>
-          & { messages?: Maybe<Pick<MarkdownRemarkFrontmatterFormName_FieldMessages, 'required' | 'character_maximum'>> }
-        )>, telephone_number_field?: Maybe<(
-          Pick<MarkdownRemarkFrontmatterFormTelephone_Number_Field, 'label' | 'max_number_characters'>
-          & { messages?: Maybe<Pick<MarkdownRemarkFrontmatterFormTelephone_Number_FieldMessages, 'character_maximum' | 'required'>> }
-        )>, email_address_field?: Maybe<(
-          Pick<MarkdownRemarkFrontmatterFormEmail_Address_Field, 'label'>
-          & { messages?: Maybe<Pick<MarkdownRemarkFrontmatterFormEmail_Address_FieldMessages, 'is_email' | 'required'>> }
-        )>, send_button?: Maybe<(
-          Pick<MarkdownRemarkFrontmatterFormSend_Button, 'button_text'>
-          & { messages?: Maybe<Pick<MarkdownRemarkFrontmatterFormSend_ButtonMessages, 'is_sent'>> }
-        )> }>, image?: Maybe<(
-        Pick<MarkdownRemarkFrontmatterImage, 'alt'>
-        & { source?: Maybe<PopupColumnImageFragment> }
-      )> }
-    )> }> };
-
-export type IndexQueryVariables = Exact<{
-  id: Scalars['String'];
-}>;
-
-
-export type IndexQuery = { markdownRemark?: Maybe<{ frontmatter?: Maybe<(
-      Pick<MarkdownRemarkFrontmatter, 'locale' | 'pageTitle' | 'path'>
-      & { home_section?: Maybe<{ image_column?: Maybe<{ image?: Maybe<(
-            Pick<MarkdownRemarkFrontmatterHome_SectionImage_ColumnImage, 'alt'>
-            & { source?: Maybe<ColumnImageLargeFragment> }
-          )> }>, text_column?: Maybe<Pick<MarkdownRemarkFrontmatterHome_SectionText_Column, 'heading' | 'markdown_text' | 'button_text'>> }>, about_us_section?: Maybe<(
-        Pick<MarkdownRemarkFrontmatterAbout_Us_Section, 'section_heading' | 'heading' | 'markdown_text'>
-        & { image?: Maybe<(
-          Pick<MarkdownRemarkFrontmatterAbout_Us_SectionImage, 'alt'>
-          & { source?: Maybe<SvgImageFragment> }
-        )> }
-      )>, philosophy_section?: Maybe<(
-        Pick<MarkdownRemarkFrontmatterPhilosophy_Section, 'section_heading'>
-        & { cards?: Maybe<Array<Maybe<(
-          Pick<MarkdownRemarkFrontmatterPhilosophy_SectionCards, 'heading' | 'markdown_text'>
-          & { image?: Maybe<(
-            Pick<MarkdownRemarkFrontmatterPhilosophy_SectionCardsImage, 'alt'>
-            & { source?: Maybe<CardHeaderImageFragment> }
-          )> }
-        )>>> }
-      )>, verfahren_section?: Maybe<(
-        Pick<MarkdownRemarkFrontmatterVerfahren_Section, 'section_heading'>
-        & { text_column?: Maybe<Pick<MarkdownRemarkFrontmatterVerfahren_SectionText_Column, 'heading' | 'markdown_text' | 'button_text'>>, image_column?: Maybe<{ image?: Maybe<(
-            Pick<MarkdownRemarkFrontmatterVerfahren_SectionImage_ColumnImage, 'alt'>
-            & { source?: Maybe<ColumnImageLargeFragment> }
-          )> }> }
-      )>, anonymous_section_1?: Maybe<{ image_column?: Maybe<{ image?: Maybe<(
-            Pick<MarkdownRemarkFrontmatterAnonymous_Section_1Image_ColumnImage, 'alt'>
-            & { source?: Maybe<ColumnImageMediumFragment> }
-          )> }>, text_column?: Maybe<Pick<MarkdownRemarkFrontmatterAnonymous_Section_1Text_Column, 'heading' | 'markdown_text'>> }>, anonymous_section_2?: Maybe<Pick<MarkdownRemarkFrontmatterAnonymous_Section_2, 'heading' | 'subheading' | 'button_text'>>, praxis_section?: Maybe<(
-        Pick<MarkdownRemarkFrontmatterPraxis_Section, 'section_heading'>
-        & { image_column?: Maybe<{ image?: Maybe<(
-            Pick<MarkdownRemarkFrontmatterPraxis_SectionImage_ColumnImage, 'alt'>
-            & { source?: Maybe<ColumnImageMediumFragment> }
-          )> }>, text_column?: Maybe<Pick<MarkdownRemarkFrontmatterPraxis_SectionText_Column, 'heading' | 'markdown_text' | 'button_text'>>, image_gallery?: Maybe<Array<Maybe<(
-          Pick<MarkdownRemarkFrontmatterPraxis_SectionImage_Gallery, 'alt'>
-          & { source?: Maybe<GalleryImageFragment> }
-        )>>>, image?: Maybe<(
-          Pick<MarkdownRemarkFrontmatterPraxis_SectionImage, 'alt'>
-          & { source?: Maybe<SvgImageFragment> }
-        )> }
-      )>, labor_section?: Maybe<Pick<MarkdownRemarkFrontmatterLabor_Section, 'heading' | 'markdown_text'>>, team_section?: Maybe<(
-        Pick<MarkdownRemarkFrontmatterTeam_Section, 'section_heading'>
-        & { cards?: Maybe<Array<Maybe<(
-          Pick<MarkdownRemarkFrontmatterTeam_SectionCards, 'heading' | 'markdown_text'>
-          & { image?: Maybe<(
-            Pick<MarkdownRemarkFrontmatterTeam_SectionCardsImage, 'alt'>
-            & { source?: Maybe<CardHeaderImageFragment> }
-          )> }
-        )>>> }
-      )>, contact_section?: Maybe<(
-        Pick<MarkdownRemarkFrontmatterContact_Section, 'section_heading' | 'heading'>
-        & { left_column?: Maybe<(
-          Pick<MarkdownRemarkFrontmatterContact_SectionLeft_Column, 'markdown_text'>
-          & { button?: Maybe<Pick<MarkdownRemarkFrontmatterContact_SectionLeft_ColumnButton, 'button_text' | 'button_href'>> }
-        )>, right_column?: Maybe<(
-          Pick<MarkdownRemarkFrontmatterContact_SectionRight_Column, 'address_markdown' | 'show_newsletter'>
-          & { newsletter?: Maybe<Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnNewsletter, 'heading' | 'placeholder' | 'button_text'>> }
-        )> }
-      )> }
-    )> }> };
-
-export type Index2QueryVariables = Exact<{
-  id: Scalars['String'];
-}>;
-
-
-export type Index2Query = { markdownRemark?: Maybe<{ frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'locale' | 'pageTitle' | 'path'>> }> };
-
-export type ColumnImageMediumFragment = { childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> };
-
-export type ColumnImageLargeFragment = { childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> };
-
-export type CardHeaderImageFragment = { childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> };
-
-export type GalleryImageFragment = { childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> };
-
-export type SvgImageFragment = Pick<File, 'extension' | 'publicURL'>;
-
-export type PopupColumnImageFragment = { childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> };
-
-export type FullWidthImageFragment = { childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> };
-
-export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type Unnamed_2_Query = { allMarkdownRemark: { edges: Array<{ node: { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'locale'>> } }> } };
-
-export type LocalesQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type LocalesQuery = { site?: Maybe<{ siteMetadata?: Maybe<{ localesSettings?: Maybe<Pick<SiteSiteMetadataLocalesSettings, 'locales' | 'primary'>> }> }> };
 
 export type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 
