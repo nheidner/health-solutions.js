@@ -137,10 +137,10 @@ praxis_section:
       button_text: Termin vereinbaren
       button_href: /contact
   image_gallery:
-    - source: /img/woman_with_doctor.png
-      alt: bla
     - source: /img/couple.png
       alt: blaa
+    - source: /img/couple.png
+      alt: couple
   image:
     source: /img/logo_farbe.svg
     alt: Health Solutions Logo
