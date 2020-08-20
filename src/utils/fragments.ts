@@ -56,3 +56,13 @@ export const popupColumnImage = graphql`
         }
     }
 `;
+
+export const fullWidthImage = graphql`
+    fragment fullWidthImage on File {
+        childImageSharp {
+            fluid(maxWidth: 1600) {
+                ...GatsbyImageSharpFluid
+            }
+        }
+    }
+`;

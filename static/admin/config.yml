@@ -503,11 +503,21 @@ collections:
                                           quote,
                                       ],
                               }
-                            - {
-                                  label: 'Button Text',
-                                  name: 'button_text',
-                                  widget: 'string',
-                              }
+                            - label: 'Button'
+                              name: button
+                              widget: 'object'
+                              collapsed: true
+                              fields:
+                                  - {
+                                        label: 'Button Text',
+                                        name: 'button_text',
+                                        widget: 'string',
+                                    }
+                                  - {
+                                        label: 'Button To',
+                                        name: 'button_href',
+                                        widget: 'string',
+                                    }
                       - label: 'Right Column'
                         name: 'right_column'
                         widget: 'object'
@@ -698,7 +708,7 @@ collections:
                                         label: 'Is Not An Email Message',
                                         name: 'is_email',
                                         widget: 'string',
-                                        hint: 'Warning message that is displayed when the character entered into the field dont fit the patter of an email',
+                                        hint: 'Warning message that is displayed when the character entered into the field dont fit the pattern of an email',
                                     }
                                   - {
                                         label: 'Required Message',

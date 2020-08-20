@@ -446,9 +446,9 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                                     }
                                 />
                             </div>
-                            <button className='button is-primary'>
+                            <Link className='button is-primary'>
                                 {contact_section?.left_column?.button_text}
-                            </button>
+                            </Link>
                         </div>
                         <div className='column right-column'>
                             <div className='content is-medium'>

@@ -1,5 +1,6 @@
 import { IndexTemplate } from '../templates/index';
 import { ContactPopupTemplate } from '../templates/contact_popup';
+import { ContactTemplate } from '../templates/contact';
 import CMS from 'netlify-cms-app';
 import React from 'react';
 import withEmotion from './with-emotion';
@@ -40,3 +41,15 @@ CMS.registerPreviewTemplate(
     'contact_popup_en',
     withEmotion(ContactPopupPagePreviewEn)
 );
+
+const ContactPagePreviewEn = ({ entry }) => {
+    const data = entry.getIn(['data']).toJS();
+    return (
+        <ContactTemplate
+            header_section={data.header_section}
+            contact_section={data.contact_section}
+            preview={true}
+        />
+    );
+};
+CMS.registerPreviewTemplate('contact_en', withEmotion(ContactPagePreviewEn));

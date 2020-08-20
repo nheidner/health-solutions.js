@@ -17,6 +17,7 @@ import {
     cardHeaderImage,
     galleryImage,
     SVGImage,
+    fullWidthImage,
 } from '../utils/fragments';
 import Content from '../components/Content';
 
@@ -30,7 +31,11 @@ const aosSettings = {
     delay: { short: 400, medium: 600, long: 1800, none: 0 },
 };
 
-export const ContactTemplate: FC<IContactTemplate> = ({ preview }) => {
+export const ContactTemplate: FC<IContactTemplate> = ({
+    header_section,
+    contact_section,
+    preview,
+}) => {
     // const praxisGalleryImages = praxis_section?.image_gallery?.map(
     //     (imageElem) => {
     //         return {
@@ -106,7 +111,10 @@ const Contact: FC<{ data: ContactQuery }> = ({ data }) => {
 
     return (
         <Layout pageTitle={frontmatter?.pageTitle as string}>
-            <ContactTemplate />
+            <ContactTemplate
+                header_section={frontmatter?.header_section}
+                contact_section={frontmatter?.contact_section}
+            />
         </Layout>
     );
 };
@@ -115,9 +123,79 @@ export const pageQuery = graphql`
     query Contact($id: String!) {
         markdownRemark(id: { eq: $id }) {
             frontmatter {
-                locale
                 pageTitle
-                path
+                header_section {
+                    heading
+                    markdown_text
+                    image {
+                        source {
+                            ...fullWidthImage
+                        }
+                        alt
+                    }
+                }
+                contact_section {
+                    section_heading
+                    heading
+                    image_column {
+                        image {
+                            source {
+                                ...columnImageMedium
+                            }
+                            alt
+                        }
+                    }
+                    right_column {
+                        heading
+                        markdown_text
+                        form {
+                            name_field {
+                                label
+                                max_number_characters
+                                messages {
+                                    character_maximum
+                                    required
+                                }
+                            }
+                            telephone_number_field {
+                                label
+                                max_number_characters
+                                messages {
+                                    character_maximum
+                                    required
+                                }
+                            }
+                            email_address_field {
+                                label
+                                messages {
+                                    is_email
+                                    required
+                                }
+                            }
+                            message_field {
+                                label
+                                max_number_characters
+                                messages {
+                                    character_maximum
+                                    required
+                                }
+                            }
+                            send_button {
+                                button_text
+                                messages {
+                                    is_sent
+                                }
+                            }
+                        }
+                        address_markdown
+                        show_newsletter
+                        newsletter {
+                            heading
+                            placeholder
+                            button_text
+                        }
+                    }
+                }
             }
         }
     }

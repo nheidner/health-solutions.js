@@ -698,6 +698,10 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___locale'
   | 'childMarkdownRemark___frontmatter___pageTitle'
   | 'childMarkdownRemark___frontmatter___path'
+  | 'childMarkdownRemark___frontmatter___header_section___heading'
+  | 'childMarkdownRemark___frontmatter___header_section___markdown_text'
+  | 'childMarkdownRemark___frontmatter___contact_section___section_heading'
+  | 'childMarkdownRemark___frontmatter___contact_section___heading'
   | 'childMarkdownRemark___frontmatter___header___heading'
   | 'childMarkdownRemark___frontmatter___header___markdown_text'
   | 'childMarkdownRemark___frontmatter___image___alt'
@@ -716,8 +720,6 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___labor_section___markdown_text'
   | 'childMarkdownRemark___frontmatter___team_section___section_heading'
   | 'childMarkdownRemark___frontmatter___team_section___cards'
-  | 'childMarkdownRemark___frontmatter___contact_section___section_heading'
-  | 'childMarkdownRemark___frontmatter___contact_section___heading'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
   | 'childMarkdownRemark___fileAbsolutePath'
@@ -1492,6 +1494,17 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___locale'
   | 'frontmatter___pageTitle'
   | 'frontmatter___path'
+  | 'frontmatter___header_section___heading'
+  | 'frontmatter___header_section___markdown_text'
+  | 'frontmatter___header_section___image___alt'
+  | 'frontmatter___contact_section___section_heading'
+  | 'frontmatter___contact_section___right_column___heading'
+  | 'frontmatter___contact_section___right_column___markdown_text'
+  | 'frontmatter___contact_section___right_column___address_markdown'
+  | 'frontmatter___contact_section___right_column___show_newsletter'
+  | 'frontmatter___contact_section___heading'
+  | 'frontmatter___contact_section___left_column___markdown_text'
+  | 'frontmatter___contact_section___left_column___button_text'
   | 'frontmatter___header___logo_image___alt'
   | 'frontmatter___header___heading'
   | 'frontmatter___header___markdown_text'
@@ -1571,12 +1584,6 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___team_section___cards'
   | 'frontmatter___team_section___cards___heading'
   | 'frontmatter___team_section___cards___markdown_text'
-  | 'frontmatter___contact_section___section_heading'
-  | 'frontmatter___contact_section___heading'
-  | 'frontmatter___contact_section___left_column___markdown_text'
-  | 'frontmatter___contact_section___left_column___button_text'
-  | 'frontmatter___contact_section___right_column___address_markdown'
-  | 'frontmatter___contact_section___right_column___show_newsletter'
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
@@ -1708,6 +1715,8 @@ export type MarkdownRemarkFrontmatter = {
   locale?: Maybe<Scalars['String']>;
   pageTitle?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
+  header_section?: Maybe<MarkdownRemarkFrontmatterHeader_Section>;
+  contact_section?: Maybe<MarkdownRemarkFrontmatterContact_Section>;
   header?: Maybe<MarkdownRemarkFrontmatterHeader>;
   form?: Maybe<MarkdownRemarkFrontmatterForm>;
   image?: Maybe<MarkdownRemarkFrontmatterImage>;
@@ -1720,7 +1729,6 @@ export type MarkdownRemarkFrontmatter = {
   praxis_section?: Maybe<MarkdownRemarkFrontmatterPraxis_Section>;
   labor_section?: Maybe<MarkdownRemarkFrontmatterLabor_Section>;
   team_section?: Maybe<MarkdownRemarkFrontmatterTeam_Section>;
-  contact_section?: Maybe<MarkdownRemarkFrontmatterContact_Section>;
 };
 
 export type MarkdownRemarkFrontmatterAbout_Us_Section = {
@@ -1799,16 +1807,36 @@ export type MarkdownRemarkFrontmatterAnonymous_Section_2FilterInput = {
 
 export type MarkdownRemarkFrontmatterContact_Section = {
   section_heading?: Maybe<Scalars['String']>;
+  image_column?: Maybe<MarkdownRemarkFrontmatterContact_SectionImage_Column>;
+  right_column?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_Column>;
   heading?: Maybe<Scalars['String']>;
   left_column?: Maybe<MarkdownRemarkFrontmatterContact_SectionLeft_Column>;
-  right_column?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_Column>;
 };
 
 export type MarkdownRemarkFrontmatterContact_SectionFilterInput = {
   section_heading?: Maybe<StringQueryOperatorInput>;
+  image_column?: Maybe<MarkdownRemarkFrontmatterContact_SectionImage_ColumnFilterInput>;
+  right_column?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFilterInput>;
   heading?: Maybe<StringQueryOperatorInput>;
   left_column?: Maybe<MarkdownRemarkFrontmatterContact_SectionLeft_ColumnFilterInput>;
-  right_column?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionImage_Column = {
+  image?: Maybe<MarkdownRemarkFrontmatterContact_SectionImage_ColumnImage>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionImage_ColumnFilterInput = {
+  image?: Maybe<MarkdownRemarkFrontmatterContact_SectionImage_ColumnImageFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionImage_ColumnImage = {
+  source?: Maybe<File>;
+  alt?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionImage_ColumnImageFilterInput = {
+  source?: Maybe<FileFilterInput>;
+  alt?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkFrontmatterContact_SectionLeft_Column = {
@@ -1822,15 +1850,141 @@ export type MarkdownRemarkFrontmatterContact_SectionLeft_ColumnFilterInput = {
 };
 
 export type MarkdownRemarkFrontmatterContact_SectionRight_Column = {
+  heading?: Maybe<Scalars['String']>;
+  markdown_text?: Maybe<Scalars['String']>;
+  form?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnForm>;
   address_markdown?: Maybe<Scalars['String']>;
   show_newsletter?: Maybe<Scalars['Boolean']>;
   newsletter?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnNewsletter>;
 };
 
 export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFilterInput = {
+  heading?: Maybe<StringQueryOperatorInput>;
+  markdown_text?: Maybe<StringQueryOperatorInput>;
+  form?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormFilterInput>;
   address_markdown?: Maybe<StringQueryOperatorInput>;
   show_newsletter?: Maybe<BooleanQueryOperatorInput>;
   newsletter?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnNewsletterFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnForm = {
+  name_field?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormName_Field>;
+  telephone_number_field?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormTelephone_Number_Field>;
+  email_address_field?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormEmail_Address_Field>;
+  message_field?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormMessage_Field>;
+  send_button?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormSend_Button>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormEmail_Address_Field = {
+  label?: Maybe<Scalars['String']>;
+  messages?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormEmail_Address_FieldMessages>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormEmail_Address_FieldFilterInput = {
+  label?: Maybe<StringQueryOperatorInput>;
+  messages?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormEmail_Address_FieldMessagesFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormEmail_Address_FieldMessages = {
+  is_email?: Maybe<Scalars['String']>;
+  required?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormEmail_Address_FieldMessagesFilterInput = {
+  is_email?: Maybe<StringQueryOperatorInput>;
+  required?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormFilterInput = {
+  name_field?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormName_FieldFilterInput>;
+  telephone_number_field?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormTelephone_Number_FieldFilterInput>;
+  email_address_field?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormEmail_Address_FieldFilterInput>;
+  message_field?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormMessage_FieldFilterInput>;
+  send_button?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormSend_ButtonFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormMessage_Field = {
+  max_number_characters?: Maybe<Scalars['Int']>;
+  messages?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormMessage_FieldMessages>;
+  label?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormMessage_FieldFilterInput = {
+  max_number_characters?: Maybe<IntQueryOperatorInput>;
+  messages?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormMessage_FieldMessagesFilterInput>;
+  label?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormMessage_FieldMessages = {
+  character_maximum?: Maybe<Scalars['String']>;
+  required?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormMessage_FieldMessagesFilterInput = {
+  character_maximum?: Maybe<StringQueryOperatorInput>;
+  required?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormName_Field = {
+  label?: Maybe<Scalars['String']>;
+  max_number_characters?: Maybe<Scalars['Int']>;
+  messages?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormName_FieldMessages>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormName_FieldFilterInput = {
+  label?: Maybe<StringQueryOperatorInput>;
+  max_number_characters?: Maybe<IntQueryOperatorInput>;
+  messages?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormName_FieldMessagesFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormName_FieldMessages = {
+  character_maximum?: Maybe<Scalars['String']>;
+  required?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormName_FieldMessagesFilterInput = {
+  character_maximum?: Maybe<StringQueryOperatorInput>;
+  required?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormSend_Button = {
+  button_text?: Maybe<Scalars['String']>;
+  messages?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormSend_ButtonMessages>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormSend_ButtonFilterInput = {
+  button_text?: Maybe<StringQueryOperatorInput>;
+  messages?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormSend_ButtonMessagesFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormSend_ButtonMessages = {
+  is_sent?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormSend_ButtonMessagesFilterInput = {
+  is_sent?: Maybe<StringQueryOperatorInput>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormTelephone_Number_Field = {
+  label?: Maybe<Scalars['String']>;
+  max_number_characters?: Maybe<Scalars['Int']>;
+  messages?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormTelephone_Number_FieldMessages>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormTelephone_Number_FieldFilterInput = {
+  label?: Maybe<StringQueryOperatorInput>;
+  max_number_characters?: Maybe<IntQueryOperatorInput>;
+  messages?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormTelephone_Number_FieldMessagesFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormTelephone_Number_FieldMessages = {
+  character_maximum?: Maybe<Scalars['String']>;
+  required?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormTelephone_Number_FieldMessagesFilterInput = {
+  character_maximum?: Maybe<StringQueryOperatorInput>;
+  required?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnNewsletter = {
@@ -1851,6 +2005,8 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   locale?: Maybe<StringQueryOperatorInput>;
   pageTitle?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
+  header_section?: Maybe<MarkdownRemarkFrontmatterHeader_SectionFilterInput>;
+  contact_section?: Maybe<MarkdownRemarkFrontmatterContact_SectionFilterInput>;
   header?: Maybe<MarkdownRemarkFrontmatterHeaderFilterInput>;
   form?: Maybe<MarkdownRemarkFrontmatterFormFilterInput>;
   image?: Maybe<MarkdownRemarkFrontmatterImageFilterInput>;
@@ -1863,7 +2019,6 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   praxis_section?: Maybe<MarkdownRemarkFrontmatterPraxis_SectionFilterInput>;
   labor_section?: Maybe<MarkdownRemarkFrontmatterLabor_SectionFilterInput>;
   team_section?: Maybe<MarkdownRemarkFrontmatterTeam_SectionFilterInput>;
-  contact_section?: Maybe<MarkdownRemarkFrontmatterContact_SectionFilterInput>;
 };
 
 export type MarkdownRemarkFrontmatterForm = {
@@ -1966,6 +2121,28 @@ export type MarkdownRemarkFrontmatterHeader = {
   logo_image?: Maybe<MarkdownRemarkFrontmatterHeaderLogo_Image>;
   heading?: Maybe<Scalars['String']>;
   markdown_text?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterHeader_Section = {
+  heading?: Maybe<Scalars['String']>;
+  markdown_text?: Maybe<Scalars['String']>;
+  image?: Maybe<MarkdownRemarkFrontmatterHeader_SectionImage>;
+};
+
+export type MarkdownRemarkFrontmatterHeader_SectionFilterInput = {
+  heading?: Maybe<StringQueryOperatorInput>;
+  markdown_text?: Maybe<StringQueryOperatorInput>;
+  image?: Maybe<MarkdownRemarkFrontmatterHeader_SectionImageFilterInput>;
+};
+
+export type MarkdownRemarkFrontmatterHeader_SectionImage = {
+  source?: Maybe<File>;
+  alt?: Maybe<Scalars['String']>;
+};
+
+export type MarkdownRemarkFrontmatterHeader_SectionImageFilterInput = {
+  source?: Maybe<FileFilterInput>;
+  alt?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkFrontmatterHeaderFilterInput = {
@@ -3577,7 +3754,40 @@ export type ContactQueryVariables = Exact<{
 }>;
 
 
-export type ContactQuery = { markdownRemark?: Maybe<{ frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'locale' | 'pageTitle' | 'path'>> }> };
+export type ContactQuery = { markdownRemark?: Maybe<{ frontmatter?: Maybe<(
+      Pick<MarkdownRemarkFrontmatter, 'pageTitle'>
+      & { header_section?: Maybe<(
+        Pick<MarkdownRemarkFrontmatterHeader_Section, 'heading' | 'markdown_text'>
+        & { image?: Maybe<(
+          Pick<MarkdownRemarkFrontmatterHeader_SectionImage, 'alt'>
+          & { source?: Maybe<FullWidthImageFragment> }
+        )> }
+      )>, contact_section?: Maybe<(
+        Pick<MarkdownRemarkFrontmatterContact_Section, 'section_heading' | 'heading'>
+        & { image_column?: Maybe<{ image?: Maybe<(
+            Pick<MarkdownRemarkFrontmatterContact_SectionImage_ColumnImage, 'alt'>
+            & { source?: Maybe<ColumnImageMediumFragment> }
+          )> }>, right_column?: Maybe<(
+          Pick<MarkdownRemarkFrontmatterContact_SectionRight_Column, 'heading' | 'markdown_text' | 'address_markdown' | 'show_newsletter'>
+          & { form?: Maybe<{ name_field?: Maybe<(
+              Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormName_Field, 'label' | 'max_number_characters'>
+              & { messages?: Maybe<Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormName_FieldMessages, 'character_maximum' | 'required'>> }
+            )>, telephone_number_field?: Maybe<(
+              Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormTelephone_Number_Field, 'label' | 'max_number_characters'>
+              & { messages?: Maybe<Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormTelephone_Number_FieldMessages, 'character_maximum' | 'required'>> }
+            )>, email_address_field?: Maybe<(
+              Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormEmail_Address_Field, 'label'>
+              & { messages?: Maybe<Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormEmail_Address_FieldMessages, 'is_email' | 'required'>> }
+            )>, message_field?: Maybe<(
+              Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormMessage_Field, 'label' | 'max_number_characters'>
+              & { messages?: Maybe<Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormMessage_FieldMessages, 'character_maximum' | 'required'>> }
+            )>, send_button?: Maybe<(
+              Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormSend_Button, 'button_text'>
+              & { messages?: Maybe<Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormSend_ButtonMessages, 'is_sent'>> }
+            )> }>, newsletter?: Maybe<Pick<MarkdownRemarkFrontmatterContact_SectionRight_ColumnNewsletter, 'heading' | 'placeholder' | 'button_text'>> }
+        )> }
+      )> }
+    )> }> };
 
 export type ContactPopupQueryVariables = Exact<{
   id: Scalars['String'];
@@ -3692,6 +3902,8 @@ export type GalleryImageFragment = { childImageSharp?: Maybe<{ fluid?: Maybe<Gat
 export type SvgImageFragment = Pick<File, 'extension' | 'publicURL'>;
 
 export type PopupColumnImageFragment = { childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> };
+
+export type FullWidthImageFragment = { childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> };
 
 export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
