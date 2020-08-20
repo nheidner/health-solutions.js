@@ -1,7 +1,4 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core';
 import React, { FC, useState } from 'react';
-import { Link } from 'gatsby';
 
 export const ImageCarousel: FC<{ images: string[] }> = ({ images }) => {
     const [selectedImageIndex, setSelectedImageIndex] = useState<number>(0);

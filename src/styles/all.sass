@@ -29,9 +29,12 @@ $danger-red: #f14668
 // typography
 $title-weight: normal
 $title-color: $dark-blue
-$size-1: 4.5rem
-$size-2: 2.8rem
+$size-1: 3.3rem
+$size-1-mobile: 2.8rem
+$size-2: 2.5rem
+$size-2-mobile: 1.9rem
 $size-normal: 1rem
+$size-medium-mobile: 1.2rem
 $size-medium: 1.375rem
 $size-large: 1.5rem
 $base-size: 16px
@@ -65,6 +68,12 @@ input,textarea
     display: block
 
 +mobile
+    .title.is-1 
+        font-size: $size-1-mobile
+    .content.is-medium
+        font-size: $size-medium-mobile
+        
++mobile
     html 
         // font-size: 90%
 
@@ -88,6 +97,8 @@ body
     height: initial
     &.is-small
         font-size: 1rem
+    +mobile 
+        font-size: $size-medium-mobile
 
 // MODAL
 .ReactModal__Body--open 
@@ -281,18 +292,20 @@ body
     +touch
         display: flex
         justify-content: space-between
-        &.my-card-is-row-reverse
+        &:nth-last-of-type(2n)
             flex-direction: row-reverse
-            div.my-card-content
-                padding-left: $space-0
-                padding-right: $space-4
         div.my-card-image
-            flex-basis: 40%
+            flex-basis: 50%
             min-width: 130px
             max-width: 300px
+            margin-bottom: $space-4
             figure.image
                 width: 100%
+                top: 50%
+                transform: translateY(-50%)
         div.my-card-content
+            padding-left: $space-0
+            padding-right: $space-4
             flex-basis: 60%
             +mobile
                 padding-left: $space-4
@@ -302,17 +315,25 @@ body
                 text-transform: uppercase
                 margin-bottom: 1rem
             div.content
+    +hypermobile
+        display: block
+        div.my-card-image
+            max-width: 100%
+            figure.image
+                top: initial
+                transform: initial
     +desktop
         & > *
             max-width: 75%
             margin: 0 auto
 
 .image-carousel-section
+    padding: $space-0 $space-5
     div.carousel-root
         width: 350px
         max-width: 100%
         margin: 0 auto
-        max-height: 200px
+        max-height: 300px
         figure
             max-height: 300px
                        

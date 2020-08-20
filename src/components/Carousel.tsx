@@ -12,6 +12,7 @@ export const ImageCarousel: FC<{
     images: GalleryImage[];
     [props: string]: any;
 }> = ({ images, ...props }) => {
+    console.log(images);
     return (
         <Carousel
             showThumbs={false}
@@ -28,7 +29,9 @@ export const ImageCarousel: FC<{
             {images.map((image, index) => {
                 return (
                     <figure key={index}>
-                        <Img source={image.source} alt={image.alt} />
+                        {image.source ? (
+                            <Img source={image.source} alt={image.alt} />
+                        ) : null}
                     </figure>
                 );
             })}
