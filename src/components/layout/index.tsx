@@ -63,7 +63,7 @@ const Layout: FC<{ pageTitle: string }> = ({ children }) => {
                 showNavbarShadow={showNavbarShadow}
             />
             <div>{children}</div>
-            <Footer />
+            <Footer currentLocale={currentLocale} />
         </div>
     );
 };

@@ -58,10 +58,9 @@ CMS.registerPreviewTemplate('contact_en', withEmotion(ContactPagePreviewEn));
 
 const SettingsPreviewEn = ({ entry }) => {
     const data = entry.getIn(['data']).toJS();
-    console.log(data);
     return (
         <div>
-            <FooterTemplate />
+            <FooterTemplate footerContent={data.footer} />
         </div>
     );
 };

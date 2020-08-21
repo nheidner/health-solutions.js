@@ -2,45 +2,56 @@ import React, { FC, useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import LocalsToggle from './LocalesToggle';
 import Link from '../Link';
-// @ts-ignore
-import logo from '../../assets/logo.svg';
-import useLocales from '../../utils/useLocales';
-import isHash from '../../utils/isHash';
+import LocalizedLink from '../LocalizedLink';
 import { SVGImage } from '../../utils/fragments';
-import { IndexQuery } from '../../../gatsby-graphql';
+import { FooterQuery } from '../../../gatsby-graphql';
 import { DeepExtractType } from 'ts-deep-extract-types';
+import Img from '../Img';
 
-export const FooterTemplate: FC = () => {
+type IFooterContent = DeepExtractType<
+    FooterQuery,
+    ['en', 'frontmatter', 'footer']
+>;
+
+export const FooterTemplate: FC<{
+    footerContent: IFooterContent;
+    currentLocale: string;
+}> = ({ footerContent, currentLocale }) => {
+    console.log(footerContent);
     return (
         <footer className='footer has-background-dark-blue has-text-white'>
             <div className='container'>
-                <div className='columns'>
-                    <div className='column'>
+                <div className='columns '>
+                    <div className='column logo-column'>
                         <Link className='logo' to='/'>
-                            <img src={logo} style={{ width: '100px' }} />
+                            <Img
+                                source={footerContent.logo_img?.source}
+                                alt={footerContent.logo_img?.alt as string}
+                            />
                         </Link>
                     </div>
                     <div className='column footer-menu'>
                         <ul>
-                            <li>
-                                <Link to='/'>About us</Link>
-                            </li>
-                            <li>
-                                <Link to='/'>Contact</Link>
-                            </li>
-                            <li>
-                                <Link to='/'>Terms and Conditions</Link>
-                            </li>
+                            {footerContent.links?.map((item, index) => {
+                                return (
+                                    <li key={index}>
+                                        <LocalizedLink
+                                            to={item?.href as string}>
+                                            {item?.text}
+                                        </LocalizedLink>
+                                    </li>
+                                );
+                            })}
                         </ul>
                     </div>
                 </div>
-                <div className='copyright'>© Health Solutions 2020</div>
+                <div className='copyright'>{footerContent.copyright}</div>
             </div>
         </footer>
     );
 };
 
-const Footer: FC = () => {
+const Footer: FC<{ currentLocale: string }> = ({ currentLocale }) => {
     const queryResult = useStaticQuery(
         graphql`
             query Footer {
@@ -59,7 +70,9 @@ const Footer: FC = () => {
                             }
                             logo_img {
                                 alt
-                                source
+                                source {
+                                    ...SVGImage
+                                }
                             }
                         }
                     }
@@ -67,8 +80,12 @@ const Footer: FC = () => {
             }
         `
     );
-    console.log(queryResult.en);
-    return <FooterTemplate />;
+    return (
+        <FooterTemplate
+            footerContent={queryResult.en?.frontmatter?.footer}
+            currentLocale={currentLocale}
+        />
+    );
 };
 
 export default Footer;
