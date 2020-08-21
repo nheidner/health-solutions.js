@@ -1,4 +1,6 @@
 ---
+locale: en
+templateKey: settings
 header:
   logo_img:
     source: /img/logo_blau_vollständig.svg

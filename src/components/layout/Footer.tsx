@@ -6,6 +6,9 @@ import Link from '../Link';
 import logo from '../../assets/logo.svg';
 import useLocales from '../../utils/useLocales';
 import isHash from '../../utils/isHash';
+import { SVGImage } from '../../utils/fragments';
+import { IndexQuery } from '../../../gatsby-graphql';
+import { DeepExtractType } from 'ts-deep-extract-types';
 
 export const FooterTemplate: FC = () => {
     return (
@@ -38,6 +41,33 @@ export const FooterTemplate: FC = () => {
 };
 
 const Footer: FC = () => {
+    const queryResult = useStaticQuery(
+        graphql`
+            query Footer {
+                en: markdownRemark(
+                    frontmatter: {
+                        locale: { eq: "en" }
+                        templateKey: { eq: "settings" }
+                    }
+                ) {
+                    frontmatter {
+                        footer {
+                            copyright
+                            links {
+                                href
+                                text
+                            }
+                            logo_img {
+                                alt
+                                source
+                            }
+                        }
+                    }
+                }
+            }
+        `
+    );
+    console.log(queryResult.en);
     return <FooterTemplate />;
 };
 

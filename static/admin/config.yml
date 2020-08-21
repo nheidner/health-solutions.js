@@ -1095,6 +1095,12 @@ collections:
                       widget: 'hidden',
                       default: 'en',
                   }
+                - {
+                      label: 'TemplateKey',
+                      name: 'templateKey',
+                      widget: 'hidden',
+                      default: 'settings',
+                  }
                 - label: 'Header'
                   name: 'header'
                   widget: 'object'
