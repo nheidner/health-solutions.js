@@ -61,7 +61,6 @@ const SettingsPreviewEn = ({ entry }) => {
     console.log(data);
     return (
         <div>
-            {/* <HeaderTemplate menuItems="/> */}
             <FooterTemplate />
         </div>
     );

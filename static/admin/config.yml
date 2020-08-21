@@ -1099,6 +1099,7 @@ collections:
                   name: 'header'
                   widget: 'object'
                   collapsed: true
+                  hint: 'No Preview Of Header Available'
                   fields:
                       - label: 'Logo'
                         name: 'logo_img'
