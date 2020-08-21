@@ -6,6 +6,7 @@ const Img: FC<{ source: any; alt: string; [props: string]: any }> = ({
     alt,
     ...props
 }) => {
+    console.log(source);
     if (!source) return <img />;
     if (!source.childImageSharp && source.extension === 'svg') {
         return <img src={source.publicURL} alt={alt} {...props} />;

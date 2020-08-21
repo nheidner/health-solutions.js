@@ -95,7 +95,7 @@ const Form: FC<{ formContent: IFormContent }> = ({ formContent }) => {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
-                body: encode({ 'form-name': 'contact', ...values }),
+                body: encode({ 'form-name': 'Contact Page Form', ...values }),
             })
                 .then(() => setSubmitted(true))
                 .then(() => formik.resetForm())
@@ -104,7 +104,7 @@ const Form: FC<{ formContent: IFormContent }> = ({ formContent }) => {
     });
 
     return (
-        <form onSubmit={formik.handleSubmit} name='Contact Form 2'>
+        <form onSubmit={formik.handleSubmit} name='Contact Page Form'>
             {/* name field */}
             <div className='field'>
                 <label className='label'>{formContent.name_field?.label}</label>

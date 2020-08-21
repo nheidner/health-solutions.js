@@ -67,7 +67,7 @@ const Form: FC<{ formContent: IFormContent }> = ({ formContent }) => {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 },
-                body: encode({ 'form-name': 'contact', ...values }),
+                body: encode({ 'form-name': 'Contact Form Popup', ...values }),
             })
                 .then(() => setSubmitted(true))
                 .then(() => formik.resetForm())
@@ -76,7 +76,7 @@ const Form: FC<{ formContent: IFormContent }> = ({ formContent }) => {
     });
 
     return (
-        <form onSubmit={formik.handleSubmit} name='Contact Form'>
+        <form onSubmit={formik.handleSubmit} name='Contact Form Popup'>
             <div className='field'>
                 <label className='label'>{formContent.name_field?.label}</label>
                 <div className='control'>
