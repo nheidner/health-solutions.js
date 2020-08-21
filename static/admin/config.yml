@@ -14,7 +14,7 @@ public_folder: /img
 
 collections:
     - name: pages_en
-      label: Pages (En)
+      label: English
       files:
           - file: 'src/markdown/en/index.md'
             label: 'Home'
@@ -780,7 +780,7 @@ collections:
                       - { label: 'Image Alt', name: 'alt', widget: 'string' }
 
           - file: 'src/markdown/en/contact.md'
-            label: 'Contact'
+            label: 'Contact Page'
             name: 'contact_en'
             fields:
                 - {
@@ -1085,3 +1085,62 @@ collections:
                                         name: 'button_text',
                                         widget: 'string',
                                     }
+          - file: 'src/markdown/en/settings.md'
+            label: 'Page Settings'
+            name: 'settings_en'
+            fields:
+                - {
+                      label: 'Locale',
+                      name: 'locale',
+                      widget: 'hidden',
+                      default: 'en',
+                  }
+                - label: 'Header'
+                  name: 'header'
+                  widget: 'object'
+                  collapsed: true
+                  fields:
+                      - label: 'Logo'
+                        name: 'logo_img'
+                        widget: object
+                        collapsed: true
+                        fields:
+                            - {
+                                  label: 'Image Source',
+                                  name: 'source',
+                                  widget: 'image',
+                              }
+                            - {
+                                  label: 'Image Alt',
+                                  name: 'alt',
+                                  widget: 'string',
+                              }
+                - label: 'Footer'
+                  name: 'footer'
+                  widget: 'object'
+                  collapsed: true
+                  fields:
+                      - label: 'Logo'
+                        name: 'logo_img'
+                        widget: object
+                        collapsed: true
+                        fields:
+                            - {
+                                  label: 'Image Source',
+                                  name: 'source',
+                                  widget: 'image',
+                              }
+                            - {
+                                  label: 'Image Alt',
+                                  name: 'alt',
+                                  widget: 'string',
+                              }
+                      - { label: 'Copyright', name: copyright, widget: string }
+                      - label: Links
+                        name: links
+                        widget: list
+                        collapsed: true
+                        label_singular: Link
+                        fields:
+                            - { label: 'Text', name: 'text', widget: 'string' }
+                            - { label: 'Href', name: 'href', widget: 'string' }

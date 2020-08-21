@@ -7,8 +7,7 @@ import logo from '../../assets/logo.svg';
 import useLocales from '../../utils/useLocales';
 import isHash from '../../utils/isHash';
 
-const Footer: FC<{ currentLocale: string }> = ({ currentLocale }) => {
-    const { primary: primaryLocale } = useLocales();
+export const FooterTemplate: FC = () => {
     return (
         <footer className='footer has-background-dark-blue has-text-white'>
             <div className='container'>
@@ -36,6 +35,10 @@ const Footer: FC<{ currentLocale: string }> = ({ currentLocale }) => {
             </div>
         </footer>
     );
+};
+
+const Footer: FC = () => {
+    return <FooterTemplate />;
 };
 
 export default Footer;

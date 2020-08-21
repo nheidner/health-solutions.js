@@ -5,7 +5,6 @@ import Link from '../Link';
 // @ts-ignore
 import logo from '../../assets/logo.svg';
 import useLocales from '../../utils/useLocales';
-import isHash from '../../utils/isHash';
 
 interface MenuItem {
     item: {
@@ -14,6 +13,7 @@ interface MenuItem {
         [locale: string]: string;
     };
     to: string;
+    [menuItem: string]: any;
 }
 
 interface TData {
@@ -24,32 +24,13 @@ interface TData {
     };
 }
 
-const Header: FC<{ currentLocale: string; showNavbarShadow: boolean }> = ({
-    currentLocale,
-    showNavbarShadow,
-}) => {
-    const { primary: primaryLocale } = useLocales();
-
-    const queryResult = useStaticQuery<TData>(
-        graphql`
-            query {
-                site {
-                    siteMetadata {
-                        menu {
-                            item {
-                                en
-                                de
-                            }
-                            to
-                        }
-                    }
-                }
-            }
-        `
-    );
-
+export const HeaderTemplate: FC<{
+    menuItems?: TData['site']['siteMetadata']['menu'];
+    currentLocale: string;
+    showNavbarShadow: boolean;
+    primaryLocale?: string;
+}> = ({ menuItems, currentLocale, showNavbarShadow, primaryLocale }) => {
     const [mobileMenuToggled, setMobileMenuToggled] = useState(false);
-    const { menu: menuItems } = queryResult.site.siteMetadata;
     return (
         <nav
             className={`navbar is-fixed-top ${
@@ -78,31 +59,70 @@ const Header: FC<{ currentLocale: string; showNavbarShadow: boolean }> = ({
                         mobileMenuToggled ? 'is-active px-5' : 'mr-5'
                     }`}>
                     <div className='navbar-end is-uppercase'>
-                        {menuItems.map((menuItem, index) => {
-                            const to = `${
-                                currentLocale === primaryLocale
-                                    ? ''
-                                    : '/' + currentLocale
-                            }${menuItem.to}`;
-                            return (
-                                <Link
-                                    key={index}
-                                    className='navbar-item'
-                                    to={to}>
-                                    <div
-                                        onClick={() =>
-                                            setMobileMenuToggled(false)
-                                        }>
-                                        {menuItem.item[currentLocale]}
-                                    </div>
-                                </Link>
-                            );
-                        })}
+                        {menuItems ? (
+                            menuItems.map((menuItem, index) => {
+                                const to = primaryLocale
+                                    ? `${
+                                          currentLocale === primaryLocale
+                                              ? ''
+                                              : '/' + currentLocale
+                                      }${menuItem.to}`
+                                    : '';
+                                return (
+                                    <Link
+                                        key={index}
+                                        className='navbar-item'
+                                        to={to}>
+                                        <div
+                                            onClick={() =>
+                                                setMobileMenuToggled(false)
+                                            }>
+                                            {menuItem.item[currentLocale]}
+                                        </div>
+                                    </Link>
+                                );
+                            })
+                        ) : (
+                            <Link />
+                        )}
                         <LocalsToggle />
                     </div>
                 </div>
             </div>
         </nav>
+    );
+};
+
+const Header: FC<{ currentLocale: string; showNavbarShadow: boolean }> = ({
+    currentLocale,
+    showNavbarShadow,
+}) => {
+    const { primary: primaryLocale } = useLocales();
+
+    const queryResult = useStaticQuery<TData>(
+        graphql`
+            query Header {
+                site {
+                    siteMetadata {
+                        menu {
+                            item {
+                                en
+                                de
+                            }
+                            to
+                        }
+                    }
+                }
+            }
+        `
+    );
+    return (
+        <HeaderTemplate
+            menuItems={queryResult.site.siteMetadata.menu}
+            currentLocale={currentLocale}
+            showNavbarShadow={showNavbarShadow}
+            primaryLocale={primaryLocale}
+        />
     );
 };
 

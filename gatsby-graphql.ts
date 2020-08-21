@@ -3791,10 +3791,10 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
-export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
+export type HeaderQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_1_Query = { site?: Maybe<{ siteMetadata?: Maybe<{ menu?: Maybe<Array<Maybe<(
+export type HeaderQuery = { site?: Maybe<{ siteMetadata?: Maybe<{ menu?: Maybe<Array<Maybe<(
         Pick<SiteSiteMetadataMenu, 'to'>
         & { item?: Maybe<Pick<SiteSiteMetadataMenuItem, 'en' | 'de'>> }
       )>>> }> }> };
@@ -3967,10 +3967,10 @@ export type PopupColumnImageFragment = { childImageSharp?: Maybe<{ fluid?: Maybe
 
 export type FullWidthImageFragment = { childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> };
 
-export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_2_Query = { allMarkdownRemark: { edges: Array<{ node: { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'locale'>> } }> } };
+export type Unnamed_1_Query = { allMarkdownRemark: { edges: Array<{ node: { fields?: Maybe<Pick<MarkdownRemarkFields, 'slug'>>, frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'locale'>> } }> } };
 
 export type LocalesQueryVariables = Exact<{ [key: string]: never; }>;
 

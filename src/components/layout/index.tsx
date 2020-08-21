@@ -55,7 +55,7 @@ const Layout: FC<{ pageTitle: string }> = ({ children }) => {
     return (
         <div className='pt-6' id='top'>
             <Helmet></Helmet>
-            <Link className='to-top-button' to='#top'>
+            <Link className='to-top-button' to='#top' sameSite>
                 <span />
             </Link>
             <Header
@@ -63,7 +63,7 @@ const Layout: FC<{ pageTitle: string }> = ({ children }) => {
                 showNavbarShadow={showNavbarShadow}
             />
             <div>{children}</div>
-            <Footer currentLocale={currentLocale} />
+            <Footer />
         </div>
     );
 };

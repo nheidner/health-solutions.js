@@ -8,14 +8,24 @@ const Link: FC<{
     children?: ReactNode;
     to?: string;
     className?: string;
+    sameSite?: boolean;
     [otherParams: string]: any;
-}> = ({ children, to, ...other }) => {
+}> = ({ children, to, sameSite, ...other }) => {
     // This example assumes that any internal link (intended for Gatsby)
     // will start with exactly one slash, and that anything else is external.
     const internal = to ? /^\/(?!\/)/.test(to) : false;
     const hash = to ? isHash(to) : false;
     if (hash) {
-        return (
+        return sameSite ? (
+            <a
+                href={to as string}
+                {...other}
+                css={css`
+                    cursor: pointer;
+                `}>
+                {children}
+            </a>
+        ) : (
             <GatsbyLink
                 to={to as string}
                 {...other}

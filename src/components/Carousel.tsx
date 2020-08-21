@@ -9,11 +9,10 @@ export interface GalleryImage {
 }
 
 export const ImageCarousel: FC<{
-    images: GalleryImage[];
+    images?: GalleryImage[];
     [props: string]: any;
 }> = ({ images, ...props }) => {
-    console.log(images);
-    return (
+    return images ? (
         <Carousel
             showThumbs={false}
             infiniteLoop={true}
@@ -36,5 +35,7 @@ export const ImageCarousel: FC<{
                 );
             })}
         </Carousel>
+    ) : (
+        <div></div>
     );
 };
