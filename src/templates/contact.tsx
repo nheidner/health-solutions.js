@@ -22,6 +22,7 @@ import Content from '../components/Content';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Newsletter, { INewsletterContent } from '../components/Newsletter';
+import Maps from '../components/Maps';
 
 type IContactTemplate = DeepExtractType<
     ContactQuery,
@@ -189,6 +190,7 @@ const Form: FC<{ formContent: IFormContent }> = ({ formContent }) => {
                         : null}
                 </p>
             </div>
+            {/* submit button */}
             <div className='field'>
                 <div className='control'>
                     {submitted ? (
@@ -275,7 +277,7 @@ export const ContactTemplate: FC<IContactTemplate> = ({
                             </figure>
                         </div>
                         <div className='column right-column'>
-                            <h1 className='title is-2'>
+                            <h1 className='title is-2 pt-5'>
                                 {contact_section?.right_column?.heading}
                             </h1>
                             <div className='content'>
@@ -313,6 +315,8 @@ export const ContactTemplate: FC<IContactTemplate> = ({
                         </div>
                     </div>
                 </div>
+
+                <Maps />
             </section>
         </div>
     );

@@ -2,30 +2,11 @@ import React, { FC, useState } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import LocalsToggle from './LocalesToggle';
 import Link from '../Link';
-// @ts-ignore
-import logo from '../../assets/logo.svg';
 import useLocales from '../../utils/useLocales';
 import { HeaderQuery } from '../../../gatsby-graphql';
 import { SVGImage } from '../../utils/fragments';
 import { DeepExtractType } from 'ts-deep-extract-types';
-
-// interface MenuItem {
-//     item: {
-//         en: string;
-//         de: string;
-//         [locale: string]: string;
-//     };
-//     to: string;
-//     [menuItem: string]: any;
-// }
-
-// interface TData {
-//     site: {
-//         siteMetadata: {
-//             menu: MenuItem[];
-//         };
-//     };
-// }
+import Img from '../Img';
 
 const Header: FC<{ currentLocale: string; showNavbarShadow: boolean }> = ({
     currentLocale,
@@ -39,6 +20,23 @@ const Header: FC<{ currentLocale: string; showNavbarShadow: boolean }> = ({
                 en: markdownRemark(
                     frontmatter: {
                         locale: { eq: "en" }
+                        templateKey: { eq: "settings" }
+                    }
+                ) {
+                    frontmatter {
+                        header {
+                            logo_img {
+                                source {
+                                    ...SVGImage
+                                }
+                                alt
+                            }
+                        }
+                    }
+                }
+                de: markdownRemark(
+                    frontmatter: {
+                        locale: { eq: "de" }
                         templateKey: { eq: "settings" }
                     }
                 ) {
@@ -77,7 +75,17 @@ const Header: FC<{ currentLocale: string; showNavbarShadow: boolean }> = ({
             <div className='container'>
                 <div className='navbar-brand px-5'>
                     <Link className='navbar-item' to='/'>
-                        <img src={logo} style={{ width: '100px' }} />
+                        <Img
+                            className='logo'
+                            source={
+                                queryResult[currentLocale].frontmatter.header
+                                    .logo_img.source
+                            }
+                            alt={
+                                queryResult[currentLocale].frontmatter.header
+                                    .logo_img.alt
+                            }
+                        />
                     </Link>
                     <Link
                         role='button'

@@ -218,6 +218,13 @@ body
         border-bottom: 1px solid #d0d0d0
     &.is-fixed-top
         z-index: 100
+    div.navbar-brand
+        align-items: center
+        a.navbar-item
+            img.logo
+                display: block
+                width: auto
+                height: 52px
     div.navbar-menu
         div.navbar-end
             a.navbar-item 
@@ -361,9 +368,7 @@ body
                 margin-bottom: $space-1            
         div.newsletter
             +newsletter
-    div.map
-        height: 300px
-        background: #ddd
+    +maps
 
 .footer
     div.columns

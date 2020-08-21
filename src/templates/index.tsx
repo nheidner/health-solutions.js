@@ -20,6 +20,7 @@ import {
 } from '../utils/fragments';
 import Content from '../components/Content';
 import Newsletter, { INewsletterContent } from '../components/Newsletter';
+import Maps from '../components/Maps';
 
 type IIndexTemplate = DeepExtractType<
     IndexQuery,
@@ -499,11 +500,7 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                         </div>
                     </div>
                 </div>
-                <div
-                    className='container map'
-                    data-aos='fade'
-                    data-aos-duration={aosSettings.duration.fast}
-                    data-aos-delay={aosSettings.delay.short}></div>
+                <Maps />
             </section>
         </div>
     );
