@@ -60,7 +60,7 @@ const SettingsPreviewEn = ({ entry }) => {
     const data = entry.getIn(['data']).toJS();
     return (
         <div>
-            <FooterTemplate footerContent={data.footer} />
+            <FooterTemplate footerContent={data.footer} preview={true} />
         </div>
     );
 };

@@ -15,9 +15,8 @@ type IFooterContent = DeepExtractType<
 
 export const FooterTemplate: FC<{
     footerContent: IFooterContent;
-    currentLocale: string;
-}> = ({ footerContent, currentLocale }) => {
-    console.log(footerContent);
+    preview?: boolean;
+}> = ({ footerContent, preview }) => {
     return (
         <footer className='footer has-background-dark-blue has-text-white'>
             <div className='container'>
@@ -35,10 +34,16 @@ export const FooterTemplate: FC<{
                             {footerContent.links?.map((item, index) => {
                                 return (
                                     <li key={index}>
-                                        <LocalizedLink
-                                            to={item?.href as string}>
-                                            {item?.text}
-                                        </LocalizedLink>
+                                        {preview ? (
+                                            <Link to={item?.href as string}>
+                                                {item?.text}
+                                            </Link>
+                                        ) : (
+                                            <LocalizedLink
+                                                to={item?.href as string}>
+                                                {item?.text}
+                                            </LocalizedLink>
+                                        )}
                                     </li>
                                 );
                             })}
@@ -51,7 +56,7 @@ export const FooterTemplate: FC<{
     );
 };
 
-const Footer: FC<{ currentLocale: string }> = ({ currentLocale }) => {
+const Footer: FC = () => {
     const queryResult = useStaticQuery(
         graphql`
             query Footer {
@@ -81,10 +86,7 @@ const Footer: FC<{ currentLocale: string }> = ({ currentLocale }) => {
         `
     );
     return (
-        <FooterTemplate
-            footerContent={queryResult.en?.frontmatter?.footer}
-            currentLocale={currentLocale}
-        />
+        <FooterTemplate footerContent={queryResult.en?.frontmatter?.footer} />
     );
 };
 

@@ -54,16 +54,6 @@ contact_section:
         button_text: Abschicken
         messages:
           is_sent: Your message was sent
-    address markdown: |-
-      Adresse BLABLABLA 
-
-      Adresse BLABLABLA
-
-      Adresse BLABLABLA
-
-      Adresse BLABLABLA
-
-      Adresse BLABLABLA
     show_newsletter: true
     newsletter:
       heading: Subscribe to our newsletter
