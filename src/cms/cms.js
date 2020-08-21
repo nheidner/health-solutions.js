@@ -65,3 +65,14 @@ const SettingsPreviewEn = ({ entry }) => {
     );
 };
 CMS.registerPreviewTemplate('settings_en', withEmotion(SettingsPreviewEn));
+
+// GERMAN
+const SettingsPreviewDe = ({ entry }) => {
+    const data = entry.getIn(['data']).toJS();
+    return (
+        <div>
+            <FooterTemplate footerContent={data.footer} preview={true} />
+        </div>
+    );
+};
+CMS.registerPreviewTemplate('settings_de', withEmotion(SettingsPreviewDe));

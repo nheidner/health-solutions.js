@@ -5,24 +5,27 @@ import Link from '../Link';
 // @ts-ignore
 import logo from '../../assets/logo.svg';
 import useLocales from '../../utils/useLocales';
+import { HeaderQuery } from '../../../gatsby-graphql';
+import { SVGImage } from '../../utils/fragments';
+import { DeepExtractType } from 'ts-deep-extract-types';
 
-interface MenuItem {
-    item: {
-        en: string;
-        de: string;
-        [locale: string]: string;
-    };
-    to: string;
-    [menuItem: string]: any;
-}
+// interface MenuItem {
+//     item: {
+//         en: string;
+//         de: string;
+//         [locale: string]: string;
+//     };
+//     to: string;
+//     [menuItem: string]: any;
+// }
 
-interface TData {
-    site: {
-        siteMetadata: {
-            menu: MenuItem[];
-        };
-    };
-}
+// interface TData {
+//     site: {
+//         siteMetadata: {
+//             menu: MenuItem[];
+//         };
+//     };
+// }
 
 const Header: FC<{ currentLocale: string; showNavbarShadow: boolean }> = ({
     currentLocale,
@@ -30,9 +33,26 @@ const Header: FC<{ currentLocale: string; showNavbarShadow: boolean }> = ({
 }) => {
     const { primary: primaryLocale } = useLocales();
 
-    const queryResult = useStaticQuery<TData>(
+    const queryResult = useStaticQuery<HeaderQuery>(
         graphql`
             query Header {
+                en: markdownRemark(
+                    frontmatter: {
+                        locale: { eq: "en" }
+                        templateKey: { eq: "settings" }
+                    }
+                ) {
+                    frontmatter {
+                        header {
+                            logo_img {
+                                source {
+                                    ...SVGImage
+                                }
+                                alt
+                            }
+                        }
+                    }
+                }
                 site {
                     siteMetadata {
                         menu {
@@ -48,7 +68,7 @@ const Header: FC<{ currentLocale: string; showNavbarShadow: boolean }> = ({
         `
     );
     const [mobileMenuToggled, setMobileMenuToggled] = useState(false);
-    const { menu: menuItems } = queryResult.site.siteMetadata;
+    const menuItems = queryResult.site?.siteMetadata?.menu;
     return (
         <nav
             className={`navbar is-fixed-top ${
@@ -77,28 +97,34 @@ const Header: FC<{ currentLocale: string; showNavbarShadow: boolean }> = ({
                         mobileMenuToggled ? 'is-active px-5' : 'mr-5'
                     }`}>
                     <div className='navbar-end is-uppercase'>
-                        {menuItems.map((menuItem, index) => {
-                            const to = primaryLocale
-                                ? `${
-                                      currentLocale === primaryLocale
-                                          ? ''
-                                          : '/' + currentLocale
-                                  }${menuItem.to}`
-                                : '';
-                            return (
-                                <Link
-                                    key={index}
-                                    className='navbar-item'
-                                    to={to}>
-                                    <div
-                                        onClick={() =>
-                                            setMobileMenuToggled(false)
-                                        }>
-                                        {menuItem.item[currentLocale]}
-                                    </div>
-                                </Link>
-                            );
-                        })}
+                        {menuItems
+                            ? menuItems.map((menuItem, index) => {
+                                  const to = primaryLocale
+                                      ? `${
+                                            currentLocale === primaryLocale
+                                                ? ''
+                                                : '/' + currentLocale
+                                        }${menuItem?.to}`
+                                      : '';
+                                  return (
+                                      <Link
+                                          key={index}
+                                          className='navbar-item'
+                                          to={to}>
+                                          <div
+                                              onClick={() =>
+                                                  setMobileMenuToggled(false)
+                                              }>
+                                              {menuItem?.item
+                                                  ? menuItem?.item[
+                                                        currentLocale
+                                                    ]
+                                                  : ''}
+                                          </div>
+                                      </Link>
+                                  );
+                              })
+                            : null}
                         <LocalsToggle />
                     </div>
                 </div>

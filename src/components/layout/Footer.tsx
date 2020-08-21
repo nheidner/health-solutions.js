@@ -56,7 +56,7 @@ export const FooterTemplate: FC<{
     );
 };
 
-const Footer: FC = () => {
+const Footer: FC<{ currentLocale: string }> = ({ currentLocale }) => {
     const queryResult = useStaticQuery(
         graphql`
             query Footer {
@@ -82,11 +82,35 @@ const Footer: FC = () => {
                         }
                     }
                 }
+                de: markdownRemark(
+                    frontmatter: {
+                        locale: { eq: "de" }
+                        templateKey: { eq: "settings" }
+                    }
+                ) {
+                    frontmatter {
+                        footer {
+                            copyright
+                            links {
+                                href
+                                text
+                            }
+                            logo_img {
+                                alt
+                                source {
+                                    ...SVGImage
+                                }
+                            }
+                        }
+                    }
+                }
             }
         `
     );
     return (
-        <FooterTemplate footerContent={queryResult.en?.frontmatter?.footer} />
+        <FooterTemplate
+            footerContent={queryResult[currentLocale].frontmatter?.footer}
+        />
     );
 };
 

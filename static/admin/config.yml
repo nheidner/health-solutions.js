@@ -1151,3 +1151,72 @@ collections:
                         fields:
                             - { label: 'Text', name: 'text', widget: 'string' }
                             - { label: 'Href', name: 'href', widget: 'string' }
+    - name: pages_de
+      label: Deutsch
+      files:
+          - file: 'src/markdown/de/settings.md'
+            label: 'Page Settings'
+            name: 'settings_de'
+            fields:
+                - {
+                      label: 'Locale',
+                      name: 'locale',
+                      widget: 'hidden',
+                      default: 'de',
+                  }
+                - {
+                      label: 'TemplateKey',
+                      name: 'templateKey',
+                      widget: 'hidden',
+                      default: 'settings',
+                  }
+                - label: 'Header'
+                  name: 'header'
+                  widget: 'object'
+                  collapsed: true
+                  hint: 'No Preview Of Header Available'
+                  fields:
+                      - label: 'Logo'
+                        name: 'logo_img'
+                        widget: object
+                        collapsed: true
+                        fields:
+                            - {
+                                  label: 'Image Source',
+                                  name: 'source',
+                                  widget: 'image',
+                              }
+                            - {
+                                  label: 'Image Alt',
+                                  name: 'alt',
+                                  widget: 'string',
+                              }
+                - label: 'Footer'
+                  name: 'footer'
+                  widget: 'object'
+                  collapsed: true
+                  fields:
+                      - label: 'Logo'
+                        name: 'logo_img'
+                        widget: object
+                        collapsed: true
+                        fields:
+                            - {
+                                  label: 'Image Source',
+                                  name: 'source',
+                                  widget: 'image',
+                              }
+                            - {
+                                  label: 'Image Alt',
+                                  name: 'alt',
+                                  widget: 'string',
+                              }
+                      - { label: 'Copyright', name: copyright, widget: string }
+                      - label: Links
+                        name: links
+                        widget: list
+                        collapsed: true
+                        label_singular: Link
+                        fields:
+                            - { label: 'Text', name: 'text', widget: 'string' }
+                            - { label: 'Href', name: 'href', widget: 'string' }
