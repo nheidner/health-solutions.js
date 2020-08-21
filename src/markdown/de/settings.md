@@ -11,9 +11,9 @@ footer:
     alt: logo
   copyright: © Health Solutions 2020
   links:
-    - text: About us
+    - text: Über Uns
       href: /
-    - text: Contact
+    - text: Kontakt
       href: /contact
     - text: Terms and Conditions
       href: /
