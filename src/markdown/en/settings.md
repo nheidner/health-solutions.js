@@ -1,13 +1,11 @@
 ---
-locale: en
-templateKey: settings
 header:
   logo_img:
     source: /img/logo_blau_vollständig.svg
     alt: logo
 footer:
   logo_img:
-    source: /img/logo_blau_vollständig.svg
+    source: /img/logo_blau_vollstaendig.svg
     alt: logo
   copyright: © Health Solutions 2020
   links:
