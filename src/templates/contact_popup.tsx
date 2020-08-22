@@ -232,7 +232,6 @@ export const ContactPopupTemplate: FC<IContactPopupTemplate> = ({
 };
 
 const ContactPopup: FC<{ data: ContactPopupQuery }> = ({ data }) => {
-    console.log(data);
     const { frontmatter } = data.markdownRemark || {};
 
     return (

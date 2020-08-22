@@ -1,5 +1,5 @@
 backend:
-    name: git-gateway
+    name: github
     repo: nheidner/health-solutions.js
     branch: master
     commit_messages:
@@ -1100,6 +1100,11 @@ collections:
                       name: 'templateKey',
                       widget: 'hidden',
                       default: 'settings',
+                  }
+                - {
+                      label: Meta Description,
+                      name: meta_description,
+                      widget: string,
                   }
                 - label: 'Header'
                   name: 'header'
