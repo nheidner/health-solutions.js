@@ -1175,6 +1175,11 @@ collections:
                       widget: 'hidden',
                       default: 'settings',
                   }
+                - {
+                      label: Meta Description,
+                      name: meta_description,
+                      widget: string,
+                  }
                 - label: 'Header'
                   name: 'header'
                   widget: 'object'
