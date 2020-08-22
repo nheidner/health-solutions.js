@@ -104,7 +104,11 @@ const Form: FC<{ formContent: IFormContent }> = ({ formContent }) => {
     });
 
     return (
-        <form onSubmit={formik.handleSubmit} name='Contact Page Form'>
+        <form
+            onSubmit={formik.handleSubmit}
+            name='Contact Page Form'
+            data-netlify='true'
+            data-netlify-honeypot='bot-field'>
             {/* name field */}
             <div className='field'>
                 <label className='label'>{formContent.name_field?.label}</label>

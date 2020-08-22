@@ -76,7 +76,11 @@ const Form: FC<{ formContent: IFormContent }> = ({ formContent }) => {
     });
 
     return (
-        <form onSubmit={formik.handleSubmit} name='Contact Form Popup'>
+        <form
+            onSubmit={formik.handleSubmit}
+            data-netlify='true'
+            data-netlify-honeypot='bot-field'
+            name='Contact Form Popup'>
             <div className='field'>
                 <label className='label'>{formContent.name_field?.label}</label>
                 <div className='control'>
@@ -86,7 +90,6 @@ const Form: FC<{ formContent: IFormContent }> = ({ formContent }) => {
                                 ? 'is-danger'
                                 : ''
                         }`}
-                        type='text'
                         {...formik.getFieldProps('name')}
                     />
                 </div>
@@ -108,7 +111,6 @@ const Form: FC<{ formContent: IFormContent }> = ({ formContent }) => {
                                 ? 'is-danger'
                                 : ''
                         }`}
-                        type='text'
                         {...formik.getFieldProps('telephone')}
                     />
                 </div>
@@ -130,7 +132,6 @@ const Form: FC<{ formContent: IFormContent }> = ({ formContent }) => {
                                 ? 'is-danger'
                                 : ''
                         }`}
-                        type='text'
                         {...formik.getFieldProps('email')}
                     />
                 </div>
