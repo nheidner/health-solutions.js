@@ -1,6 +1,7 @@
 ---
 locale: en
 templateKey: settings
+meta_description: Description of Health Solutions
 header:
   logo_img:
     source: /img/logo_blau_vollstaendig.svg
