@@ -2,7 +2,7 @@ import { IndexTemplate } from '../templates/index';
 import { ContactPopupTemplate } from '../templates/contact_popup';
 import { ContactTemplate } from '../templates/contact';
 import { FooterTemplate } from '../components/layout/Footer';
-import { HeaderTemplate } from '../components/layout/Header';
+import { OneColumnPageTemplate } from '../templates/one_column_page';
 import CMS from 'netlify-cms-app';
 import React from 'react';
 import withEmotion from './with-emotion';
@@ -55,6 +55,31 @@ const ContactPagePreviewEn = ({ entry }) => {
     );
 };
 CMS.registerPreviewTemplate('contact_en', withEmotion(ContactPagePreviewEn));
+
+const FourZeroFourPagePreviewEn = ({ entry }) => {
+    const data = entry.getIn(['data']).toJS();
+    return (
+        <OneColumnPageTemplate
+            heading={data.heading}
+            markdown_text={data.markdown_text}
+            preview={true}
+        />
+    );
+};
+CMS.registerPreviewTemplate('404_en', withEmotion(FourZeroFourPagePreviewEn));
+
+const ImprintPreviewEn = ({ entry }) => {
+    const data = entry.getIn(['data']).toJS();
+    console.log(data);
+    return (
+        <OneColumnPageTemplate
+            heading='Hello'
+            markdown_text='hello'
+            preview={true}
+        />
+    );
+};
+CMS.registerPreviewTemplate('imprint_en', ImprintPreviewEn);
 
 const SettingsPreviewEn = ({ entry }) => {
     const data = entry.getIn(['data']).toJS();

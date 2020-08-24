@@ -696,18 +696,14 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___title'
   | 'childMarkdownRemark___frontmatter___templateKey'
   | 'childMarkdownRemark___frontmatter___locale'
-  | 'childMarkdownRemark___frontmatter___path'
-  | 'childMarkdownRemark___frontmatter___header___heading'
-  | 'childMarkdownRemark___frontmatter___header___markdown_text'
-  | 'childMarkdownRemark___frontmatter___image___alt'
   | 'childMarkdownRemark___frontmatter___pageTitle'
+  | 'childMarkdownRemark___frontmatter___path'
+  | 'childMarkdownRemark___frontmatter___heading'
+  | 'childMarkdownRemark___frontmatter___markdown_text'
   | 'childMarkdownRemark___frontmatter___header_section___heading'
   | 'childMarkdownRemark___frontmatter___header_section___markdown_text'
   | 'childMarkdownRemark___frontmatter___contact_section___section_heading'
   | 'childMarkdownRemark___frontmatter___contact_section___heading'
-  | 'childMarkdownRemark___frontmatter___meta_description'
-  | 'childMarkdownRemark___frontmatter___footer___copyright'
-  | 'childMarkdownRemark___frontmatter___footer___links'
   | 'childMarkdownRemark___frontmatter___about_us_section___section_heading'
   | 'childMarkdownRemark___frontmatter___about_us_section___heading'
   | 'childMarkdownRemark___frontmatter___about_us_section___markdown_text'
@@ -723,6 +719,12 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___labor_section___markdown_text'
   | 'childMarkdownRemark___frontmatter___team_section___section_heading'
   | 'childMarkdownRemark___frontmatter___team_section___cards'
+  | 'childMarkdownRemark___frontmatter___header___heading'
+  | 'childMarkdownRemark___frontmatter___header___markdown_text'
+  | 'childMarkdownRemark___frontmatter___image___alt'
+  | 'childMarkdownRemark___frontmatter___meta_description'
+  | 'childMarkdownRemark___frontmatter___footer___copyright'
+  | 'childMarkdownRemark___frontmatter___footer___links'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
   | 'childMarkdownRemark___fileAbsolutePath'
@@ -1495,7 +1497,56 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___title'
   | 'frontmatter___templateKey'
   | 'frontmatter___locale'
+  | 'frontmatter___pageTitle'
   | 'frontmatter___path'
+  | 'frontmatter___heading'
+  | 'frontmatter___markdown_text'
+  | 'frontmatter___header_section___heading'
+  | 'frontmatter___header_section___markdown_text'
+  | 'frontmatter___header_section___image___alt'
+  | 'frontmatter___contact_section___section_heading'
+  | 'frontmatter___contact_section___right_column___heading'
+  | 'frontmatter___contact_section___right_column___markdown_text'
+  | 'frontmatter___contact_section___right_column___show_newsletter'
+  | 'frontmatter___contact_section___right_column___address_markdown'
+  | 'frontmatter___contact_section___heading'
+  | 'frontmatter___contact_section___left_column___markdown_text'
+  | 'frontmatter___contact_section___left_column___button_text'
+  | 'frontmatter___home_section___text_column___heading'
+  | 'frontmatter___home_section___text_column___markdown_text'
+  | 'frontmatter___home_section___text_column___button_text'
+  | 'frontmatter___about_us_section___section_heading'
+  | 'frontmatter___about_us_section___heading'
+  | 'frontmatter___about_us_section___markdown_text'
+  | 'frontmatter___about_us_section___image___alt'
+  | 'frontmatter___philosophy_section___section_heading'
+  | 'frontmatter___philosophy_section___cards'
+  | 'frontmatter___philosophy_section___cards___heading'
+  | 'frontmatter___philosophy_section___cards___markdown_text'
+  | 'frontmatter___verfahren_section___section_heading'
+  | 'frontmatter___verfahren_section___text_column___heading'
+  | 'frontmatter___verfahren_section___text_column___markdown_text'
+  | 'frontmatter___verfahren_section___text_column___button_text'
+  | 'frontmatter___anonymous_section_1___text_column___heading'
+  | 'frontmatter___anonymous_section_1___text_column___markdown_text'
+  | 'frontmatter___anonymous_section_2___heading'
+  | 'frontmatter___anonymous_section_2___subheading'
+  | 'frontmatter___anonymous_section_2___button_text'
+  | 'frontmatter___anonymous_section_2___button___button_text'
+  | 'frontmatter___anonymous_section_2___button___button_href'
+  | 'frontmatter___praxis_section___section_heading'
+  | 'frontmatter___praxis_section___text_column___heading'
+  | 'frontmatter___praxis_section___text_column___markdown_text'
+  | 'frontmatter___praxis_section___text_column___button_text'
+  | 'frontmatter___praxis_section___image_gallery'
+  | 'frontmatter___praxis_section___image_gallery___alt'
+  | 'frontmatter___praxis_section___image___alt'
+  | 'frontmatter___labor_section___heading'
+  | 'frontmatter___labor_section___markdown_text'
+  | 'frontmatter___team_section___section_heading'
+  | 'frontmatter___team_section___cards'
+  | 'frontmatter___team_section___cards___heading'
+  | 'frontmatter___team_section___cards___markdown_text'
   | 'frontmatter___header___logo_image___alt'
   | 'frontmatter___header___heading'
   | 'frontmatter___header___markdown_text'
@@ -1543,59 +1594,12 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___image___source___id'
   | 'frontmatter___image___source___children'
   | 'frontmatter___image___alt'
-  | 'frontmatter___pageTitle'
-  | 'frontmatter___header_section___heading'
-  | 'frontmatter___header_section___markdown_text'
-  | 'frontmatter___header_section___image___alt'
-  | 'frontmatter___contact_section___section_heading'
-  | 'frontmatter___contact_section___right_column___heading'
-  | 'frontmatter___contact_section___right_column___markdown_text'
-  | 'frontmatter___contact_section___right_column___show_newsletter'
-  | 'frontmatter___contact_section___right_column___address_markdown'
-  | 'frontmatter___contact_section___heading'
-  | 'frontmatter___contact_section___left_column___markdown_text'
-  | 'frontmatter___contact_section___left_column___button_text'
   | 'frontmatter___meta_description'
   | 'frontmatter___footer___logo_img___alt'
   | 'frontmatter___footer___copyright'
   | 'frontmatter___footer___links'
   | 'frontmatter___footer___links___text'
   | 'frontmatter___footer___links___href'
-  | 'frontmatter___home_section___text_column___heading'
-  | 'frontmatter___home_section___text_column___markdown_text'
-  | 'frontmatter___home_section___text_column___button_text'
-  | 'frontmatter___about_us_section___section_heading'
-  | 'frontmatter___about_us_section___heading'
-  | 'frontmatter___about_us_section___markdown_text'
-  | 'frontmatter___about_us_section___image___alt'
-  | 'frontmatter___philosophy_section___section_heading'
-  | 'frontmatter___philosophy_section___cards'
-  | 'frontmatter___philosophy_section___cards___heading'
-  | 'frontmatter___philosophy_section___cards___markdown_text'
-  | 'frontmatter___verfahren_section___section_heading'
-  | 'frontmatter___verfahren_section___text_column___heading'
-  | 'frontmatter___verfahren_section___text_column___markdown_text'
-  | 'frontmatter___verfahren_section___text_column___button_text'
-  | 'frontmatter___anonymous_section_1___text_column___heading'
-  | 'frontmatter___anonymous_section_1___text_column___markdown_text'
-  | 'frontmatter___anonymous_section_2___heading'
-  | 'frontmatter___anonymous_section_2___subheading'
-  | 'frontmatter___anonymous_section_2___button_text'
-  | 'frontmatter___anonymous_section_2___button___button_text'
-  | 'frontmatter___anonymous_section_2___button___button_href'
-  | 'frontmatter___praxis_section___section_heading'
-  | 'frontmatter___praxis_section___text_column___heading'
-  | 'frontmatter___praxis_section___text_column___markdown_text'
-  | 'frontmatter___praxis_section___text_column___button_text'
-  | 'frontmatter___praxis_section___image_gallery'
-  | 'frontmatter___praxis_section___image_gallery___alt'
-  | 'frontmatter___praxis_section___image___alt'
-  | 'frontmatter___labor_section___heading'
-  | 'frontmatter___labor_section___markdown_text'
-  | 'frontmatter___team_section___section_heading'
-  | 'frontmatter___team_section___cards'
-  | 'frontmatter___team_section___cards___heading'
-  | 'frontmatter___team_section___cards___markdown_text'
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
@@ -1725,15 +1729,12 @@ export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>;
   templateKey?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
-  path?: Maybe<Scalars['String']>;
-  header?: Maybe<MarkdownRemarkFrontmatterHeader>;
-  form?: Maybe<MarkdownRemarkFrontmatterForm>;
-  image?: Maybe<MarkdownRemarkFrontmatterImage>;
   pageTitle?: Maybe<Scalars['String']>;
+  path?: Maybe<Scalars['String']>;
+  heading?: Maybe<Scalars['String']>;
+  markdown_text?: Maybe<Scalars['String']>;
   header_section?: Maybe<MarkdownRemarkFrontmatterHeader_Section>;
   contact_section?: Maybe<MarkdownRemarkFrontmatterContact_Section>;
-  meta_description?: Maybe<Scalars['String']>;
-  footer?: Maybe<MarkdownRemarkFrontmatterFooter>;
   home_section?: Maybe<MarkdownRemarkFrontmatterHome_Section>;
   about_us_section?: Maybe<MarkdownRemarkFrontmatterAbout_Us_Section>;
   philosophy_section?: Maybe<MarkdownRemarkFrontmatterPhilosophy_Section>;
@@ -1743,6 +1744,11 @@ export type MarkdownRemarkFrontmatter = {
   praxis_section?: Maybe<MarkdownRemarkFrontmatterPraxis_Section>;
   labor_section?: Maybe<MarkdownRemarkFrontmatterLabor_Section>;
   team_section?: Maybe<MarkdownRemarkFrontmatterTeam_Section>;
+  header?: Maybe<MarkdownRemarkFrontmatterHeader>;
+  form?: Maybe<MarkdownRemarkFrontmatterForm>;
+  image?: Maybe<MarkdownRemarkFrontmatterImage>;
+  meta_description?: Maybe<Scalars['String']>;
+  footer?: Maybe<MarkdownRemarkFrontmatterFooter>;
 };
 
 export type MarkdownRemarkFrontmatterAbout_Us_Section = {
@@ -2041,15 +2047,12 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   templateKey?: Maybe<StringQueryOperatorInput>;
   locale?: Maybe<StringQueryOperatorInput>;
-  path?: Maybe<StringQueryOperatorInput>;
-  header?: Maybe<MarkdownRemarkFrontmatterHeaderFilterInput>;
-  form?: Maybe<MarkdownRemarkFrontmatterFormFilterInput>;
-  image?: Maybe<MarkdownRemarkFrontmatterImageFilterInput>;
   pageTitle?: Maybe<StringQueryOperatorInput>;
+  path?: Maybe<StringQueryOperatorInput>;
+  heading?: Maybe<StringQueryOperatorInput>;
+  markdown_text?: Maybe<StringQueryOperatorInput>;
   header_section?: Maybe<MarkdownRemarkFrontmatterHeader_SectionFilterInput>;
   contact_section?: Maybe<MarkdownRemarkFrontmatterContact_SectionFilterInput>;
-  meta_description?: Maybe<StringQueryOperatorInput>;
-  footer?: Maybe<MarkdownRemarkFrontmatterFooterFilterInput>;
   home_section?: Maybe<MarkdownRemarkFrontmatterHome_SectionFilterInput>;
   about_us_section?: Maybe<MarkdownRemarkFrontmatterAbout_Us_SectionFilterInput>;
   philosophy_section?: Maybe<MarkdownRemarkFrontmatterPhilosophy_SectionFilterInput>;
@@ -2059,6 +2062,11 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   praxis_section?: Maybe<MarkdownRemarkFrontmatterPraxis_SectionFilterInput>;
   labor_section?: Maybe<MarkdownRemarkFrontmatterLabor_SectionFilterInput>;
   team_section?: Maybe<MarkdownRemarkFrontmatterTeam_SectionFilterInput>;
+  header?: Maybe<MarkdownRemarkFrontmatterHeaderFilterInput>;
+  form?: Maybe<MarkdownRemarkFrontmatterFormFilterInput>;
+  image?: Maybe<MarkdownRemarkFrontmatterImageFilterInput>;
+  meta_description?: Maybe<StringQueryOperatorInput>;
+  footer?: Maybe<MarkdownRemarkFrontmatterFooterFilterInput>;
 };
 
 export type MarkdownRemarkFrontmatterFooter = {
@@ -4027,6 +4035,13 @@ export type IndexQuery = { markdownRemark?: Maybe<{ frontmatter?: Maybe<(
         )> }
       )> }
     )> }> };
+
+export type OneColumnPageQueryVariables = Exact<{
+  id: Scalars['String'];
+}>;
+
+
+export type OneColumnPageQuery = { markdownRemark?: Maybe<{ frontmatter?: Maybe<Pick<MarkdownRemarkFrontmatter, 'pageTitle' | 'heading' | 'markdown_text'>> }> };
 
 export type ColumnImageMediumFragment = { childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> };
 
