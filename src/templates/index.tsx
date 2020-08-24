@@ -21,16 +21,12 @@ import {
 import Content from '../components/Content';
 import Newsletter, { INewsletterContent } from '../components/Newsletter';
 import Maps from '../components/Maps';
+import { aosSettings } from '../utils/settings';
 
 type IIndexTemplate = DeepExtractType<
     IndexQuery,
     ['markdownRemark', 'frontmatter']
 > & { preview?: boolean };
-
-const aosSettings = {
-    duration: { fast: 600, slow: 1800 },
-    delay: { short: 400, medium: 600, long: 1800, none: 0 },
-};
 
 export const IndexTemplate: FC<IIndexTemplate> = ({
     preview,
@@ -210,7 +206,7 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                             className='column'
                             data-aos='fade'
                             data-aos-duration={aosSettings.duration.fast}
-                            data-aos-delay={2 * aosSettings.delay.short}>
+                            data-aos-delay={2 * aosSettings.delay.medium}>
                             <h1 className='title is-1'>
                                 {verfahren_section?.text_column?.heading}
                             </h1>
@@ -238,7 +234,7 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                             className='column'
                             data-aos='fade'
                             data-aos-duration={aosSettings.duration.fast}
-                            data-aos-delay={aosSettings.delay.short}>
+                            data-aos-delay={aosSettings.delay.medium}>
                             <figure className='image'>
                                 <Img
                                     source={
@@ -322,7 +318,7 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                             className='column'
                             data-aos='fade'
                             data-aos-duration={aosSettings.duration.fast}
-                            data-aos-delay={aosSettings.delay.short}>
+                            data-aos-delay={aosSettings.delay.medium}>
                             <figure className='image'>
                                 <Img
                                     source={
@@ -340,7 +336,7 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                             className='column'
                             data-aos='fade'
                             data-aos-duration={aosSettings.duration.fast}
-                            data-aos-delay={2 * aosSettings.delay.short}>
+                            data-aos-delay={2 * aosSettings.delay.medium}>
                             <h1 className='title is-1'>
                                 {praxis_section?.text_column?.heading}
                             </h1>
@@ -390,7 +386,7 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                         className='content is-normal has-text-centered'
                         data-aos='fade'
                         data-aos-duration={aosSettings.duration.fast}
-                        data-aos-delay={aosSettings.delay.short}>
+                        data-aos-delay={aosSettings.delay.medium}>
                         <Content
                             markdown={labor_section?.markdown_text as string}
                         />

@@ -1,10 +1,13 @@
 import React, { FC, useState } from 'react';
 
-export const ImageCarousel: FC<{ images: string[] }> = ({ images }) => {
+export const ImageCarousel: FC<{ images: string[]; [prop: string]: any }> = ({
+    images,
+    ...props
+}) => {
     const [selectedImageIndex, setSelectedImageIndex] = useState<number>(0);
 
     return (
-        <div className='image-carousel'>
+        <div className='image-carousel' {...props}>
             <ul className='image-container'>
                 {images.map((image, index) => {
                     return (
