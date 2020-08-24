@@ -696,18 +696,18 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___title'
   | 'childMarkdownRemark___frontmatter___templateKey'
   | 'childMarkdownRemark___frontmatter___locale'
-  | 'childMarkdownRemark___frontmatter___meta_description'
+  | 'childMarkdownRemark___frontmatter___path'
   | 'childMarkdownRemark___frontmatter___header___heading'
   | 'childMarkdownRemark___frontmatter___header___markdown_text'
-  | 'childMarkdownRemark___frontmatter___footer___copyright'
-  | 'childMarkdownRemark___frontmatter___footer___links'
-  | 'childMarkdownRemark___frontmatter___path'
   | 'childMarkdownRemark___frontmatter___image___alt'
   | 'childMarkdownRemark___frontmatter___pageTitle'
   | 'childMarkdownRemark___frontmatter___header_section___heading'
   | 'childMarkdownRemark___frontmatter___header_section___markdown_text'
   | 'childMarkdownRemark___frontmatter___contact_section___section_heading'
   | 'childMarkdownRemark___frontmatter___contact_section___heading'
+  | 'childMarkdownRemark___frontmatter___meta_description'
+  | 'childMarkdownRemark___frontmatter___footer___copyright'
+  | 'childMarkdownRemark___frontmatter___footer___links'
   | 'childMarkdownRemark___frontmatter___about_us_section___section_heading'
   | 'childMarkdownRemark___frontmatter___about_us_section___heading'
   | 'childMarkdownRemark___frontmatter___about_us_section___markdown_text'
@@ -1495,17 +1495,11 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___title'
   | 'frontmatter___templateKey'
   | 'frontmatter___locale'
-  | 'frontmatter___meta_description'
-  | 'frontmatter___header___logo_img___alt'
+  | 'frontmatter___path'
   | 'frontmatter___header___logo_image___alt'
   | 'frontmatter___header___heading'
   | 'frontmatter___header___markdown_text'
-  | 'frontmatter___footer___logo_img___alt'
-  | 'frontmatter___footer___copyright'
-  | 'frontmatter___footer___links'
-  | 'frontmatter___footer___links___text'
-  | 'frontmatter___footer___links___href'
-  | 'frontmatter___path'
+  | 'frontmatter___header___logo_img___alt'
   | 'frontmatter___form___name_field___label'
   | 'frontmatter___form___name_field___max_number_characters'
   | 'frontmatter___form___telephone_number_field___label'
@@ -1561,6 +1555,12 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___contact_section___heading'
   | 'frontmatter___contact_section___left_column___markdown_text'
   | 'frontmatter___contact_section___left_column___button_text'
+  | 'frontmatter___meta_description'
+  | 'frontmatter___footer___logo_img___alt'
+  | 'frontmatter___footer___copyright'
+  | 'frontmatter___footer___links'
+  | 'frontmatter___footer___links___text'
+  | 'frontmatter___footer___links___href'
   | 'frontmatter___home_section___text_column___heading'
   | 'frontmatter___home_section___text_column___markdown_text'
   | 'frontmatter___home_section___text_column___button_text'
@@ -1725,15 +1725,15 @@ export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>;
   templateKey?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
-  meta_description?: Maybe<Scalars['String']>;
-  header?: Maybe<MarkdownRemarkFrontmatterHeader>;
-  footer?: Maybe<MarkdownRemarkFrontmatterFooter>;
   path?: Maybe<Scalars['String']>;
+  header?: Maybe<MarkdownRemarkFrontmatterHeader>;
   form?: Maybe<MarkdownRemarkFrontmatterForm>;
   image?: Maybe<MarkdownRemarkFrontmatterImage>;
   pageTitle?: Maybe<Scalars['String']>;
   header_section?: Maybe<MarkdownRemarkFrontmatterHeader_Section>;
   contact_section?: Maybe<MarkdownRemarkFrontmatterContact_Section>;
+  meta_description?: Maybe<Scalars['String']>;
+  footer?: Maybe<MarkdownRemarkFrontmatterFooter>;
   home_section?: Maybe<MarkdownRemarkFrontmatterHome_Section>;
   about_us_section?: Maybe<MarkdownRemarkFrontmatterAbout_Us_Section>;
   philosophy_section?: Maybe<MarkdownRemarkFrontmatterPhilosophy_Section>;
@@ -2041,15 +2041,15 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   templateKey?: Maybe<StringQueryOperatorInput>;
   locale?: Maybe<StringQueryOperatorInput>;
-  meta_description?: Maybe<StringQueryOperatorInput>;
-  header?: Maybe<MarkdownRemarkFrontmatterHeaderFilterInput>;
-  footer?: Maybe<MarkdownRemarkFrontmatterFooterFilterInput>;
   path?: Maybe<StringQueryOperatorInput>;
+  header?: Maybe<MarkdownRemarkFrontmatterHeaderFilterInput>;
   form?: Maybe<MarkdownRemarkFrontmatterFormFilterInput>;
   image?: Maybe<MarkdownRemarkFrontmatterImageFilterInput>;
   pageTitle?: Maybe<StringQueryOperatorInput>;
   header_section?: Maybe<MarkdownRemarkFrontmatterHeader_SectionFilterInput>;
   contact_section?: Maybe<MarkdownRemarkFrontmatterContact_SectionFilterInput>;
+  meta_description?: Maybe<StringQueryOperatorInput>;
+  footer?: Maybe<MarkdownRemarkFrontmatterFooterFilterInput>;
   home_section?: Maybe<MarkdownRemarkFrontmatterHome_SectionFilterInput>;
   about_us_section?: Maybe<MarkdownRemarkFrontmatterAbout_Us_SectionFilterInput>;
   philosophy_section?: Maybe<MarkdownRemarkFrontmatterPhilosophy_SectionFilterInput>;
@@ -2194,10 +2194,10 @@ export type MarkdownRemarkFrontmatterFormTelephone_Number_FieldMessagesFilterInp
 };
 
 export type MarkdownRemarkFrontmatterHeader = {
-  logo_img?: Maybe<MarkdownRemarkFrontmatterHeaderLogo_Img>;
   logo_image?: Maybe<MarkdownRemarkFrontmatterHeaderLogo_Image>;
   heading?: Maybe<Scalars['String']>;
   markdown_text?: Maybe<Scalars['String']>;
+  logo_img?: Maybe<MarkdownRemarkFrontmatterHeaderLogo_Img>;
 };
 
 export type MarkdownRemarkFrontmatterHeader_Section = {
@@ -2223,10 +2223,10 @@ export type MarkdownRemarkFrontmatterHeader_SectionImageFilterInput = {
 };
 
 export type MarkdownRemarkFrontmatterHeaderFilterInput = {
-  logo_img?: Maybe<MarkdownRemarkFrontmatterHeaderLogo_ImgFilterInput>;
   logo_image?: Maybe<MarkdownRemarkFrontmatterHeaderLogo_ImageFilterInput>;
   heading?: Maybe<StringQueryOperatorInput>;
   markdown_text?: Maybe<StringQueryOperatorInput>;
+  logo_img?: Maybe<MarkdownRemarkFrontmatterHeaderLogo_ImgFilterInput>;
 };
 
 export type MarkdownRemarkFrontmatterHeaderLogo_Image = {

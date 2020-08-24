@@ -27,7 +27,7 @@ const Layout: FC<{ pageTitle: string }> = ({ children, pageTitle }) => {
 
     // AOS
     useEffect(() => {
-        AOS.init({ /*once: true,*/ disable: window.innerWidth < 768 });
+        AOS.init({ once: true, disable: window.innerWidth < 768 });
     });
 
     // smooth-scroll
