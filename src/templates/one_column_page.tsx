@@ -10,7 +10,7 @@ type IOneColumnPageTemplate = DeepExtractType<
     ['markdownRemark', 'frontmatter']
 > & { preview?: boolean };
 
-const OneColumnPageTemplate: FC<IOneColumnPageTemplate> = ({
+export const OneColumnPageTemplate: FC<IOneColumnPageTemplate> = ({
     markdown_text,
     heading,
 }) => {
@@ -18,7 +18,7 @@ const OneColumnPageTemplate: FC<IOneColumnPageTemplate> = ({
         <div>
             <section className='section'>
                 <div className='container'>
-                    <h1 className='title is-2 pt-5'>{heading}</h1>
+                    <h1 className='title is-1 pt-5'>{heading}</h1>
                     <div className='content is-normal'>
                         <Content markdown={markdown_text as string} />
                     </div>

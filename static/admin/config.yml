@@ -1,5 +1,5 @@
 backend:
-    name: github
+    name: git-gateway #github
     repo: nheidner/health-solutions.js
     branch: master
     commit_messages:

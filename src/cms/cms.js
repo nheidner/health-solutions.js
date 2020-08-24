@@ -70,11 +70,10 @@ CMS.registerPreviewTemplate('404_en', withEmotion(FourZeroFourPagePreviewEn));
 
 const ImprintPreviewEn = ({ entry }) => {
     const data = entry.getIn(['data']).toJS();
-    console.log(data);
     return (
         <OneColumnPageTemplate
-            heading='Hello'
-            markdown_text='hello'
+            heading={data.heading}
+            markdown_text={data.markdown_text}
             preview={true}
         />
     );
