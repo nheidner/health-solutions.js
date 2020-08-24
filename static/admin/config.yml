@@ -1085,6 +1085,92 @@ collections:
                                         name: 'button_text',
                                         widget: 'string',
                                     }
+          - file: 'src/markdown/en/imprint.md'
+            label: 'Imprint'
+            name: 'imprint_en'
+            fields:
+                - {
+                      label: 'TemplateKey',
+                      name: 'templateKey',
+                      widget: 'hidden',
+                      default: 'one_column_page',
+                  }
+                - {
+                      label: 'Locale',
+                      name: 'locale',
+                      widget: 'hidden',
+                      default: 'en',
+                  }
+                - {
+                      label: 'Page Title',
+                      name: 'pageTitle',
+                      widget: 'string',
+                      hint: 'Modifies the title of the page that will be rendered in the browser - as f.e. seen in the tab bar of the browser',
+                  }
+                - {
+                      label: 'Path',
+                      name: 'path',
+                      widget: 'string',
+                      hint: 'Without locales path - Modifies the path under which the page will be found - Warning: Please only change it, if you know, what you are doing!',
+                  }
+                - { label: 'Heading', name: 'heading', widget: 'string' }
+                - {
+                      label: 'Markdown Text',
+                      name: 'markdown_text',
+                      widget: 'markdown',
+                      buttons:
+                          [
+                              bold,
+                              italic,
+                              link,
+                              bulleted-list,
+                              numbered-list,
+                              quote,
+                          ],
+                  }
+          - file: 'src/markdown/en/404.md'
+            label: '404 Page'
+            name: '404_en'
+            fields:
+                - {
+                      label: 'TemplateKey',
+                      name: 'templateKey',
+                      widget: 'hidden',
+                      default: 'one_column_page',
+                  }
+                - {
+                      label: 'Locale',
+                      name: 'locale',
+                      widget: 'hidden',
+                      default: 'en',
+                  }
+                - {
+                      label: 'Page Title',
+                      name: 'pageTitle',
+                      widget: 'string',
+                      hint: 'Modifies the title of the page that will be rendered in the browser - as f.e. seen in the tab bar of the browser',
+                  }
+                - {
+                      label: 'Path',
+                      name: 'path',
+                      widget: 'string',
+                      hint: 'Without locales path - Modifies the path under which the page will be found - Warning: Please only change it, if you know, what you are doing!',
+                  }
+                - { label: 'Heading', name: 'heading', widget: 'string' }
+                - {
+                      label: 'Markdown Text',
+                      name: 'markdown_text',
+                      widget: 'markdown',
+                      buttons:
+                          [
+                              bold,
+                              italic,
+                              link,
+                              bulleted-list,
+                              numbered-list,
+                              quote,
+                          ],
+                  }
           - file: 'src/markdown/en/settings.md'
             label: 'Page Settings'
             name: 'settings_en'
