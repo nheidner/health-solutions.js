@@ -91,6 +91,79 @@ const SettingsPreviewEn = ({ entry }) => {
 CMS.registerPreviewTemplate('settings_en', withEmotion(SettingsPreviewEn));
 
 // GERMAN
+const IndexPagePreviewDe = ({ entry }) => {
+    const data = entry.getIn(['data']).toJS();
+    return (
+        <IndexTemplate
+            pageTitle={data.pageTitle}
+            home_section={data.home_section}
+            about_us_section={data.about_us_section}
+            philosophy_section={data.philosophy_section}
+            verfahren_section={data.verfahren_section}
+            anonymous_section_1={data.anonymous_section_1}
+            anonymous_section_2={data.anonymous_section_2}
+            praxis_section={data.praxis_section}
+            labor_section={data.labor_section}
+            team_section={data.team_section}
+            contact_section={data.contact_section}
+            preview={true}
+        />
+    );
+};
+CMS.registerPreviewTemplate('index_de', withEmotion(IndexPagePreviewDe));
+
+const ContactPopupPagePreviewDe = ({ entry }) => {
+    const data = entry.getIn(['data']).toJS();
+    return (
+        <ContactPopupTemplate
+            header={data.header}
+            form={data.form}
+            image={data.image}
+            preview={true}
+        />
+    );
+};
+CMS.registerPreviewTemplate(
+    'contact_popup_de',
+    withEmotion(ContactPopupPagePreviewDe)
+);
+
+const ContactPagePreviewDe = ({ entry }) => {
+    const data = entry.getIn(['data']).toJS();
+    return (
+        <ContactTemplate
+            header_section={data.header_section}
+            contact_section={data.contact_section}
+            preview={true}
+        />
+    );
+};
+CMS.registerPreviewTemplate('contact_de', withEmotion(ContactPagePreviewDe));
+
+const FourZeroFourPagePreviewDe = ({ entry }) => {
+    const data = entry.getIn(['data']).toJS();
+    return (
+        <OneColumnPageTemplate
+            heading={data.heading}
+            markdown_text={data.markdown_text}
+            preview={true}
+        />
+    );
+};
+CMS.registerPreviewTemplate('404_de', withEmotion(FourZeroFourPagePreviewDe));
+
+const ImprintPreviewDe = ({ entry }) => {
+    const data = entry.getIn(['data']).toJS();
+    return (
+        <OneColumnPageTemplate
+            heading={data.heading}
+            markdown_text={data.markdown_text}
+            preview={true}
+        />
+    );
+};
+CMS.registerPreviewTemplate('imprint_de', ImprintPreviewDe);
+
 const SettingsPreviewDe = ({ entry }) => {
     const data = entry.getIn(['data']).toJS();
     return (

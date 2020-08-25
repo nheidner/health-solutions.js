@@ -4,9 +4,9 @@ import LocalsToggle from './LocalesToggle';
 import Link from '../Link';
 import useLocales from '../../utils/useLocales';
 import { HeaderQuery } from '../../../gatsby-graphql';
-import { SVGImage } from '../../utils/fragments';
-import { DeepExtractType } from 'ts-deep-extract-types';
 import Img from '../Img';
+import LocalizedLink from '../LocalizedLink';
+import { SVGImage } from '../../utils/fragments';
 
 const Header: FC<{ currentLocale: string; showNavbarShadow: boolean }> = ({
     currentLocale,
@@ -74,7 +74,7 @@ const Header: FC<{ currentLocale: string; showNavbarShadow: boolean }> = ({
             }`}>
             <div className='container'>
                 <div className='navbar-brand px-5'>
-                    <Link className='navbar-item' to='/'>
+                    <LocalizedLink className='navbar-item' to='/'>
                         <Img
                             className='logo'
                             source={
@@ -86,7 +86,7 @@ const Header: FC<{ currentLocale: string; showNavbarShadow: boolean }> = ({
                                     .logo_img.alt
                             }
                         />
-                    </Link>
+                    </LocalizedLink>
                     <Link
                         role='button'
                         className={`navbar-burger burger ${

@@ -7,6 +7,7 @@ import { IndexQuery } from '../../gatsby-graphql';
 import { DeepExtractType } from 'ts-deep-extract-types';
 import Img from '../components/Img';
 import Link from '../components/Link';
+import LocalizedLink from '../components/LocalizedLink';
 import '../styles/all.sass';
 // @ts-ignore
 import myImg from '../../static/img/apple-touch-icon.png';
@@ -80,7 +81,7 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                                     }
                                 />
                             </div>
-                            <Link
+                            <LocalizedLink
                                 className='button is-primary'
                                 to='/contact-popup/'
                                 state={{
@@ -88,7 +89,7 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                                     noScroll: true,
                                 }}>
                                 {home_section?.text_column?.button_text}
-                            </Link>
+                            </LocalizedLink>
                         </div>
                         <div
                             className='column'

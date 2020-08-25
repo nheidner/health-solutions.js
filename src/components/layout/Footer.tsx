@@ -22,12 +22,12 @@ export const FooterTemplate: FC<{
             <div className='container'>
                 <div className='columns '>
                     <div className='column logo-column'>
-                        <Link className='logo' to='/'>
+                        <LocalizedLink className='logo' to='/'>
                             <Img
                                 source={footerContent.logo_img?.source}
                                 alt={footerContent.logo_img?.alt as string}
                             />
-                        </Link>
+                        </LocalizedLink>
                     </div>
                     <div className='column footer-menu'>
                         <ul>
