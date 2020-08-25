@@ -166,7 +166,6 @@ CMS.registerPreviewTemplate('imprint_de', ImprintPreviewDe);
 
 const SettingsPreviewDe = ({ entry }) => {
     const data = entry.getIn(['data']).toJS();
-    console.log(data);
     return (
         <div>
             <FooterTemplate footerContent={data.footer} preview={true} />

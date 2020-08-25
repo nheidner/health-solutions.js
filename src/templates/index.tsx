@@ -81,15 +81,27 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                                     }
                                 />
                             </div>
-                            <LocalizedLink
-                                className='button is-primary'
-                                to='/contact-popup/'
-                                state={{
-                                    modal: true,
-                                    noScroll: true,
-                                }}>
-                                {home_section?.text_column?.button_text}
-                            </LocalizedLink>
+                            {preview ? (
+                                <Link
+                                    className='button is-primary'
+                                    to='/contact-popup/'
+                                    state={{
+                                        modal: true,
+                                        noScroll: true,
+                                    }}>
+                                    {home_section?.text_column?.button_text}
+                                </Link>
+                            ) : (
+                                <LocalizedLink
+                                    className='button is-primary'
+                                    to='/contact-popup/'
+                                    state={{
+                                        modal: true,
+                                        noScroll: true,
+                                    }}>
+                                    {home_section?.text_column?.button_text}
+                                </LocalizedLink>
+                            )}
                         </div>
                         <div
                             className='column'

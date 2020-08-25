@@ -1,6 +1,5 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import LocalsToggle from './LocalesToggle';
 import Link from '../Link';
 import LocalizedLink from '../LocalizedLink';
 import { SVGImage } from '../../utils/fragments';
@@ -23,12 +22,12 @@ export const FooterTemplate: FC<{
                 <div className='columns '>
                     <div className='column logo-column'>
                         {preview ? (
-                            <LocalizedLink className='logo' to='/'>
+                            <Link className='logo' to='/'>
                                 <Img
                                     source={footerContent.logo_img?.source}
                                     alt={footerContent.logo_img?.alt as string}
                                 />
-                            </LocalizedLink>
+                            </Link>
                         ) : (
                             <LocalizedLink className='logo' to='/'>
                                 <Img
