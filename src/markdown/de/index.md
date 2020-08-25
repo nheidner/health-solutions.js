@@ -72,7 +72,27 @@ verfahren_section:
       alt: HealthSolutions
   text_column:
     heading: FLIEßTEXT
-    markdown_text: FLIEßTEXT
+    markdown_text: >-
+      Jeder naturheilkundlichen Therapie geht eine fundierte Ursachenforschung
+      voraus. In unserem Fall richtet sich die Untersuchung nicht nur an das
+      akute Problem oder eine bestimmten Erkrankung, sondern wir machen uns ein
+      ganzheitlichen Bild von Ihnen.
+
+
+
+
+
+
+      Für alle Beschwerden gibt es einen oder mehrere Auslöser, die sich über die Jahre ansammeln und verstärken können. Durch unsere aufUrsachenbasierende Therapiemethode, sind auch diese Krankheiten therapierbar. Bei unserem Messverfahren, der so genannten Frequenz Therapie wird an verschiedenen Akupunkturpunkten von Händen und Füßen der Hautwiderstand gemessen. Durch diese Widerstandsmessung sieht man, wo sichFunktionsstörungenundEntzündungsherdeim Körper befinden. Ein Entzündungsherd ist eine krankmachende Belastung, welche keine direkten Beschwerden auslöst, aber eine Fernwirkung auf andere Organe hat und diese negativ beeinflusst. Aus diesem Umstand folgt die Schlussfolgerung, dass dort, wo der Patient seine Beschwerden hat, nur selten die Ursachen liegen. Oft findet man mehrere solcher Belastungen und erst das Zusammenspiel all dieser "Giftdosen" führt zur Erkrankung. Besonders häufig findet man Entzündungsherde bei Patienten die sich sehr schwach fühlen oderchronische Leidenhaben.
+
+
+      Mit dem von uns angewandten Verfahren und er Unterstützung des hierfür eigens entwickelte PC-Programm können selbst kleinste Beeinträchtigungen im Körper, chronische Entzündungsherde und Störfelder, die durch Viren, Bakterien, Pilze, Bakterien u.v.m. ausgelöst werden, erkannt und therapeutisch behandelt werden. Es wird ein zuverlässiges Bild vom Zustand Ihres Körpers geliefert, bei dem alle wichtigenOrgansystemeerfasst werden. Selbst kleinste Problemstellen können gefunden und Zusammenhänge zu Ihren Symptomen aufgedeckt werden. Für alle Beschwerden gibt es Auslöser, die sich über die Jahre intensivieren können.
+
+
+      Unsere jahrelange Erfahrung hat gezeigt, dass es notwendig ist die chronischen Entzündungsherde und bakteriellen oder viralen Störfelder zu beseitigen, um eine ganzheitliche Genesung zu ermöglichen. Ohne diese ist der Körper nicht in der Lage mit den Herausforderungen des Alltages, sowie weiteren psychische und physische Beschwerden umzugehen.
+
+
+      Mit Hilfe einer speziell auf Ihre Beschwerden und Erkrankungen abgestimmte Therapie werden dieSelbstheilungskräftedes Körpers aktiviert und ein natürlicher Heilungsprozess in Gang gesetzt. Der Körper erhält wieder die Möglichkeit selbst mit Erkrankungen fertig zu werden und mit ein wenig Geduld werden Ihre Belastungen nach und nach verschwinden.
     button:
       button_text: Erfahren Sie mehr
       button_href: Erfahren Sie mehr
