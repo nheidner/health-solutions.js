@@ -189,7 +189,7 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                                         </figure>
                                     </div>
                                     <div className='my-card-content'>
-                                        <h1 className='title is-2'>
+                                        <h1 className='title is-2 hover-orange'>
                                             {card?.heading}
                                         </h1>
                                         <div className='content is-normal'>
@@ -206,7 +206,7 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                     </div>
                 </div>
             </section>
-            <section className='section' id='verfahren'>
+            <section className='section' id='procedure'>
                 <div className='container'>
                     <h1
                         className='title section-heading'
@@ -318,7 +318,7 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                     </Link>
                 </div>
             </section>
-            <section className='section' id='praxis'>
+            <section className='section' id='practice'>
                 <div className='container'>
                     <h1
                         className='title section-heading'
@@ -414,6 +414,15 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                         data-aos-duration={aosSettings.duration.fast}>
                         {team_section?.section_heading}
                     </h1>
+                    <div
+                        className='content is-normal has-text-centered'
+                        data-aos='fade'
+                        data-aos-duration={aosSettings.duration.fast}
+                        data-aos-delay={aosSettings.delay.medium}>
+                        <Content
+                            markdown={team_section?.markdown_text as string}
+                        />
+                    </div>
                     <div className='columns touch-is-block flex-wrap'>
                         {team_section?.cards?.map((card, index) => {
                             return (
@@ -437,7 +446,7 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                                         </figure>
                                     </div>
                                     <div className='my-card-content'>
-                                        <h1 className='title is-2'>
+                                        <h1 className='title is-2 hover-orange'>
                                             {card?.heading}
                                         </h1>
                                         <div className='content is-normal'>
@@ -661,6 +670,7 @@ export const pageQuery = graphql`
                 }
                 team_section {
                     section_heading
+                    markdown_text
                     cards {
                         image {
                             source {

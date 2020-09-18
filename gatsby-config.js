@@ -15,31 +15,31 @@ module.exports = {
             },
             {
                 item: {
-                    en: 'Our Story',
+                    en: 'About',
                     de: 'Über Uns',
                 },
                 to: '/#about',
             },
             {
                 item: {
-                    en: 'Philosophie',
+                    en: 'Philosophy',
                     de: 'Philosophie',
                 },
                 to: '/#philosophy',
             },
             {
                 item: {
-                    en: 'Verfahren',
+                    en: 'Procedure',
                     de: 'Verfahren',
                 },
-                to: '/#verfahren',
+                to: '/#procedure',
             },
             {
                 item: {
-                    en: 'Praxis',
+                    en: 'Practice',
                     de: 'Praxis',
                 },
-                to: '/#praxis',
+                to: '/#practice',
             },
             {
                 item: {
@@ -50,7 +50,7 @@ module.exports = {
             },
             {
                 item: {
-                    en: 'contact',
+                    en: 'Contact',
                     de: 'Kontakt',
                 },
                 to: '/#contact',

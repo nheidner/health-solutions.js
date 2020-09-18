@@ -46,6 +46,7 @@ $base-size: 16px
 
 // navbar
 $navbar-item-color: $dark-blue
+$navbar-item-hover-color: $orange
 $navbar-item-hover-background-color: $white
 $navbar-box-shadow-size: 0 2px 0 0
 
@@ -53,6 +54,7 @@ $navbar-box-shadow-size: 0 2px 0 0
 $button-border-width: 0
 $button-padding-vertical: 0.3rem
 $button-padding-horizontal: 1rem
+$button-hover-color: $orange
 
 @import "~bulma/bulma.sass";
 @import "image-carousel.sass"
@@ -98,6 +100,9 @@ h1
     font-family: ClearfaceStd-Regular
     font-size: $size-medium
     height: initial
+    transition: color 200ms
+    &:hover 
+        color: $orange !important
     &.is-small
         font-size: 1rem
     +mobile 
@@ -232,6 +237,8 @@ h1
         div.navbar-end
             a.navbar-item 
                 padding: 0.4rem
+                transition: color 200ms
+
 
 // to top
 .to-top-button
@@ -298,6 +305,11 @@ h1
 
 .is-Apercu-Regular 
     font-family: Apercu-Regular
+
+.hover-orange
+    &:hover
+        transition: color 200ms
+        color: $orange 
 
 // index template
 .my-card-component

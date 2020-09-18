@@ -463,6 +463,20 @@ collections:
                             name: 'section_heading',
                             widget: 'string',
                         }
+                      - {
+                            label: 'Markdown Text',
+                            name: 'markdown_text',
+                            widget: 'markdown',
+                            buttons:
+                                [
+                                    bold,
+                                    italic,
+                                    link,
+                                    bulleted-list,
+                                    numbered-list,
+                                    quote,
+                                ],
+                        }
                       - label: Cards
                         name: cards
                         widget: list
@@ -1692,6 +1706,20 @@ collections:
                             label: 'Section Heading',
                             name: 'section_heading',
                             widget: 'string',
+                        }
+                      - {
+                            label: 'Markdown Text',
+                            name: 'markdown_text',
+                            widget: 'markdown',
+                            buttons:
+                                [
+                                    bold,
+                                    italic,
+                                    link,
+                                    bulleted-list,
+                                    numbered-list,
+                                    quote,
+                                ],
                         }
                       - label: Cards
                         name: cards
