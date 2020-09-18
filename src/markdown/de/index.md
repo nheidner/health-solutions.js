@@ -30,7 +30,7 @@ about_us_section:
   heading: Willkommen bei Health Solutions. Schön, dass Sie hier sind.
   section_heading: Über Uns
   image:
-    source: /img/man_with_doctor.png
+    source: /img/logo_farbe.svg
     alt: HealthSolutions
 philosophy_section:
   section_heading: Philosophie
