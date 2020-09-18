@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'ClearfaceStd-Regular';
+    src: url('ClearfaceStd-Regular.otf');
+}
+
+@font-face {
+    font-family: 'Apercu-Bold';
+    src: url('Apercu-Font/Apercu-Bold.otf');
+}
+
+@font-face {
+    font-family: 'Apercu-Bold-Italic';
+    src: url('Apercu-Font/Apercu-Bold-Italic.otf');
+}
+
+@font-face {
+    font-family: 'Apercu-Italic';
+    src: url('Apercu-Font/Apercu-Italic.otf');
+}
+
+@font-face {
+    font-family: 'Apercu-Light';
+    src: url('Apercu-Font/Apercu-Light.otf');
+}
+
+@font-face {
+    font-family: 'Apercu-Light-Italic';
+    src: url('Apercu-Font/Apercu-Light-Italic.otf');
+}
+
+@font-face {
+    font-family: 'Apercu-Medium';
+    src: url('Apercu-Font/Apercu-Medium.otf');
+}
+
+@font-face {
+    font-family: 'Apercu-Medium-Italic';
+    src: url('Apercu-Font/Apercu-Medium-Italic.otf');
+}
+
+@font-face {
+    font-family: 'Apercu-Mono';
+    src: url('Apercu-Font/Apercu-Mono.otf');
+}
+
+@font-face {
+    font-family: 'Apercu-Pro-Bold';
+    src: url('Apercu-Font/Apercu-Pro-Bold.otf');
+}
+
+@font-face {
+    font-family: 'Apercu-Pro-Bold-Italic';
+    src: url('Apercu-Font/Apercu-Pro-Bold-Italic.otf');
+}
+
+@font-face {
+    font-family: 'Apercu-Pro-Italic';
+    src: url('Apercu-Font/Apercu-Pro-Italic.otf');
+}
+@font-face {
+    font-family: 'Apercu-Pro-Light';
+    src: url('Apercu-Font/Apercu-Pro-Light.otf');
+}
+@font-face {
+    font-family: 'Apercu-Pro-Light-Italic';
+    src: url('Apercu-Font/Apercu-Pro-Light-Italic.otf');
+}
+@font-face {
+    font-family: 'Apercu-Pro-Medium';
+    src: url('Apercu-Font/Apercu-Pro-Medium.otf');
+}
+@font-face {
+    font-family: 'Apercu-Pro-Medium-Italic';
+    src: url('Apercu-Font/Apercu-Pro-Medium-Italic.otf');
+}
+@font-face {
+    font-family: 'Apercu-Pro-Mono';
+    src: url('Apercu-Font/Apercu-Pro-Mono.otf');
+}
+@font-face {
+    font-family: 'Apercu-Pro-Regular';
+    src: url('Apercu-Font/Apercu-Pro-Regular.otf');
+}
+@font-face {
+    font-family: 'Apercu-Regular';
+    src: url('Apercu-Font/Apercu-Regular.otf');
+}

@@ -696,17 +696,13 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___title'
   | 'childMarkdownRemark___frontmatter___templateKey'
   | 'childMarkdownRemark___frontmatter___locale'
-  | 'childMarkdownRemark___frontmatter___pageTitle'
   | 'childMarkdownRemark___frontmatter___path'
-  | 'childMarkdownRemark___frontmatter___header_section___heading'
-  | 'childMarkdownRemark___frontmatter___header_section___markdown_text'
-  | 'childMarkdownRemark___frontmatter___contact_section___section_heading'
-  | 'childMarkdownRemark___frontmatter___contact_section___heading'
-  | 'childMarkdownRemark___frontmatter___heading'
-  | 'childMarkdownRemark___frontmatter___markdown_text'
   | 'childMarkdownRemark___frontmatter___header___heading'
   | 'childMarkdownRemark___frontmatter___header___markdown_text'
   | 'childMarkdownRemark___frontmatter___image___alt'
+  | 'childMarkdownRemark___frontmatter___pageTitle'
+  | 'childMarkdownRemark___frontmatter___heading'
+  | 'childMarkdownRemark___frontmatter___markdown_text'
   | 'childMarkdownRemark___frontmatter___about_us_section___section_heading'
   | 'childMarkdownRemark___frontmatter___about_us_section___heading'
   | 'childMarkdownRemark___frontmatter___about_us_section___markdown_text'
@@ -722,6 +718,10 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___labor_section___markdown_text'
   | 'childMarkdownRemark___frontmatter___team_section___section_heading'
   | 'childMarkdownRemark___frontmatter___team_section___cards'
+  | 'childMarkdownRemark___frontmatter___contact_section___section_heading'
+  | 'childMarkdownRemark___frontmatter___contact_section___heading'
+  | 'childMarkdownRemark___frontmatter___header_section___heading'
+  | 'childMarkdownRemark___frontmatter___header_section___markdown_text'
   | 'childMarkdownRemark___frontmatter___meta_description'
   | 'childMarkdownRemark___frontmatter___footer___copyright'
   | 'childMarkdownRemark___frontmatter___footer___links'
@@ -1497,21 +1497,7 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___title'
   | 'frontmatter___templateKey'
   | 'frontmatter___locale'
-  | 'frontmatter___pageTitle'
   | 'frontmatter___path'
-  | 'frontmatter___header_section___heading'
-  | 'frontmatter___header_section___markdown_text'
-  | 'frontmatter___header_section___image___alt'
-  | 'frontmatter___contact_section___section_heading'
-  | 'frontmatter___contact_section___right_column___heading'
-  | 'frontmatter___contact_section___right_column___markdown_text'
-  | 'frontmatter___contact_section___right_column___show_newsletter'
-  | 'frontmatter___contact_section___right_column___address_markdown'
-  | 'frontmatter___contact_section___heading'
-  | 'frontmatter___contact_section___left_column___markdown_text'
-  | 'frontmatter___contact_section___left_column___button_text'
-  | 'frontmatter___heading'
-  | 'frontmatter___markdown_text'
   | 'frontmatter___header___logo_image___alt'
   | 'frontmatter___header___heading'
   | 'frontmatter___header___markdown_text'
@@ -1559,6 +1545,9 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___image___source___id'
   | 'frontmatter___image___source___children'
   | 'frontmatter___image___alt'
+  | 'frontmatter___pageTitle'
+  | 'frontmatter___heading'
+  | 'frontmatter___markdown_text'
   | 'frontmatter___home_section___text_column___heading'
   | 'frontmatter___home_section___text_column___markdown_text'
   | 'frontmatter___home_section___text_column___button_text'
@@ -1594,6 +1583,17 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___team_section___cards'
   | 'frontmatter___team_section___cards___heading'
   | 'frontmatter___team_section___cards___markdown_text'
+  | 'frontmatter___contact_section___section_heading'
+  | 'frontmatter___contact_section___heading'
+  | 'frontmatter___contact_section___left_column___markdown_text'
+  | 'frontmatter___contact_section___left_column___button_text'
+  | 'frontmatter___contact_section___right_column___address_markdown'
+  | 'frontmatter___contact_section___right_column___show_newsletter'
+  | 'frontmatter___contact_section___right_column___heading'
+  | 'frontmatter___contact_section___right_column___markdown_text'
+  | 'frontmatter___header_section___heading'
+  | 'frontmatter___header_section___markdown_text'
+  | 'frontmatter___header_section___image___alt'
   | 'frontmatter___meta_description'
   | 'frontmatter___footer___logo_img___alt'
   | 'frontmatter___footer___copyright'
@@ -1729,15 +1729,13 @@ export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>;
   templateKey?: Maybe<Scalars['String']>;
   locale?: Maybe<Scalars['String']>;
-  pageTitle?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
-  header_section?: Maybe<MarkdownRemarkFrontmatterHeader_Section>;
-  contact_section?: Maybe<MarkdownRemarkFrontmatterContact_Section>;
-  heading?: Maybe<Scalars['String']>;
-  markdown_text?: Maybe<Scalars['String']>;
   header?: Maybe<MarkdownRemarkFrontmatterHeader>;
   form?: Maybe<MarkdownRemarkFrontmatterForm>;
   image?: Maybe<MarkdownRemarkFrontmatterImage>;
+  pageTitle?: Maybe<Scalars['String']>;
+  heading?: Maybe<Scalars['String']>;
+  markdown_text?: Maybe<Scalars['String']>;
   home_section?: Maybe<MarkdownRemarkFrontmatterHome_Section>;
   about_us_section?: Maybe<MarkdownRemarkFrontmatterAbout_Us_Section>;
   philosophy_section?: Maybe<MarkdownRemarkFrontmatterPhilosophy_Section>;
@@ -1747,6 +1745,8 @@ export type MarkdownRemarkFrontmatter = {
   praxis_section?: Maybe<MarkdownRemarkFrontmatterPraxis_Section>;
   labor_section?: Maybe<MarkdownRemarkFrontmatterLabor_Section>;
   team_section?: Maybe<MarkdownRemarkFrontmatterTeam_Section>;
+  contact_section?: Maybe<MarkdownRemarkFrontmatterContact_Section>;
+  header_section?: Maybe<MarkdownRemarkFrontmatterHeader_Section>;
   meta_description?: Maybe<Scalars['String']>;
   footer?: Maybe<MarkdownRemarkFrontmatterFooter>;
 };
@@ -1839,18 +1839,18 @@ export type MarkdownRemarkFrontmatterAnonymous_Section_2FilterInput = {
 
 export type MarkdownRemarkFrontmatterContact_Section = {
   section_heading?: Maybe<Scalars['String']>;
-  image_column?: Maybe<MarkdownRemarkFrontmatterContact_SectionImage_Column>;
-  right_column?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_Column>;
   heading?: Maybe<Scalars['String']>;
   left_column?: Maybe<MarkdownRemarkFrontmatterContact_SectionLeft_Column>;
+  right_column?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_Column>;
+  image_column?: Maybe<MarkdownRemarkFrontmatterContact_SectionImage_Column>;
 };
 
 export type MarkdownRemarkFrontmatterContact_SectionFilterInput = {
   section_heading?: Maybe<StringQueryOperatorInput>;
-  image_column?: Maybe<MarkdownRemarkFrontmatterContact_SectionImage_ColumnFilterInput>;
-  right_column?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFilterInput>;
   heading?: Maybe<StringQueryOperatorInput>;
   left_column?: Maybe<MarkdownRemarkFrontmatterContact_SectionLeft_ColumnFilterInput>;
+  right_column?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFilterInput>;
+  image_column?: Maybe<MarkdownRemarkFrontmatterContact_SectionImage_ColumnFilterInput>;
 };
 
 export type MarkdownRemarkFrontmatterContact_SectionImage_Column = {
@@ -1894,21 +1894,21 @@ export type MarkdownRemarkFrontmatterContact_SectionLeft_ColumnFilterInput = {
 };
 
 export type MarkdownRemarkFrontmatterContact_SectionRight_Column = {
+  address_markdown?: Maybe<Scalars['String']>;
+  show_newsletter?: Maybe<Scalars['Boolean']>;
+  newsletter?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnNewsletter>;
   heading?: Maybe<Scalars['String']>;
   markdown_text?: Maybe<Scalars['String']>;
   form?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnForm>;
-  show_newsletter?: Maybe<Scalars['Boolean']>;
-  newsletter?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnNewsletter>;
-  address_markdown?: Maybe<Scalars['String']>;
 };
 
 export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnFilterInput = {
+  address_markdown?: Maybe<StringQueryOperatorInput>;
+  show_newsletter?: Maybe<BooleanQueryOperatorInput>;
+  newsletter?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnNewsletterFilterInput>;
   heading?: Maybe<StringQueryOperatorInput>;
   markdown_text?: Maybe<StringQueryOperatorInput>;
   form?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnFormFilterInput>;
-  show_newsletter?: Maybe<BooleanQueryOperatorInput>;
-  newsletter?: Maybe<MarkdownRemarkFrontmatterContact_SectionRight_ColumnNewsletterFilterInput>;
-  address_markdown?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkFrontmatterContact_SectionRight_ColumnForm = {
@@ -2047,15 +2047,13 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   templateKey?: Maybe<StringQueryOperatorInput>;
   locale?: Maybe<StringQueryOperatorInput>;
-  pageTitle?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
-  header_section?: Maybe<MarkdownRemarkFrontmatterHeader_SectionFilterInput>;
-  contact_section?: Maybe<MarkdownRemarkFrontmatterContact_SectionFilterInput>;
-  heading?: Maybe<StringQueryOperatorInput>;
-  markdown_text?: Maybe<StringQueryOperatorInput>;
   header?: Maybe<MarkdownRemarkFrontmatterHeaderFilterInput>;
   form?: Maybe<MarkdownRemarkFrontmatterFormFilterInput>;
   image?: Maybe<MarkdownRemarkFrontmatterImageFilterInput>;
+  pageTitle?: Maybe<StringQueryOperatorInput>;
+  heading?: Maybe<StringQueryOperatorInput>;
+  markdown_text?: Maybe<StringQueryOperatorInput>;
   home_section?: Maybe<MarkdownRemarkFrontmatterHome_SectionFilterInput>;
   about_us_section?: Maybe<MarkdownRemarkFrontmatterAbout_Us_SectionFilterInput>;
   philosophy_section?: Maybe<MarkdownRemarkFrontmatterPhilosophy_SectionFilterInput>;
@@ -2065,6 +2063,8 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   praxis_section?: Maybe<MarkdownRemarkFrontmatterPraxis_SectionFilterInput>;
   labor_section?: Maybe<MarkdownRemarkFrontmatterLabor_SectionFilterInput>;
   team_section?: Maybe<MarkdownRemarkFrontmatterTeam_SectionFilterInput>;
+  contact_section?: Maybe<MarkdownRemarkFrontmatterContact_SectionFilterInput>;
+  header_section?: Maybe<MarkdownRemarkFrontmatterHeader_SectionFilterInput>;
   meta_description?: Maybe<StringQueryOperatorInput>;
   footer?: Maybe<MarkdownRemarkFrontmatterFooterFilterInput>;
 };
@@ -3385,6 +3385,8 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___fileName'
   | 'pluginCreator___pluginOptions___maxWidth'
   | 'pluginCreator___pluginOptions___destinationDir'
+  | 'pluginCreator___pluginOptions___custom___families'
+  | 'pluginCreator___pluginOptions___custom___urls'
   | 'pluginCreator___pluginOptions___modulePath'
   | 'pluginCreator___pluginOptions___enableIdentityWidget'
   | 'pluginCreator___pluginOptions___publicPath'
@@ -3592,6 +3594,8 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___fileName'
   | 'pluginOptions___maxWidth'
   | 'pluginOptions___destinationDir'
+  | 'pluginOptions___custom___families'
+  | 'pluginOptions___custom___urls'
   | 'pluginOptions___modulePath'
   | 'pluginOptions___enableIdentityWidget'
   | 'pluginOptions___publicPath'
@@ -3716,11 +3720,22 @@ export type SitePluginPluginOptions = {
   fileName?: Maybe<Scalars['String']>;
   maxWidth?: Maybe<Scalars['Int']>;
   destinationDir?: Maybe<Scalars['String']>;
+  custom?: Maybe<SitePluginPluginOptionsCustom>;
   modulePath?: Maybe<Scalars['String']>;
   enableIdentityWidget?: Maybe<Scalars['String']>;
   publicPath?: Maybe<Scalars['String']>;
   htmlTitle?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
+};
+
+export type SitePluginPluginOptionsCustom = {
+  families?: Maybe<Array<Maybe<Scalars['String']>>>;
+  urls?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SitePluginPluginOptionsCustomFilterInput = {
+  families?: Maybe<StringQueryOperatorInput>;
+  urls?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePluginPluginOptionsFilterInput = {
@@ -3731,6 +3746,7 @@ export type SitePluginPluginOptionsFilterInput = {
   fileName?: Maybe<StringQueryOperatorInput>;
   maxWidth?: Maybe<IntQueryOperatorInput>;
   destinationDir?: Maybe<StringQueryOperatorInput>;
+  custom?: Maybe<SitePluginPluginOptionsCustomFilterInput>;
   modulePath?: Maybe<StringQueryOperatorInput>;
   enableIdentityWidget?: Maybe<StringQueryOperatorInput>;
   publicPath?: Maybe<StringQueryOperatorInput>;

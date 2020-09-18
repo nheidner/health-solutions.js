@@ -19,7 +19,9 @@ const Newsletter: FC<{
 }> = ({ showNewsletter, newsletterContent }) => {
     return showNewsletter ? (
         <div className='newsletter'>
-            <h1 className='title is-6'>{newsletterContent?.heading}</h1>
+            <h1 className='title is-6 is-Apercu-Regular'>
+                {newsletterContent?.heading}
+            </h1>
             <form className='newsletter-form'>
                 <div className='control'>
                     <input
@@ -27,7 +29,7 @@ const Newsletter: FC<{
                         type='text'
                         placeholder={newsletterContent?.placeholder as string}
                     />
-                    <button className='button is-small'>
+                    <button className='button is-small is-Apercu-Regular'>
                         {newsletterContent?.button_text}
                     </button>
                 </div>

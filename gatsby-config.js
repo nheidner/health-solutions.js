@@ -146,6 +146,17 @@ module.exports = {
         //     },
         // }, // must be after other CSS plugins
         {
+            resolve: 'gatsby-plugin-web-font-loader',
+            options: {
+                custom: {
+                    families: [
+                        'ClearfaceStd-Regular, Apercu-Regular, Apercu-Bold',
+                    ],
+                    urls: ['/fonts/fonts.css'],
+                },
+            },
+        },
+        {
             resolve: 'gatsby-plugin-netlify-cms',
             options: {
                 modulePath: `${__dirname}/src/cms/cms.js`,
