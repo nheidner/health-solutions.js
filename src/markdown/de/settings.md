@@ -17,5 +17,5 @@ footer:
     - text: Kontakt
       href: /contact
     - text: Terms and Conditions
-      href: /
+      href: /imprint
 ---
