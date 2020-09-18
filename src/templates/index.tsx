@@ -387,22 +387,23 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                 </div>
             </section>
             <hr className='line-differentiator py-0 mt-6' />
-            <section className='section'>
+            <section
+                className='section has-background-yellow'
+                id='about'
+                data-aos='fade'
+                data-aos-duration={aosSettings.duration.fast}>
                 <div className='container'>
-                    <h1
-                        className='title is-2 has-text-centered'
-                        data-aos='fade'
-                        data-aos-duration={aosSettings.duration.fast}>
-                        {labor_section?.heading}
-                    </h1>
-                    <div
-                        className='content is-normal has-text-centered'
-                        data-aos='fade'
-                        data-aos-duration={aosSettings.duration.fast}
-                        data-aos-delay={aosSettings.delay.medium}>
-                        <Content
-                            markdown={labor_section?.markdown_text as string}
-                        />
+                    <div className='container has-background-light-yellow has-text-centered px-3 py-3'>
+                        <h1 className='title is-2 pt-5'>
+                            {labor_section?.heading}
+                        </h1>
+                        <div className='content is-medium'>
+                            <Content
+                                markdown={
+                                    labor_section?.markdown_text as string
+                                }
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
