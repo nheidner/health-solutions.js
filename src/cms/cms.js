@@ -19,7 +19,7 @@ const IndexPagePreviewEn = ({ entry }) => {
             anonymous_section_1={data.anonymous_section_1}
             anonymous_section_2={data.anonymous_section_2}
             praxis_section={data.praxis_section}
-            labor_section={data.labor_section}
+            laboratory_section={data.laboratory_section}
             team_section={data.team_section}
             contact_section={data.contact_section}
             preview={true}
@@ -103,7 +103,7 @@ const IndexPagePreviewDe = ({ entry }) => {
             anonymous_section_1={data.anonymous_section_1}
             anonymous_section_2={data.anonymous_section_2}
             praxis_section={data.praxis_section}
-            labor_section={data.labor_section}
+            laboratory_section={data.laboratory_section}
             team_section={data.team_section}
             contact_section={data.contact_section}
             preview={true}

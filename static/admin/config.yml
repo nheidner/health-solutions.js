@@ -433,8 +433,8 @@ collections:
                                   name: 'alt',
                                   widget: 'string',
                               }
-                - label: 'Labor Section'
-                  name: 'labor_section'
+                - label: 'Laboratory Section'
+                  name: 'laboratory_section'
                   widget: object
                   collapsed: true
                   fields:
@@ -1677,8 +1677,8 @@ collections:
                                   name: 'alt',
                                   widget: 'string',
                               }
-                - label: 'Labor Section'
-                  name: 'labor_section'
+                - label: 'Laboratory Section'
+                  name: 'laboratory_section'
                   widget: object
                   collapsed: true
                   fields:

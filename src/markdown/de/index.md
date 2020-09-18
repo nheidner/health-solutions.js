@@ -125,7 +125,7 @@ praxis_section:
   image:
     source: /img/man_with_doctor.png
     alt: HealthSolutions
-labor_section:
+laboratory_section:
   heading: Unser Labor
   markdown_text: >-
     Für die ganzheitliche Erfassung Ihrer gesundheitlichen Beschwerden gehört

@@ -38,7 +38,7 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
     anonymous_section_1,
     anonymous_section_2,
     praxis_section,
-    labor_section,
+    laboratory_section,
     team_section,
     contact_section,
 }) => {
@@ -395,12 +395,12 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                 <div className='container'>
                     <div className='container has-background-light-yellow has-text-centered px-3 py-3'>
                         <h1 className='title is-2 pt-5'>
-                            {labor_section?.heading}
+                            {laboratory_section?.heading}
                         </h1>
                         <div className='content is-medium'>
                             <Content
                                 markdown={
-                                    labor_section?.markdown_text as string
+                                    laboratory_section?.markdown_text as string
                                 }
                             />
                         </div>
@@ -538,7 +538,7 @@ const Index: FC<{ data: IndexQuery }> = ({ data }) => {
                 anonymous_section_1={frontmatter?.anonymous_section_1}
                 anonymous_section_2={frontmatter?.anonymous_section_2}
                 praxis_section={frontmatter?.praxis_section}
-                labor_section={frontmatter?.labor_section}
+                laboratory_section={frontmatter?.laboratory_section}
                 team_section={frontmatter?.team_section}
                 contact_section={frontmatter?.contact_section}
             />
@@ -665,7 +665,7 @@ export const pageQuery = graphql`
                         alt
                     }
                 }
-                labor_section {
+                laboratory_section {
                     heading
                     markdown_text
                 }

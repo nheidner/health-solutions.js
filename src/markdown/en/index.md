@@ -144,7 +144,7 @@ praxis_section:
   image:
     source: /img/logo_farbe.svg
     alt: Health Solutions Logo
-labor_section:
+laboratory_section:
   heading: LABOR LABOR LABOR
   markdown_text: Ich bin ein Fließtext und das ist gut so. Was hier stehen soll,
     dass weiß leider noch keiner, aber das ist auch noch lange kein Problem. Was

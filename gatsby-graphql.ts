@@ -700,8 +700,11 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___path'
   | 'childMarkdownRemark___frontmatter___heading'
   | 'childMarkdownRemark___frontmatter___markdown_text'
+  | 'childMarkdownRemark___frontmatter___meta_description'
   | 'childMarkdownRemark___frontmatter___header___heading'
   | 'childMarkdownRemark___frontmatter___header___markdown_text'
+  | 'childMarkdownRemark___frontmatter___footer___copyright'
+  | 'childMarkdownRemark___frontmatter___footer___links'
   | 'childMarkdownRemark___frontmatter___image___alt'
   | 'childMarkdownRemark___frontmatter___header_section___heading'
   | 'childMarkdownRemark___frontmatter___header_section___markdown_text'
@@ -718,14 +721,11 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___anonymous_section_2___button_text'
   | 'childMarkdownRemark___frontmatter___praxis_section___section_heading'
   | 'childMarkdownRemark___frontmatter___praxis_section___image_gallery'
-  | 'childMarkdownRemark___frontmatter___labor_section___heading'
-  | 'childMarkdownRemark___frontmatter___labor_section___markdown_text'
+  | 'childMarkdownRemark___frontmatter___laboratory_section___heading'
+  | 'childMarkdownRemark___frontmatter___laboratory_section___markdown_text'
   | 'childMarkdownRemark___frontmatter___team_section___section_heading'
   | 'childMarkdownRemark___frontmatter___team_section___cards'
   | 'childMarkdownRemark___frontmatter___team_section___markdown_text'
-  | 'childMarkdownRemark___frontmatter___meta_description'
-  | 'childMarkdownRemark___frontmatter___footer___copyright'
-  | 'childMarkdownRemark___frontmatter___footer___links'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
   | 'childMarkdownRemark___fileAbsolutePath'
@@ -1502,10 +1502,16 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___path'
   | 'frontmatter___heading'
   | 'frontmatter___markdown_text'
+  | 'frontmatter___meta_description'
+  | 'frontmatter___header___logo_img___alt'
   | 'frontmatter___header___logo_image___alt'
   | 'frontmatter___header___heading'
   | 'frontmatter___header___markdown_text'
-  | 'frontmatter___header___logo_img___alt'
+  | 'frontmatter___footer___logo_img___alt'
+  | 'frontmatter___footer___copyright'
+  | 'frontmatter___footer___links'
+  | 'frontmatter___footer___links___text'
+  | 'frontmatter___footer___links___href'
   | 'frontmatter___form___name_field___label'
   | 'frontmatter___form___name_field___max_number_characters'
   | 'frontmatter___form___telephone_number_field___label'
@@ -1589,19 +1595,13 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___praxis_section___image_gallery'
   | 'frontmatter___praxis_section___image_gallery___alt'
   | 'frontmatter___praxis_section___image___alt'
-  | 'frontmatter___labor_section___heading'
-  | 'frontmatter___labor_section___markdown_text'
+  | 'frontmatter___laboratory_section___heading'
+  | 'frontmatter___laboratory_section___markdown_text'
   | 'frontmatter___team_section___section_heading'
   | 'frontmatter___team_section___cards'
   | 'frontmatter___team_section___cards___heading'
   | 'frontmatter___team_section___cards___markdown_text'
   | 'frontmatter___team_section___markdown_text'
-  | 'frontmatter___meta_description'
-  | 'frontmatter___footer___logo_img___alt'
-  | 'frontmatter___footer___copyright'
-  | 'frontmatter___footer___links'
-  | 'frontmatter___footer___links___text'
-  | 'frontmatter___footer___links___href'
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
@@ -1735,7 +1735,9 @@ export type MarkdownRemarkFrontmatter = {
   path?: Maybe<Scalars['String']>;
   heading?: Maybe<Scalars['String']>;
   markdown_text?: Maybe<Scalars['String']>;
+  meta_description?: Maybe<Scalars['String']>;
   header?: Maybe<MarkdownRemarkFrontmatterHeader>;
+  footer?: Maybe<MarkdownRemarkFrontmatterFooter>;
   form?: Maybe<MarkdownRemarkFrontmatterForm>;
   image?: Maybe<MarkdownRemarkFrontmatterImage>;
   header_section?: Maybe<MarkdownRemarkFrontmatterHeader_Section>;
@@ -1747,10 +1749,8 @@ export type MarkdownRemarkFrontmatter = {
   anonymous_section_1?: Maybe<MarkdownRemarkFrontmatterAnonymous_Section_1>;
   anonymous_section_2?: Maybe<MarkdownRemarkFrontmatterAnonymous_Section_2>;
   praxis_section?: Maybe<MarkdownRemarkFrontmatterPraxis_Section>;
-  labor_section?: Maybe<MarkdownRemarkFrontmatterLabor_Section>;
+  laboratory_section?: Maybe<MarkdownRemarkFrontmatterLaboratory_Section>;
   team_section?: Maybe<MarkdownRemarkFrontmatterTeam_Section>;
-  meta_description?: Maybe<Scalars['String']>;
-  footer?: Maybe<MarkdownRemarkFrontmatterFooter>;
 };
 
 export type MarkdownRemarkFrontmatterAbout_Us_Section = {
@@ -2053,7 +2053,9 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   path?: Maybe<StringQueryOperatorInput>;
   heading?: Maybe<StringQueryOperatorInput>;
   markdown_text?: Maybe<StringQueryOperatorInput>;
+  meta_description?: Maybe<StringQueryOperatorInput>;
   header?: Maybe<MarkdownRemarkFrontmatterHeaderFilterInput>;
+  footer?: Maybe<MarkdownRemarkFrontmatterFooterFilterInput>;
   form?: Maybe<MarkdownRemarkFrontmatterFormFilterInput>;
   image?: Maybe<MarkdownRemarkFrontmatterImageFilterInput>;
   header_section?: Maybe<MarkdownRemarkFrontmatterHeader_SectionFilterInput>;
@@ -2065,10 +2067,8 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   anonymous_section_1?: Maybe<MarkdownRemarkFrontmatterAnonymous_Section_1FilterInput>;
   anonymous_section_2?: Maybe<MarkdownRemarkFrontmatterAnonymous_Section_2FilterInput>;
   praxis_section?: Maybe<MarkdownRemarkFrontmatterPraxis_SectionFilterInput>;
-  labor_section?: Maybe<MarkdownRemarkFrontmatterLabor_SectionFilterInput>;
+  laboratory_section?: Maybe<MarkdownRemarkFrontmatterLaboratory_SectionFilterInput>;
   team_section?: Maybe<MarkdownRemarkFrontmatterTeam_SectionFilterInput>;
-  meta_description?: Maybe<StringQueryOperatorInput>;
-  footer?: Maybe<MarkdownRemarkFrontmatterFooterFilterInput>;
 };
 
 export type MarkdownRemarkFrontmatterFooter = {
@@ -2204,10 +2204,10 @@ export type MarkdownRemarkFrontmatterFormTelephone_Number_FieldMessagesFilterInp
 };
 
 export type MarkdownRemarkFrontmatterHeader = {
+  logo_img?: Maybe<MarkdownRemarkFrontmatterHeaderLogo_Img>;
   logo_image?: Maybe<MarkdownRemarkFrontmatterHeaderLogo_Image>;
   heading?: Maybe<Scalars['String']>;
   markdown_text?: Maybe<Scalars['String']>;
-  logo_img?: Maybe<MarkdownRemarkFrontmatterHeaderLogo_Img>;
 };
 
 export type MarkdownRemarkFrontmatterHeader_Section = {
@@ -2233,10 +2233,10 @@ export type MarkdownRemarkFrontmatterHeader_SectionImageFilterInput = {
 };
 
 export type MarkdownRemarkFrontmatterHeaderFilterInput = {
+  logo_img?: Maybe<MarkdownRemarkFrontmatterHeaderLogo_ImgFilterInput>;
   logo_image?: Maybe<MarkdownRemarkFrontmatterHeaderLogo_ImageFilterInput>;
   heading?: Maybe<StringQueryOperatorInput>;
   markdown_text?: Maybe<StringQueryOperatorInput>;
-  logo_img?: Maybe<MarkdownRemarkFrontmatterHeaderLogo_ImgFilterInput>;
 };
 
 export type MarkdownRemarkFrontmatterHeaderLogo_Image = {
@@ -2309,12 +2309,12 @@ export type MarkdownRemarkFrontmatterImageFilterInput = {
   alt?: Maybe<StringQueryOperatorInput>;
 };
 
-export type MarkdownRemarkFrontmatterLabor_Section = {
+export type MarkdownRemarkFrontmatterLaboratory_Section = {
   heading?: Maybe<Scalars['String']>;
   markdown_text?: Maybe<Scalars['String']>;
 };
 
-export type MarkdownRemarkFrontmatterLabor_SectionFilterInput = {
+export type MarkdownRemarkFrontmatterLaboratory_SectionFilterInput = {
   heading?: Maybe<StringQueryOperatorInput>;
   markdown_text?: Maybe<StringQueryOperatorInput>;
 };
@@ -2754,8 +2754,6 @@ export type QueryAllSitePageArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2867,8 +2865,6 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
-  port?: Maybe<Scalars['Int']>;
-  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -3076,8 +3072,6 @@ export type SiteFieldsEnum =
   | 'siteMetadata___menu___item___en'
   | 'siteMetadata___menu___item___de'
   | 'siteMetadata___menu___to'
-  | 'port'
-  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -3170,8 +3164,6 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
-  port?: Maybe<IntQueryOperatorInput>;
-  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -4035,7 +4027,7 @@ export type IndexQuery = { markdownRemark?: Maybe<{ frontmatter?: Maybe<(
           Pick<MarkdownRemarkFrontmatterPraxis_SectionImage, 'alt'>
           & { source?: Maybe<SvgImageFragment> }
         )> }
-      )>, labor_section?: Maybe<Pick<MarkdownRemarkFrontmatterLabor_Section, 'heading' | 'markdown_text'>>, team_section?: Maybe<(
+      )>, laboratory_section?: Maybe<Pick<MarkdownRemarkFrontmatterLaboratory_Section, 'heading' | 'markdown_text'>>, team_section?: Maybe<(
         Pick<MarkdownRemarkFrontmatterTeam_Section, 'section_heading' | 'markdown_text'>
         & { cards?: Maybe<Array<Maybe<(
           Pick<MarkdownRemarkFrontmatterTeam_SectionCards, 'heading' | 'markdown_text'>
