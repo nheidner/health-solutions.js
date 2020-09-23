@@ -698,14 +698,6 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___locale'
   | 'childMarkdownRemark___frontmatter___pageTitle'
   | 'childMarkdownRemark___frontmatter___path'
-  | 'childMarkdownRemark___frontmatter___heading'
-  | 'childMarkdownRemark___frontmatter___markdown_text'
-  | 'childMarkdownRemark___frontmatter___meta_description'
-  | 'childMarkdownRemark___frontmatter___header___heading'
-  | 'childMarkdownRemark___frontmatter___header___markdown_text'
-  | 'childMarkdownRemark___frontmatter___footer___copyright'
-  | 'childMarkdownRemark___frontmatter___footer___links'
-  | 'childMarkdownRemark___frontmatter___image___alt'
   | 'childMarkdownRemark___frontmatter___header_section___heading'
   | 'childMarkdownRemark___frontmatter___header_section___markdown_text'
   | 'childMarkdownRemark___frontmatter___contact_section___section_heading'
@@ -726,6 +718,14 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___team_section___section_heading'
   | 'childMarkdownRemark___frontmatter___team_section___cards'
   | 'childMarkdownRemark___frontmatter___team_section___markdown_text'
+  | 'childMarkdownRemark___frontmatter___meta_description'
+  | 'childMarkdownRemark___frontmatter___header___heading'
+  | 'childMarkdownRemark___frontmatter___header___markdown_text'
+  | 'childMarkdownRemark___frontmatter___footer___copyright'
+  | 'childMarkdownRemark___frontmatter___footer___links'
+  | 'childMarkdownRemark___frontmatter___heading'
+  | 'childMarkdownRemark___frontmatter___markdown_text'
+  | 'childMarkdownRemark___frontmatter___image___alt'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
   | 'childMarkdownRemark___fileAbsolutePath'
@@ -1500,61 +1500,6 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___locale'
   | 'frontmatter___pageTitle'
   | 'frontmatter___path'
-  | 'frontmatter___heading'
-  | 'frontmatter___markdown_text'
-  | 'frontmatter___meta_description'
-  | 'frontmatter___header___logo_img___alt'
-  | 'frontmatter___header___logo_image___alt'
-  | 'frontmatter___header___heading'
-  | 'frontmatter___header___markdown_text'
-  | 'frontmatter___footer___logo_img___alt'
-  | 'frontmatter___footer___copyright'
-  | 'frontmatter___footer___links'
-  | 'frontmatter___footer___links___text'
-  | 'frontmatter___footer___links___href'
-  | 'frontmatter___form___name_field___label'
-  | 'frontmatter___form___name_field___max_number_characters'
-  | 'frontmatter___form___telephone_number_field___label'
-  | 'frontmatter___form___telephone_number_field___max_number_characters'
-  | 'frontmatter___form___email_address_field___label'
-  | 'frontmatter___form___send_button___button_text'
-  | 'frontmatter___image___source___sourceInstanceName'
-  | 'frontmatter___image___source___absolutePath'
-  | 'frontmatter___image___source___relativePath'
-  | 'frontmatter___image___source___extension'
-  | 'frontmatter___image___source___size'
-  | 'frontmatter___image___source___prettySize'
-  | 'frontmatter___image___source___modifiedTime'
-  | 'frontmatter___image___source___accessTime'
-  | 'frontmatter___image___source___changeTime'
-  | 'frontmatter___image___source___birthTime'
-  | 'frontmatter___image___source___root'
-  | 'frontmatter___image___source___dir'
-  | 'frontmatter___image___source___base'
-  | 'frontmatter___image___source___ext'
-  | 'frontmatter___image___source___name'
-  | 'frontmatter___image___source___relativeDirectory'
-  | 'frontmatter___image___source___dev'
-  | 'frontmatter___image___source___mode'
-  | 'frontmatter___image___source___nlink'
-  | 'frontmatter___image___source___uid'
-  | 'frontmatter___image___source___gid'
-  | 'frontmatter___image___source___rdev'
-  | 'frontmatter___image___source___ino'
-  | 'frontmatter___image___source___atimeMs'
-  | 'frontmatter___image___source___mtimeMs'
-  | 'frontmatter___image___source___ctimeMs'
-  | 'frontmatter___image___source___atime'
-  | 'frontmatter___image___source___mtime'
-  | 'frontmatter___image___source___ctime'
-  | 'frontmatter___image___source___birthtime'
-  | 'frontmatter___image___source___birthtimeMs'
-  | 'frontmatter___image___source___blksize'
-  | 'frontmatter___image___source___blocks'
-  | 'frontmatter___image___source___publicURL'
-  | 'frontmatter___image___source___id'
-  | 'frontmatter___image___source___children'
-  | 'frontmatter___image___alt'
   | 'frontmatter___header_section___heading'
   | 'frontmatter___header_section___markdown_text'
   | 'frontmatter___header_section___image___alt'
@@ -1602,6 +1547,61 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___team_section___cards___heading'
   | 'frontmatter___team_section___cards___markdown_text'
   | 'frontmatter___team_section___markdown_text'
+  | 'frontmatter___meta_description'
+  | 'frontmatter___header___logo_img___alt'
+  | 'frontmatter___header___logo_image___alt'
+  | 'frontmatter___header___heading'
+  | 'frontmatter___header___markdown_text'
+  | 'frontmatter___footer___logo_img___alt'
+  | 'frontmatter___footer___copyright'
+  | 'frontmatter___footer___links'
+  | 'frontmatter___footer___links___text'
+  | 'frontmatter___footer___links___href'
+  | 'frontmatter___heading'
+  | 'frontmatter___markdown_text'
+  | 'frontmatter___form___name_field___label'
+  | 'frontmatter___form___name_field___max_number_characters'
+  | 'frontmatter___form___telephone_number_field___label'
+  | 'frontmatter___form___telephone_number_field___max_number_characters'
+  | 'frontmatter___form___email_address_field___label'
+  | 'frontmatter___form___send_button___button_text'
+  | 'frontmatter___image___source___sourceInstanceName'
+  | 'frontmatter___image___source___absolutePath'
+  | 'frontmatter___image___source___relativePath'
+  | 'frontmatter___image___source___extension'
+  | 'frontmatter___image___source___size'
+  | 'frontmatter___image___source___prettySize'
+  | 'frontmatter___image___source___modifiedTime'
+  | 'frontmatter___image___source___accessTime'
+  | 'frontmatter___image___source___changeTime'
+  | 'frontmatter___image___source___birthTime'
+  | 'frontmatter___image___source___root'
+  | 'frontmatter___image___source___dir'
+  | 'frontmatter___image___source___base'
+  | 'frontmatter___image___source___ext'
+  | 'frontmatter___image___source___name'
+  | 'frontmatter___image___source___relativeDirectory'
+  | 'frontmatter___image___source___dev'
+  | 'frontmatter___image___source___mode'
+  | 'frontmatter___image___source___nlink'
+  | 'frontmatter___image___source___uid'
+  | 'frontmatter___image___source___gid'
+  | 'frontmatter___image___source___rdev'
+  | 'frontmatter___image___source___ino'
+  | 'frontmatter___image___source___atimeMs'
+  | 'frontmatter___image___source___mtimeMs'
+  | 'frontmatter___image___source___ctimeMs'
+  | 'frontmatter___image___source___atime'
+  | 'frontmatter___image___source___mtime'
+  | 'frontmatter___image___source___ctime'
+  | 'frontmatter___image___source___birthtime'
+  | 'frontmatter___image___source___birthtimeMs'
+  | 'frontmatter___image___source___blksize'
+  | 'frontmatter___image___source___blocks'
+  | 'frontmatter___image___source___publicURL'
+  | 'frontmatter___image___source___id'
+  | 'frontmatter___image___source___children'
+  | 'frontmatter___image___alt'
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
@@ -1733,13 +1733,6 @@ export type MarkdownRemarkFrontmatter = {
   locale?: Maybe<Scalars['String']>;
   pageTitle?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
-  heading?: Maybe<Scalars['String']>;
-  markdown_text?: Maybe<Scalars['String']>;
-  meta_description?: Maybe<Scalars['String']>;
-  header?: Maybe<MarkdownRemarkFrontmatterHeader>;
-  footer?: Maybe<MarkdownRemarkFrontmatterFooter>;
-  form?: Maybe<MarkdownRemarkFrontmatterForm>;
-  image?: Maybe<MarkdownRemarkFrontmatterImage>;
   header_section?: Maybe<MarkdownRemarkFrontmatterHeader_Section>;
   contact_section?: Maybe<MarkdownRemarkFrontmatterContact_Section>;
   home_section?: Maybe<MarkdownRemarkFrontmatterHome_Section>;
@@ -1751,6 +1744,13 @@ export type MarkdownRemarkFrontmatter = {
   praxis_section?: Maybe<MarkdownRemarkFrontmatterPraxis_Section>;
   laboratory_section?: Maybe<MarkdownRemarkFrontmatterLaboratory_Section>;
   team_section?: Maybe<MarkdownRemarkFrontmatterTeam_Section>;
+  meta_description?: Maybe<Scalars['String']>;
+  header?: Maybe<MarkdownRemarkFrontmatterHeader>;
+  footer?: Maybe<MarkdownRemarkFrontmatterFooter>;
+  heading?: Maybe<Scalars['String']>;
+  markdown_text?: Maybe<Scalars['String']>;
+  form?: Maybe<MarkdownRemarkFrontmatterForm>;
+  image?: Maybe<MarkdownRemarkFrontmatterImage>;
 };
 
 export type MarkdownRemarkFrontmatterAbout_Us_Section = {
@@ -2051,13 +2051,6 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   locale?: Maybe<StringQueryOperatorInput>;
   pageTitle?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
-  heading?: Maybe<StringQueryOperatorInput>;
-  markdown_text?: Maybe<StringQueryOperatorInput>;
-  meta_description?: Maybe<StringQueryOperatorInput>;
-  header?: Maybe<MarkdownRemarkFrontmatterHeaderFilterInput>;
-  footer?: Maybe<MarkdownRemarkFrontmatterFooterFilterInput>;
-  form?: Maybe<MarkdownRemarkFrontmatterFormFilterInput>;
-  image?: Maybe<MarkdownRemarkFrontmatterImageFilterInput>;
   header_section?: Maybe<MarkdownRemarkFrontmatterHeader_SectionFilterInput>;
   contact_section?: Maybe<MarkdownRemarkFrontmatterContact_SectionFilterInput>;
   home_section?: Maybe<MarkdownRemarkFrontmatterHome_SectionFilterInput>;
@@ -2069,6 +2062,13 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   praxis_section?: Maybe<MarkdownRemarkFrontmatterPraxis_SectionFilterInput>;
   laboratory_section?: Maybe<MarkdownRemarkFrontmatterLaboratory_SectionFilterInput>;
   team_section?: Maybe<MarkdownRemarkFrontmatterTeam_SectionFilterInput>;
+  meta_description?: Maybe<StringQueryOperatorInput>;
+  header?: Maybe<MarkdownRemarkFrontmatterHeaderFilterInput>;
+  footer?: Maybe<MarkdownRemarkFrontmatterFooterFilterInput>;
+  heading?: Maybe<StringQueryOperatorInput>;
+  markdown_text?: Maybe<StringQueryOperatorInput>;
+  form?: Maybe<MarkdownRemarkFrontmatterFormFilterInput>;
+  image?: Maybe<MarkdownRemarkFrontmatterImageFilterInput>;
 };
 
 export type MarkdownRemarkFrontmatterFooter = {
@@ -2754,6 +2754,8 @@ export type QueryAllSitePageArgs = {
 export type QuerySiteArgs = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2865,6 +2867,8 @@ export type QueryAllSitePluginArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
+  port?: Maybe<Scalars['Int']>;
+  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -3072,6 +3076,8 @@ export type SiteFieldsEnum =
   | 'siteMetadata___menu___item___en'
   | 'siteMetadata___menu___item___de'
   | 'siteMetadata___menu___to'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -3164,6 +3170,8 @@ export type SiteFieldsEnum =
 export type SiteFilterInput = {
   buildTime?: Maybe<DateQueryOperatorInput>;
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
+  port?: Maybe<IntQueryOperatorInput>;
+  host?: Maybe<StringQueryOperatorInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
