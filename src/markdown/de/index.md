@@ -71,7 +71,7 @@ verfahren_section:
       source: /img/woman_with_doctor.png
       alt: HealthSolutions
   text_column:
-    heading: FLIEßTEXT
+    heading: " "
     markdown_text: >-
       Jeder naturheilkundlichen Therapie geht eine fundierte Ursachenforschung
       voraus. In unserem Fall richtet sich die Untersuchung nicht nur an das
