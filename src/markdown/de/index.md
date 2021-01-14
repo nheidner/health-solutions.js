@@ -27,7 +27,7 @@ about_us_section:
     sind. Selbstverständlich können Sie auch zu uns kommen, wenn Sie präventiv
     auf Ihre Gesundheit achten und Ressourcen auffüllen möchten, die Ihre
     Gesundheit stabilisieren können.
-  heading: Willkommen bei Health Solutions.  Schön, dass Sie hier sind.
+  heading: Willkommen bei Health Solutions
   section_heading: Über Uns
   image:
     source: /img/logo_farbe.svg
@@ -113,7 +113,7 @@ praxis_section:
       source: /img/man_with_doctor.png
       alt: HealthSolutions
   text_column:
-    heading: " "
+    heading: Wir freuen uns, Sie zu Begrüßen.
     markdown_text: Schwerpunkt in unserer Praxis ist der individuelle
       Therapieansatz, ganz im Sinne der naturheilkundlichen Therapien, die den
       Menschen als Gesamtes und als Individium begreifen. Wir freuen uns darauf
