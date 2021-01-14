@@ -27,7 +27,7 @@ about_us_section:
     sind. Selbstverständlich können Sie auch zu uns kommen, wenn Sie präventiv
     auf Ihre Gesundheit achten und Ressourcen auffüllen möchten, die Ihre
     Gesundheit stabilisieren können.
-  heading: Willkommen bei Health Solutions. Schön, dass Sie hier sind.
+  heading: Willkommen bei Health Solutions.  Schön, dass Sie hier sind.
   section_heading: Über Uns
   image:
     source: /img/logo_farbe.svg
@@ -71,7 +71,7 @@ verfahren_section:
       source: /img/woman_with_doctor.png
       alt: HealthSolutions
   text_column:
-    heading: " "
+    heading: "Erleben Sie den Unterschied! "
     markdown_text: >-
       Jeder naturheilkundlichen Therapie geht eine fundierte Ursachenforschung
       voraus. In unserem Fall richtet sich die Untersuchung nicht nur an das
@@ -92,17 +92,11 @@ anonymous_section_1:
       source: /img/couple.png
       alt: HealthSolutions
   text_column:
-    heading: LEISTUNGEN
+    heading: Unsere Leistungen
     markdown_text: >-
-      Mit dem von uns angewandten Verfahren und er Unterstützung des hierfür
-      eigens entwickelte PC_Programm können selbst kleinste Beeinträchtigungen
-      im Körper, chronische Entzündungsherde und Störfelder, die durch Viren,
-      Bakterien, Pilze, Bakterien u.v.m. ausgelöst werden, erkannt und
-      therapeutisch behandelt werden. Es wird ein zuverlässiges Bild vom Zustand
-      Ihres Körpers geliefert, bei dem alle wichtigen Organsysteme erfasst
-      werden. Selbst kleinste Problemstellen können gefunden und Zusammenhänge
-      zu Ihren Symptomen aufgedeckt werden. Für alle Beschwerden gibt es
-      Auslöser, die sich über die Jahre intensivieren können.
+      
+
+      Mit dem von uns angewandten Verfahren und der Unterstützung des hierfür eigens entwickeltem PC Programm können selbst kleinste Beeinträchtigungen im Körper, chronische Entzündungsherde und Störfelder, die durch Viren, Bakterien, Pilze, Bakterien u.v.m. ausgelöst werden, erkannt und therapeutisch behandelt werden. Es wird ein zuverlässiges Bild vom Zustand Ihres Körpers geliefert, bei dem alle wichtigen Organsysteme erfasst werden. Selbst kleinste Problemstellen können gefunden und Zusammenhänge zu Ihren Symptomen aufgedeckt werden. Für alle Beschwerden gibt es Auslöser, die sich über die Jahre intensivieren können.
 
 
       Unsere jahrelange Erfahrung hat gezeigt, dass es notwendig ist die chronischen Entzündungsherde und bakteriellen oder viralen Störfelder zu beseitigen, um eine ganzheitliche Genesung zu ermöglichen. Ohne diese ist der Körper nicht in der Lage mit den Herausforderungen des Alltages, sowie weiteren psychische und physische Beschwerden umzugehen.
