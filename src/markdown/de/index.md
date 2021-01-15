@@ -42,7 +42,7 @@ philosophy_section:
         unsere Methodik zu körperlichem, seelischem und geistigen Gleichgewicht
         verhelfen.
       image:
-        source: /img/menschlich_illustration.png
+        source: /img/final_menschlich_illustration-01.png
         alt: HealthSolutions
     - heading: Innovativ
       markdown_text: Wir verknüpfen Jahrtausende altes Wissen und modernste
@@ -52,7 +52,7 @@ philosophy_section:
         Behandlungsmethoden, um Ihnen noch schneller und effizienter helfen zu
         können.
       image:
-        source: /img/innovativ_illustration.png
+        source: /img/final_innovativ_illustration-01.png
         alt: HealthSolutions
     - heading: Heilsam
       markdown_text: Gemeinsam erarbeiten wir ganz individuell einen Therapieplan; der
@@ -62,7 +62,7 @@ philosophy_section:
         erfolgende schulmedizinische Behandlung wesentlich ergänzen oder
         begleiten.
       image:
-        source: /img/heilsam_illustration.png
+        source: /img/final_heilsam_illustration-01.png
         alt: HealthSolutions
 verfahren_section:
   section_heading: Verfahren
