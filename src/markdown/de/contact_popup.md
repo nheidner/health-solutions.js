@@ -4,7 +4,7 @@ locale: de
 path: /contact-popup
 header:
   logo_image:
-    source: /img/logo_blau_vollstaendig.svg
+    source: /img/logo_weiß_freistehend.png
     alt: logo
   heading: Ich bin ein Pop Up. Willkommen beim Anmelden.
   markdown_text: Ich bin ein Fließtext und das ist gut so. Was hier stehen soll,
