@@ -83,7 +83,7 @@ verfahren_section:
     button_text: Erfahre mehr
     button:
       button_text: Erfahre mehr
-      button_href: /
+      button_href: /contact
   image_column:
     image:
       source: /img/woman_with_doctor.png
