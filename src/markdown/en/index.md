@@ -32,7 +32,7 @@ philosophy_section:
   section_heading: PHILOSOPHIE
   cards:
     - image:
-        source: /img/menschlich_illustration.png
+        source: /img/final_menschlich_illustration-01.png
         alt: menschlich
       heading: Menschlich
       markdown_text: Ich bin ein Fließtext und das ist gut so. Was hier stehen soll,
@@ -45,7 +45,7 @@ philosophy_section:
         aber das ist auch noch lange kein Problem. Was verschiebe steht auf
         morgen, das bereitet keine Sorgen. Ich
     - image:
-        source: /img/innovativ_illustration.png
+        source: /img/final_innovativ_illustration-01.png
         alt: Innovativ
       heading: Innovativ
       markdown_text: Ich bin ein Fließtext und das ist gut so. Was hier stehen soll,
@@ -58,7 +58,7 @@ philosophy_section:
         aber das ist auch noch lange kein Problem. Was verschiebe steht auf
         morgen, das bereitet keine Sorgen. Ich
     - image:
-        source: /img/heilsam_illustration.png
+        source: /img/final_heilsam_illustration-01.png
         alt: Heilsam
       heading: Heilsam
       markdown_text: Ich bin ein Fließtext und das ist gut so. Was hier stehen soll,
@@ -136,11 +136,7 @@ praxis_section:
     button:
       button_text: Termin vereinbaren
       button_href: /contact
-  image_gallery:
-    - source: /img/couple.png
-      alt: blaa
-    - source: /img/couple.png
-      alt: couple
+  image_gallery: []
   image:
     source: /img/logo_farbe.svg
     alt: Health Solutions Logo
@@ -156,46 +152,7 @@ laboratory_section:
     lange kein Problem.
 team_section:
   section_heading: TEAM
-  cards:
-    - image:
-        source: /img/heilsam_illustration.png
-        alt: bla
-      heading: Erfahrung
-      markdown_text: Ich bin ein Fließtext und das ist gut so. Was hier stehen soll,
-        dass weiß leider noch keiner, aber das ist auch noch lange kein Problem.
-        Was verschiebe steht auf morgen, das bereitet keine Sorgen. IchIch bin
-        ein Fließtext und das ist gut so. Was hier stehen soll, dass weiß leider
-        noch keiner, aber das ist auch noch lange kein Problem. Was verschiebe
-        steht auf morgen, das bereitet keine Sorgen. IchIch bin ein Fließtext
-        und das ist gut so. Was hier stehen soll, dass weiß leider noch keiner,
-        aber das ist auch noch lange kein Problem. Was verschiebe steht auf
-        morgen, das bereitet keine Sorgen. Ich
-    - markdown_text: Ich bin ein Fließtext und das ist gut so. Was hier stehen soll,
-        dass weiß leider noch keiner, aber das ist auch noch lange kein Problem.
-        Was verschiebe steht auf morgen, das bereitet keine Sorgen. IchIch bin
-        ein Fließtext und das ist gut so. Was hier stehen soll, dass weiß leider
-        noch keiner, aber das ist auch noch lange kein Problem. Was verschiebe
-        steht auf morgen, das bereitet keine Sorgen. IchIch bin ein Fließtext
-        und das ist gut so. Was hier stehen soll, dass weiß leider noch keiner,
-        aber das ist auch noch lange kein Problem. Was verschiebe steht auf
-        morgen, das bereitet keine Sorgen. Ich
-      heading: Erfahrung
-      image:
-        source: /img/heilsam_illustration.png
-        alt: bla
-    - image:
-        source: /img/heilsam_illustration.png
-        alt: bla
-      markdown_text: Ich bin ein Fließtext und das ist gut so. Was hier stehen soll,
-        dass weiß leider noch keiner, aber das ist auch noch lange kein Problem.
-        Was verschiebe steht auf morgen, das bereitet keine Sorgen. IchIch bin
-        ein Fließtext und das ist gut so. Was hier stehen soll, dass weiß leider
-        noch keiner, aber das ist auch noch lange kein Problem. Was verschiebe
-        steht auf morgen, das bereitet keine Sorgen. IchIch bin ein Fließtext
-        und das ist gut so. Was hier stehen soll, dass weiß leider noch keiner,
-        aber das ist auch noch lange kein Problem. Was verschiebe steht auf
-        morgen, das bereitet keine Sorgen. Ich
-      heading: Erfahrung
+  cards: []
   markdown_text: Ich bin ein Fließtext und das ist gut so. Was hier stehen soll,
     dass weiß leider noch keiner, aber das ist auch noch lange kein Problem. Was
     verschiebe steht auf morgen, das bereitet keine Sorgen. Ich bin ein
