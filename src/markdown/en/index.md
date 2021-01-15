@@ -16,7 +16,7 @@ home_section:
 
 
       Start to activate your self-healing powers today!
-    button_text: Informieren Sie sich jetzt!
+    button_text: Find out more
 about_us_section:
   section_heading: ÜBER UNS
   heading: Willkommen bei Health Solutions
