@@ -8,7 +8,7 @@ header:
     alt: logo
 footer:
   logo_img:
-    source: /img/logo_blau_vollstaendig.svg
+    source: /img/logo_weiß_freistehend.png
     alt: logo
   copyright: © Health Solutions 2020
   links:
