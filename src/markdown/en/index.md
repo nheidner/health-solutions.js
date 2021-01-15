@@ -9,7 +9,7 @@ home_section:
       source: /img/man_with_doctor.png
       alt: man with doctor
   text_column:
-    heading: Your health is paramount!
+    heading: Your health is our paramount!
     markdown_text: >-
       We offer you a holistic cause research as a basis for a successful
       therapy.
