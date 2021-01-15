@@ -9,13 +9,13 @@ home_section:
       source: /img/man_with_doctor.png
       alt: man with doctor
   text_column:
-    heading: Ihre Gesundheit steht an höchster Stelle!
+    heading: Your health is paramount!
     markdown_text: >-
-      Wir bieten Ihnen eine ganzheitliche Ursachenforschung als Grundlange für
-      eine Erfolgreiche Therapie. 
+      We offer you a holistic cause research as a basis for a successful
+      therapy.
 
 
-      Das Aktivieren der eigenen Selbstheilungskräfte beginnt hier!
+      Start to activate your self-healing powers today!
     button_text: Informieren Sie sich jetzt!
 about_us_section:
   section_heading: ÜBER UNS
