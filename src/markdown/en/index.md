@@ -39,7 +39,7 @@ philosophy_section:
         dass weiß leider noch keiner, aber das ist auch noch lange kein Problem.
         Was verschiebe steht auf morgen, das bereitet keine Sorgen. IchIch bin
         ein Fließtext und das ist gut so. Was hier stehen soll, dass weiß leider
-        noch keiner, aber das ist auch noch lange kein Problem. Was verschiebe
+        noch keiner, aber das ist auc. h noch lange kein Problem. Was verschiebe
         steht auf morgen, das bereitet keine Sorgen. IchIch bin ein Fließtext
         und das ist gut so. Was hier stehen soll, dass weiß leider noch keiner,
         aber das ist auch noch lange kein Problem. Was verschiebe steht auf
