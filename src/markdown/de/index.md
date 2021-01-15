@@ -85,7 +85,7 @@ verfahren_section:
       Mit Hilfe einer speziell auf Ihre Beschwerden und Erkrankungen abgestimmte Therapie werden dieSelbstheilungskräftedes Körpers aktiviert und ein natürlicher Heilungsprozess in Gang gesetzt. Der Körper erhält wieder die Möglichkeit selbst mit Erkrankungen fertig zu werden und mit ein wenig Geduld werden Ihre Belastungen nach und nach verschwinden.
     button:
       button_text: Erfahren Sie mehr
-      button_href: Erfahren Sie mehr
+      button_href: /contact
 anonymous_section_1:
   image_column:
     image:
@@ -105,7 +105,7 @@ anonymous_section_2:
   subheading: Kontaktieren Sie uns jetzt telefonisch unter 030 093834582735t2
   button:
     button_text: Termin vereinbaren
-    button_href: Termin vereinbaren
+    button_href: /contact
 praxis_section:
   section_heading: Praxis
   image_column:
@@ -121,7 +121,7 @@ praxis_section:
       dürfen.
     button:
       button_text: Informieren Sie sich hier
-      button_href: Informieren Sie sich hier
+      button_href: /contact
   image:
     source: /img/man_with_doctor.png
     alt: HealthSolutions
@@ -149,7 +149,7 @@ contact_section:
       problemlos direkt online einen Termin aus.
     button:
       button_text: Termin vereinbaren
-      button_href: Termin vereinbaren
+      button_href: /contact
   right_column:
     address_markdown: ADRESSE
     show_newsletter: true
