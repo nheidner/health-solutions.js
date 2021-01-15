@@ -4,15 +4,16 @@ locale: de
 pageTitle: Contact
 path: /contact
 header_section:
-  heading: Schieb mal Nummer rüber, Alder!
-  markdown_text: Ich bin ein Fließtext und das ist gut so. Was hier stehen soll,
-    dass weiß leider noch keiner, aber das ist auch noch lange kein Problem. Was
-    verschiebe steht auf morgen, das bereitet keine Sorgen. Ich bin ein
-    Fließtext und das ist gut so. Was hier stehen soll, dass weiß leider noch
-    keiner, aber das ist auch noch lange kein Problem. Was verschiebe steht auf
-    morgen, das bereitet keine Sorgen. Ich bin ein Fließtext und das ist gut so.
-    Was hier stehen soll, dass weiß leider noch keiner, aber das ist auch noch
-    lange kein Problem
+  heading: Gesundheit ist die Abwesenheit von Krankheit
+  markdown_text: >-
+    Mit Hilfe einer speziell auf Ihre Beschwerden und Erkrankungen abgestimmte
+    Therapie werden die Selbstheilungskräfte des Körpers aktiviert und ein
+    natürlicher Heilungsprozess in Gang gesetzt. Der Körper erhält wieder die
+    Möglichkeit selbst mit Erkrankungen fertig zu werden und mit ein wenig
+    Geduld werden Ihre Belastungen nach und nach verschwinden.
+
+
+    Nehmen Sie Ihre Gesundheit selbst in die Hand und vereinbaren Sie einen Termin noch heute.
   image:
     source: /img/holding_hands.png
     alt: Holding Hands
