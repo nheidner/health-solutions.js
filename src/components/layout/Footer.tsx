@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Link from '../Link';
 import LocalizedLink from '../LocalizedLink';
-import { SVGImage } from '../../utils/fragments';
+import { logo } from '../../utils/fragments';
 import { FooterQuery } from '../../../gatsby-graphql';
 import { DeepExtractType } from 'ts-deep-extract-types';
 import Img from '../Img';
@@ -84,7 +84,7 @@ const Footer: FC<{ currentLocale: string }> = ({ currentLocale }) => {
                             logo_img {
                                 alt
                                 source {
-                                    ...SVGImage
+                                    ...logo
                                 }
                             }
                         }
@@ -106,7 +106,7 @@ const Footer: FC<{ currentLocale: string }> = ({ currentLocale }) => {
                             logo_img {
                                 alt
                                 source {
-                                    ...SVGImage
+                                    ...logo
                                 }
                             }
                         }

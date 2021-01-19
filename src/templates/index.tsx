@@ -42,14 +42,14 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
     team_section,
     contact_section,
 }) => {
-    const praxisGalleryImages = praxis_section?.image_gallery?.map(
-        (imageElem) => {
-            return {
-                alt: imageElem?.alt as string,
-                source: imageElem?.source as any,
-            };
-        }
-    );
+    // const praxisGalleryImages = praxis_section?.image_gallery?.map(
+    //     (imageElem) => {
+    //         return {
+    //             alt: imageElem?.alt as string,
+    //             source: imageElem?.source as any,
+    //         };
+    //     }
+    // );
     return (
         <div
             css={
@@ -381,9 +381,9 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                 data-aos='fade'
                 data-aos-duration={aosSettings.duration.fast}>
                 <div className='container'>
-                    <ImageCarousel
+                    {/* <ImageCarousel
                         images={praxisGalleryImages as GalleryImage[]}
-                    />
+                    /> */}
                 </div>
             </section>
             <hr className='line-differentiator py-0 mt-6' />
@@ -425,7 +425,7 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                         />
                     </div>
                     <div className='columns touch-is-block flex-wrap'>
-                        {team_section?.cards?.map((card, index) => {
+                        {/* {team_section?.cards?.map((card, index) => {
                             return (
                                 <div
                                     key={index}
@@ -460,7 +460,7 @@ export const IndexTemplate: FC<IIndexTemplate> = ({
                                     </div>
                                 </div>
                             );
-                        })}
+                        })} */}
                     </div>
                 </div>
             </section>
@@ -652,12 +652,12 @@ export const pageQuery = graphql`
                             button_href
                         }
                     }
-                    image_gallery {
-                        source {
-                            ...galleryImage
-                        }
-                        alt
-                    }
+                    # image_gallery {
+                    #     source {
+                    #         ...galleryImage
+                    #     }
+                    #     alt
+                    # }
                     image {
                         source {
                             ...SVGImage
@@ -672,16 +672,16 @@ export const pageQuery = graphql`
                 team_section {
                     section_heading
                     markdown_text
-                    cards {
-                        image {
-                            source {
-                                ...cardHeaderImage
-                            }
-                            alt
-                        }
-                        heading
-                        markdown_text
-                    }
+                    # cards {
+                    #     image {
+                    #         source {
+                    #             ...cardHeaderImage
+                    #         }
+                    #         alt
+                    #     }
+                    #     heading
+                    #     markdown_text
+                    # }
                 }
                 contact_section {
                     section_heading

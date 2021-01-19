@@ -6,7 +6,7 @@ import { DeepExtractType } from 'ts-deep-extract-types';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Link from '../components/Link';
-import { popupColumnImage, SVGImage } from '../utils/fragments';
+import { popupColumnImage, logo } from '../utils/fragments';
 import Img from '../components/Img';
 import LocalizedLink from '../components/LocalizedLink';
 import Content from '../components/Content';
@@ -251,7 +251,7 @@ export const pageQuery = graphql`
                 header {
                     logo_image {
                         source {
-                            ...SVGImage
+                            ...logo
                         }
                         alt
                     }

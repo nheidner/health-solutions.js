@@ -23,6 +23,17 @@ export const columnImageLarge = graphql`
     }
 `;
 
+export const logo = graphql`
+    fragment logo on File {
+        childImageSharp {
+            fluid(maxWidth: 400) {
+                #720
+                ...GatsbyImageSharpFluid
+            }
+        }
+    }
+`;
+
 export const cardHeaderImage = graphql`
     fragment cardHeaderImage on File {
         childImageSharp {
