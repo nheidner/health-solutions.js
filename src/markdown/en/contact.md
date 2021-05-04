@@ -4,28 +4,30 @@ locale: en
 pageTitle: Contact
 path: /contact
 header_section:
-  heading: Schieb mal Nummer rüber, Alder!
-  markdown_text: Ich bin ein Fließtext und das ist gut so. Was hier stehen soll,
-    dass weiß leider noch keiner, aber das ist auch noch lange kein Problem. Was
-    verschiebe steht auf morgen, das bereitet keine Sorgen. Ich bin ein
-    Fließtext und das ist gut so. Was hier stehen soll, dass weiß leider noch
-    keiner, aber das ist auch noch lange kein Problem. Was verschiebe steht auf
-    morgen, das bereitet keine Sorgen. Ich bin ein Fließtext und das ist gut so.
-    Was hier stehen soll, dass weiß leider noch keiner, aber das ist auch noch
-    lange kein Problem
+  heading: " Health is more than the absence of disease."
+  markdown_text: >-
+    With the help of a therapy specifically tailored to your complaints and
+    diseases, the self-healing powers of the body are activated and a natural
+    healing process is set in motion. The body regains the ability to cope with
+    challenges or illnesses and with a little patience, your burdens can
+    gradually disappear.
+
+
+    Take your health and well-being into your own hands and make an appointment with us.
   image:
     source: /img/holding_hands.png
     alt: Holding Hands
 contact_section:
-  section_heading: KONTAKT
+  section_heading: CONTACT
   image_column:
     image:
       source: /img/man_with_phone.png
       alt: Man With Phone
   right_column:
-    heading: Ich bin ein Subheader. Willkommen auf  Unserer Seite !
-    markdown_text: Termine erfolgen nach Absprache. Sie können auch problemlos
-      online einen Termin direkt ausmachen.
+    heading: If you are interested, have questions or would like to make an
+      appointment, please do not hesitate to contact us.
+    markdown_text: Appointments are made by prior arrangement. Call us or easily
+      make an appointment online.
     form:
       name_field:
         label: NAME
@@ -34,13 +36,13 @@ contact_section:
           character_maximum: Must be 80 characters or less
           required: Required
       telephone_number_field:
-        label: TELEFON NUMMER
+        label: PHONE NUMBER
         max_number_characters: 78
         messages:
           character_maximum: Must be 80 characters or less
           required: Required
       email_address_field:
-        label: E-MAIL ADRESSE
+        label: E-MAIL ADRESS
         messages:
           is_email: Invalid email address
           required: Required
@@ -49,24 +51,26 @@ contact_section:
         messages:
           character_maximum: Must be 80 characters or less
           required: Required
-        label: NACHRICHT
+        label: MESSAGE
       send_button:
-        button_text: Abschicken
+        button_text: SEND
         messages:
           is_sent: Your message was sent
-    show_newsletter: true
+    show_newsletter: false
     newsletter:
       heading: Subscribe to our newsletter
       placeholder: Email Address
       button_text: OK
     address_markdown: |-
-      Adresse BLABLABLA
+      Health Solutions
 
-      Adresse BLABLABLA
+      Potsdamer Straße 4
 
-      Adresse BLABLABLA
+      10785 Berlin
 
-      Adresse BLABLABLA
+      Germany
 
-      Adresse BLABLABLA
+      030-1234567
+
+      office@healthsolutions.one
 ---
