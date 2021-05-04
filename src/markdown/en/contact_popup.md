@@ -6,9 +6,9 @@ header:
   logo_image:
     source: /img/logo_weiß_freistehend.png
     alt: logo
-  heading: Ich bin ein Pop Up. Willkommen beim Anmelden.
-  markdown_text: Ich bin ein Fließtext und das ist gut so. Was hier stehen soll,
-    dass weiß leider noch keiner, aber das ist auch noch lange kein Problem.
+  heading: " Health is more than the absence of disease."
+  markdown_text: Take your health and well-being into your own hands and make an
+    appointment with us.
 form:
   name_field:
     label: NAME
