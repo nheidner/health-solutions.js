@@ -56,13 +56,12 @@ philosophy_section:
     - heading: Heilsam
       markdown_text: >-
         Gemeinsam erarbeiten wir ganz individuell einen Therapieplan,der genau
-        auf ihre Bedürfnisse ausgerichtet ist.Heilungsprozesse werden dadurch
+        auf ihre Bedürfnisse ausgerichtet ist. Heilungsprozesse werden dadurch
         auf sanfte Art und Weise unterstützt und Ihre Selbstheilungskräfte
         freigesetzt. Ebenso kann dieses Verfahren eine bereits erfolgende
         schulmedizinische Behandlung wesentlich ergänzen oder begleiten, ohne
-        diese zu beeinflussen.\
+        diese zu beeinflussen. 
 
-        \
 
         Wir weisen in diesem Zusammenhang ausdrücklich daraufhin, dass sie keinesfalls ohne ärztlichen Rat, medizinisch angeratene bzw. bereits laufende Behandlungen abbrechen bzw. Medikamente welche ihnen verschrieben worden sind absetzen sollten.
       image:
