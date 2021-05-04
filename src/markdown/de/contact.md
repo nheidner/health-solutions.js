@@ -25,7 +25,8 @@ contact_section:
       source: /img/man_with_phone.png
       alt: Man With Phone
   right_column:
-    heading: Ich bin ein Subheader. Willkommen auf  Unserer Seite !
+    heading: Bei Interesse, Fragen oder einer Terminabsprache, stehen wir Ihnen
+      jederzeit zur Verfügung.
     markdown_text: Termine erfolgen nach Absprache. Sie können auch problemlos
       online einen Termin direkt ausmachen.
     form:
@@ -62,13 +63,15 @@ contact_section:
       placeholder: Email Address
       button_text: OK
     address_markdown: |-
-      Adresse BLABLABLA
+      Health Solutions
 
-      Adresse BLABLABLA
+      Potsdamer Straße 4
 
-      Adresse BLABLABLA
+      10785 Berlin
 
-      Adresse BLABLABLA
+      Germany
 
-      Adresse BLABLABLA
+      030-1234567
+
+      office@healthsolutions.one
 ---
