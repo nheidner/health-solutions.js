@@ -4,16 +4,17 @@ locale: de
 pageTitle: Contact
 path: /contact
 header_section:
-  heading: Gesundheit ist die Abwesenheit von Krankheit
+  heading: Gesundheit ist mehr als die Abwesenheit von Krankheit.
   markdown_text: >-
-    Mit Hilfe einer speziell auf Ihre Beschwerden und Erkrankungen abgestimmte
-    Therapie werden die Selbstheilungskräfte des Körpers aktiviert und ein
+    Mit Hilfe einer speziell auf ihre Beschwerden und Erkrankungen abgestimmten
+    Therapie, werden die Selbstheilungskräfte des Körpers aktiviert und ein
     natürlicher Heilungsprozess in Gang gesetzt. Der Körper erhält wieder die
-    Möglichkeit selbst mit Erkrankungen fertig zu werden und mit ein wenig
-    Geduld werden Ihre Belastungen nach und nach verschwinden.
+    Möglichkeit, selbst mit Herausforderungen oder auch mit Erkrankungen fertig
+    zu werden und mit ein wenig Geduld, können ihre Belastungen nach und nach
+    verschwinden.
 
 
-    Nehmen Sie Ihre Gesundheit selbst in die Hand und vereinbaren Sie einen Termin noch heute.
+    Nehmen sie ihre Gesundheit und ihr Wohlbefinden selbst in die Hand und vereinbaren sie einen Termin mit uns.
   image:
     source: /img/holding_hands.png
     alt: Holding Hands
@@ -55,7 +56,7 @@ contact_section:
         button_text: Abschicken
         messages:
           is_sent: Your message was sent
-    show_newsletter: true
+    show_newsletter: false
     newsletter:
       heading: Subscribe to our newsletter
       placeholder: Email Address
