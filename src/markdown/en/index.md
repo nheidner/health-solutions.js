@@ -27,8 +27,6 @@ about_us_section:
     not detectable by laboratory medicine in the conventional sense.
 
 
-    \
-
     Of course, you can also come to us if you want to take preventive care of your health and replenish resources, stabilize your health and make your body more resistant to environmental influences.
   image:
     source: /img/logo_farbe.svg
